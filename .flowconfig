@@ -1,0 +1,26 @@
+[ignore]
+
+[include]
+
+[untyped]
+<PROJECT_ROOT>/node_modules/graphql/.*
+<PROJECT_ROOT>/node_modules/express-graphql/.*
+<PROJECT_ROOT>/backend/graphql/.*
+<PROJECT_ROOT>/node_modules/react-relay-network-modern/node8/fetchWithMiddleware.js
+
+[libs]
+flow-typed/
+
+[lints]
+
+[options]
+suppress_type=$FlowFixMe
+suppress_type=$FlowFixMeProps
+suppress_type=$FlowFixMeState
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(<VERSION>\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue: https://github.com/facebook/flow/issues/[0-9]+
+suppress_comment=\\(.\\|\n\\)*\\$FlowRelayIssue: https://github.com/facebook/relay/issues/[0-9]+
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError: .+
+
+[strict]
