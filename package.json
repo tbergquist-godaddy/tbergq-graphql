@@ -13,14 +13,17 @@
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.0.2",
+    "graphql-iso-date": "^3.6.1",
     "graphql-relay": "^0.5.5",
     "jest-fetch-mock": "^2.0.1",
     "jsonwebtoken": "^8.4.0",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.14",
     "morgan": "^1.9.1",
+    "node-fetch": "^2.3.0",
     "nodemon": "^1.18.6",
     "password-hash": "^1.2.2",
+    "mock-mongoose": "^7.4.0",
     "webpack": "^4.26.0"
   },
   "scripts": {
@@ -28,7 +31,7 @@
     "now-build": "rimraf graphql/ && yarn webpack",
     "start": "node graphql/index.js",
     "deploy": "yarn now-build && now",
-    "test": "jest --setupTestFrameworkScriptFile=./scripts/setupTests.js",
+    "test": "DB_URL=url jest --setupTestFrameworkScriptFile=./scripts/setupTests.js",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",
     "test-ci": "yarn lint && yarn flow && yarn test"
