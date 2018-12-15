@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`works 1`] = `
+Object {
+  "data": Object {
+    "searchTvShow": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "id": "dHZTaG93OjE=",
+            "name": "lol",
+            "premiered": "2018-11-11",
+            "rating": 1.1,
+            "status": "status",
+          },
+        },
+      ],
+    },
+  },
+}
+`;
