@@ -13,6 +13,10 @@ it('works', async () => {
           status: 'status',
           premiered: '2018-11-11',
           rating: { average: 1.1 },
+          image: {
+            original: 'http://mock.original',
+            medium: 'http://mock.medium',
+          },
         },
       },
     ]),
@@ -27,6 +31,10 @@ it('works', async () => {
             status
             premiered
             rating
+            image {
+              medium
+              original
+            }
           }
         }
       }
