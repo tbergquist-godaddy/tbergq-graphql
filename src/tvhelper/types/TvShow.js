@@ -10,6 +10,7 @@ import { toGlobalId } from 'graphql-relay';
 import { GraphQLDate } from 'graphql-iso-date';
 
 import type { TvShow } from '../dataloaders/SearchTvShowLoader';
+import TvHelperImage from './TvHelperImage';
 
 export default new GraphQLObjectType({
   name: 'TvShow',
@@ -30,6 +31,9 @@ export default new GraphQLObjectType({
     rating: {
       type: GraphQLFloat,
       resolve: ({ rating }: TvShow) => rating.average,
+    },
+    image: {
+      type: TvHelperImage,
     },
   },
 });
