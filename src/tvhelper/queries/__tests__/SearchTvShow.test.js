@@ -1,23 +1,15 @@
 // @flow
 
 import fetch from 'node-fetch';
+
 import { graphql } from '../../../common/services/TestingTools';
+import tvshow from '../../datasets/tvshow.json';
 
 it('works', async () => {
   fetch.mockResponse(
     JSON.stringify([
       {
-        show: {
-          id: 1,
-          name: 'lol',
-          status: 'status',
-          premiered: '2018-11-11',
-          rating: { average: 1.1 },
-          image: {
-            original: 'http://mock.original',
-            medium: 'http://mock.medium',
-          },
-        },
+        show: tvshow,
       },
     ]),
   );
