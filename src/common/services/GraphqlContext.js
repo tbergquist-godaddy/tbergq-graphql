@@ -8,6 +8,9 @@ import SearchTvShowLoader, {
   type TvShow,
 } from '../../tvhelper/dataloaders/SearchTvShowLoader';
 import TvDetailLoader from '../../tvhelper/dataloaders/TvDetailLoader';
+import TvHelperUserLoader, {
+  type UserType as TvHelperUser,
+} from '../../tvhelper/dataloaders/UserLoader';
 
 export type GraphqlContextType = {|
   +dataLoader: {|
@@ -15,6 +18,7 @@ export type GraphqlContextType = {|
     +tvhelper: {|
       +searchTvShow: DataLoader<string, TvShow[]>,
       +tvDetail: DataLoader<string, TvShow>,
+      +user: DataLoader<string, TvHelperUser>,
     |},
   |},
 |};
@@ -26,6 +30,7 @@ export default function createContext() {
       tvhelper: {
         searchTvShow: SearchTvShowLoader(),
         tvDetail: TvDetailLoader(),
+        user: TvHelperUserLoader(),
       },
     },
   };

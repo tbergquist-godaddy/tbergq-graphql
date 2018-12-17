@@ -6,7 +6,8 @@
   "env": {
     "NODE_ENV": "production",
     "DB_URL":"@db_url",
-    "JWT_SECRET": "@jwt_secret"
+    "JWT_SECRET": "@jwt_secret",
+    "TV_HELPER_DB": "@tv_helper_db"
   },
   "alias": "tbergq-graphql.now.sh"
 }

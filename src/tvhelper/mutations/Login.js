@@ -2,9 +2,9 @@
 
 import { GraphQLString, GraphQLNonNull } from 'graphql';
 
-import type { GraphqlContextType } from '../common/services/GraphqlContext';
-import LoginType from '../types/LoginType';
-import loginResolver from '../resolvers/LoginResolver';
+import type { GraphqlContextType } from '../../common/services/GraphqlContext';
+import LoginType from '../../types/LoginType';
+import loginResolver from '../../resolvers/LoginResolver';
 
 type Args = {|
   +username: string,
@@ -26,7 +26,8 @@ export default {
     { username, password }: Args,
     { dataLoader }: GraphqlContextType,
   ) => {
-    const user = await dataLoader.user.load(username);
+    const user = await dataLoader.tvhelper.user.load(username);
+
     return loginResolver(user, password);
   },
 };
