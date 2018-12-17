@@ -15,13 +15,18 @@ type User = {|
 
 const { JWT_SECRET } = process.env;
 
-export default (user: User, password: string) => {
+const loginFailed = () => ({
+  token: null,
+  success: false,
+});
+
+export default (user: ?User, password: string) => {
+  if (user == null) {
+    return loginFailed();
+  }
   const isCorrect = verify(password, user.password);
   if (!isCorrect) {
-    return {
-      token: null,
-      success: false,
-    };
+    return loginFailed();
   }
   const token = jwt.sign(
     {
