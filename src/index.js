@@ -17,8 +17,8 @@ app.use(cors({ methods: ['GET', 'POST'] }));
 app.use(compression());
 app.use(morgan('dev'));
 
-function createGraphqlServer() {
-  const context = createContext();
+function createGraphqlServer(token: ?string) {
+  const context = createContext(token);
   return graphqlHTTP({
     schema: Schema,
     graphiql: true,
@@ -26,9 +26,10 @@ function createGraphqlServer() {
   });
 }
 
-app.use('/', (request: $Request, response: $Response) =>
-  createGraphqlServer()(request, response),
-);
+app.use('/', (request: $Request, response: $Response) => {
+  const token = request.get('Authorization');
+  return createGraphqlServer(token)(request, response);
+});
 
 if (process.env.NODE_ENV === 'production') {
   app.listen();
