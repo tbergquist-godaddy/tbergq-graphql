@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`works 1`] = `
+Object {
+  "data": Object {
+    "tvShowDetail": Object {
+      "id": "dHZTaG93OjEzOQ==",
+      "image": Object {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/31/78286.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/31/78286.jpg",
+      },
+      "name": "Girls",
+      "premiered": "2012-04-15",
+      "rating": 6.7,
+      "status": "Ended",
+      "summary": "This Emmy winning series is a comic look at the assorted humiliations and rare triumphs of a group of girls in their 20s.",
+    },
+  },
+}
+`;

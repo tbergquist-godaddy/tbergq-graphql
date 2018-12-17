@@ -9,6 +9,7 @@ export type TvShow = {|
   +status: string,
   +premiered: Date,
   +rating: {| +average: number |},
+  +summary: string,
 |};
 
 type ApiResponse = $ReadOnlyArray<{|

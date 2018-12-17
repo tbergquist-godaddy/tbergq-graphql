@@ -7,15 +7,15 @@ Object {
       "edges": Array [
         Object {
           "node": Object {
-            "id": "dHZTaG93OjE=",
+            "id": "dHZTaG93OjEzOQ==",
             "image": Object {
-              "medium": "http://mock.medium",
-              "original": "http://mock.original",
+              "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/31/78286.jpg",
+              "original": "http://static.tvmaze.com/uploads/images/original_untouched/31/78286.jpg",
             },
-            "name": "lol",
-            "premiered": "2018-11-11",
-            "rating": 1.1,
-            "status": "status",
+            "name": "Girls",
+            "premiered": "2012-04-15",
+            "rating": 6.7,
+            "status": "Ended",
           },
         },
       ],
