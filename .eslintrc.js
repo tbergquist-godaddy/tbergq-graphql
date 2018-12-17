@@ -20,6 +20,7 @@ module.exports = {
     }
   },
   rules: {
+    "curly": [ERROR, "all"],
     "no-duplicate-imports": ERROR,
     "no-underscore-dangle": OFF,
     "no-use-before-define": OFF,

@@ -12,6 +12,7 @@ module.exports = {
     namedChunks: true,
     minimizer: [new UglifyJsPlugin()],
   },
+  externals: ['pg', 'tedious', 'pg-hstore'],
   entry: {
     index: './src/index.js',
   },
