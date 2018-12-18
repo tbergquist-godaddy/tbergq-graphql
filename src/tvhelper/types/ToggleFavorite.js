@@ -1,8 +1,18 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLBoolean } from 'graphql';
+import { GraphQLObjectType, GraphQLBoolean, GraphQLID } from 'graphql';
 
 import TvShow from './TvShow';
+
+const TvShowNode = new GraphQLObjectType({
+  name: 'TvShowNode',
+  fields: {
+    node: {
+      type: TvShow,
+      resolve: (ancestor: Object) => ancestor,
+    },
+  },
+});
 
 export default new GraphQLObjectType({
   name: 'ToggleFavorite',
@@ -10,8 +20,11 @@ export default new GraphQLObjectType({
     success: {
       type: GraphQLBoolean,
     },
+    serieId: {
+      type: GraphQLID,
+    },
     tvShow: {
-      type: TvShow,
+      type: TvShowNode,
     },
   },
 });

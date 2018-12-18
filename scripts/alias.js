@@ -7,7 +7,6 @@ if (process.argv.length !== 3) {
   throw Error('Please pass one argument');
 }
 
-// $FlowFixMe
 const deployName = process.argv[2];
 
 execSync(`now alias ${deployName} tbergq-graphql.now.sh`, {

@@ -50,6 +50,6 @@ export default {
         serieId,
       },
     });
-    return { success: true };
+    return { success: true, serieId: args.serieId };
   },
 };
