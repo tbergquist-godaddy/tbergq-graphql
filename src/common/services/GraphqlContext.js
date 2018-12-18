@@ -16,6 +16,9 @@ import TvHelperUserLoader, {
 import FavoritesLoader, {
   type Favorites,
 } from '../../tvhelper/dataloaders/FavoritesLoader';
+import EpisodeLoader, {
+  type Episode,
+} from '../../tvhelper/dataloaders/EpisodeLoader';
 
 config();
 
@@ -35,6 +38,7 @@ export type GraphqlContextType = {|
       +tvDetail: DataLoader<string, TvShow>,
       +user: DataLoader<string, TvHelperUser>,
       +favorites: DataLoader<string, Favorites[]>,
+      +episodes: DataLoader<string, Episode[]>,
     |},
   |},
 |};
@@ -58,6 +62,7 @@ export default function createContext(token: ?string) {
         tvDetail: TvDetailLoader(),
         user: TvHelperUserLoader(),
         favorites: FavoritesLoader(),
+        episodes: EpisodeLoader(),
       },
     },
   };
