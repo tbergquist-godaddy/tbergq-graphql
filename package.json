@@ -38,7 +38,8 @@
     "test": "DB_URL=url jest --setupTestFrameworkScriptFile=./scripts/setupTests.js",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",
-    "test-ci": "yarn lint && yarn flow && yarn test"
+    "test-ci": "yarn lint && yarn flow && yarn test",
+    "set-alias": "yarn babel-node scripts/alias.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
