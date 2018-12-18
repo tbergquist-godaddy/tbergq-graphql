@@ -2,19 +2,14 @@
 
 import { GraphQLString, GraphQLNonNull } from 'graphql';
 import {
-  connectionDefinitions,
   connectionFromArray,
   connectionArgs,
   type ConnectionArguments,
 } from 'graphql-relay';
 
-import TvShow from '../types/TvShow';
+import TvShowConnection from '../types/TvShowConnection';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import type { TvShow as TvShowType } from '../dataloaders/SearchTvShowLoader';
-
-const { connectionType: TvShowConnection } = connectionDefinitions({
-  nodeType: TvShow,
-});
 
 type Args = {|
   +query: string,
