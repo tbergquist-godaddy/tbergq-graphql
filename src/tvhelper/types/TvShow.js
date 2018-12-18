@@ -7,12 +7,14 @@ import {
   GraphQLFloat,
   GraphQLBoolean,
 } from 'graphql';
-import { toGlobalId } from 'graphql-relay';
+import { toGlobalId, fromGlobalId } from 'graphql-relay';
 import { GraphQLDate } from 'graphql-iso-date';
 import striptags from 'striptags';
 
 import type { TvShow } from '../dataloaders/SearchTvShowLoader';
 import TvHelperImage from './TvHelperImage';
+import type { GraphqlContextType } from '../../common/services/GraphqlContext';
+import Favorites from '../db/models/FavoritesModel';
 
 export default new GraphQLObjectType({
   name: 'TvShow',
@@ -50,6 +52,25 @@ export default new GraphQLObjectType({
           return striptags(summary);
         }
         return summary;
+      },
+    },
+    isFavorite: {
+      type: GraphQLBoolean,
+      resolve: async (
+        { id }: TvShow,
+        _: mixed,
+        { user }: GraphqlContextType,
+      ) => {
+        if (user == null) {
+          return null;
+        }
+        const favorite = await Favorites.findOne({
+          where: {
+            userId: fromGlobalId(user.id).id,
+            serieId: id,
+          },
+        });
+        return favorite != null;
       },
     },
   },
