@@ -21,11 +21,13 @@ config();
 
 const { JWT_SECRET } = process.env;
 
+export type LoggedInUser = {|
+  +id: string,
+  +username: string,
+|};
+
 export type GraphqlContextType = {|
-  +user: ?{|
-    +id: string,
-    +username: string,
-  |},
+  +user: ?LoggedInUser,
   +dataLoader: {|
     +user: DataLoader<string, UserType>,
     +tvhelper: {|

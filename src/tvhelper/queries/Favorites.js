@@ -23,7 +23,6 @@ export default {
     args: ConnectionArguments,
     { user, dataLoader }: GraphqlContextType,
   ) => {
-    console.log(user);
     if (user == null) {
       throw Error('You must be signed in to use this query');
     }
