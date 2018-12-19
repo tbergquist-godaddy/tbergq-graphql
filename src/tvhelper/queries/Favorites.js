@@ -6,31 +6,53 @@ import {
   connectionArgs,
   type ConnectionArguments,
 } from 'graphql-relay';
+import * as R from 'ramda';
 
 import TvShowConnection from '../types/TvShowConnection';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import type { TvShow as TvShowType } from '../dataloaders/SearchTvShowLoader';
+import SortOptions from '../types/input/SortOptions';
 
+type Args = {|
+  +options: {|
+    +sortDirection: 'ascending' | 'descending',
+    +sortBy: 'name' | 'nextEpisode' | 'previousEpisode' | 'status',
+  |},
+  ...$Exact<ConnectionArguments>,
+|};
 export default {
   name: 'Favorites',
   type: TvShowConnection,
   description: 'Get your favorites',
   args: {
     ...connectionArgs,
+    options: {
+      type: SortOptions,
+      defaultValue: {
+        sortDirection: 'ascending',
+        sortBy: 'name',
+      },
+    },
   },
   resolve: async (
     _: mixed,
-    args: ConnectionArguments,
+    args: Args,
     { user, dataLoader }: GraphqlContextType,
   ) => {
     if (user == null) {
       throw Error('You must be signed in to use this query');
     }
+
     const { id } = fromGlobalId(user.id);
     const savedFavorites = await dataLoader.tvhelper.favorites.load(id);
     const serieIds = savedFavorites.map(item => item.serieId.toString());
     const favorites = await dataLoader.tvhelper.tvDetail.loadMany(serieIds);
 
-    return connectionFromArray<TvShowType>(favorites, args);
+    const sortBy =
+      args.options.sortDirection === 'ascending'
+        ? R.ascend(R.prop(args.options.sortBy))
+        : R.descend(R.prop(args.options.sortBy));
+
+    return connectionFromArray<TvShowType>(R.sort(sortBy, favorites), args);
   },
 };
