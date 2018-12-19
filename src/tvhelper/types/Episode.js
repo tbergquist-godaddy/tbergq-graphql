@@ -44,6 +44,7 @@ export default new GraphQLObjectType({
     },
     airdate: {
       type: GraphQLDate,
+      resolve: ({ airdate }: Episode) => airdate || null,
     },
     summary: Summary,
   },
