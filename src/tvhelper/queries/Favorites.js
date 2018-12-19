@@ -50,8 +50,8 @@ export default {
 
     const sortBy =
       args.options.sortDirection === 'ascending'
-        ? R.ascend(R.prop(args.options.sortBy))
-        : R.descend(R.prop(args.options.sortBy));
+        ? R.ascend(R.path(args.options.sortBy.split('.')))
+        : R.descend(R.path(args.options.sortBy.split('.')));
 
     return connectionFromArray<TvShowType>(R.sort(sortBy, favorites), args);
   },
