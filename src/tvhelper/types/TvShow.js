@@ -17,6 +17,8 @@ import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import Favorites from '../db/models/FavoritesModel';
 import Episode from './Episode';
 import Summary from './Summary';
+import resolvePreviousEpisode from '../resolvers/ResolvePreviousEpisode';
+import resolveNextEpisode from '../resolvers/ResolveNextEpisode';
 
 export default new GraphQLObjectType({
   name: 'TvShow',
@@ -63,57 +65,31 @@ export default new GraphQLObjectType({
     },
     episodes: {
       type: GraphQLList(Episode),
-      resolve: async ({ id }: TvShow, _: mixed, { dataLoader }) => {
-        const episodes = await dataLoader.tvhelper.episodes.load(id);
+      resolve: async ({ id, _embedded }: TvShow, _: mixed, { dataLoader }) => {
+        const episodes =
+          _embedded?.episodes ?? (await dataLoader.tvhelper.episodes.load(id));
+
         return episodes;
       },
     },
     previousEpisode: {
       type: GraphQLDate,
-      resolve: async ({ id }: TvShow, _: mixed, { dataLoader }) => {
-        const episodes = await dataLoader.tvhelper.episodes.load(id);
-        const today = new Date();
-        const tomorrow = new Date(
-          Date.UTC(today.getFullYear(), today.getMonth(), today.getDate() + 1),
-        );
-        const dates = episodes.reduce((acc, curr) => {
-          if (curr.airdate == null) {
-            return acc;
-          }
-          const airdate = new Date(curr.airdate);
-          if (airdate < tomorrow) {
-            return [...acc, airdate];
-          }
-          return acc;
-        }, []);
-        const date = dates.length > 0 ? new Date(Math.max(...dates)) : null;
-
-        return date;
-      },
+      resolve: async (
+        { _embedded, id }: TvShow,
+        _: mixed,
+        { dataLoader }: GraphqlContextType,
+      ) =>
+        _embedded?.previousepisode?.airdate ??
+        resolvePreviousEpisode(dataLoader, id),
     },
     nextEpisode: {
       type: GraphQLDate,
-      resolve: async ({ id }: TvShow, _: mixed, { dataLoader }) => {
-        const episodes = await dataLoader.tvhelper.episodes.load(id);
-        const today = new Date();
-        const utcToday = new Date(
-          Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()),
-        );
-        const dates = episodes.reduce((acc, curr) => {
-          if (curr.airdate == null) {
-            return acc;
-          }
-          const airdate = new Date(curr.airdate);
-
-          if (airdate >= utcToday) {
-            return [...acc, airdate];
-          }
-          return acc;
-        }, []);
-        const date = dates.length > 0 ? new Date(Math.min(...dates)) : null;
-
-        return date;
-      },
+      resolve: async (
+        { _embedded, id }: TvShow,
+        _: mixed,
+        { dataLoader }: GraphqlContextType,
+      ) =>
+        _embedded?.nextepisode?.airdate ?? resolveNextEpisode(dataLoader, id),
     },
   },
 });
