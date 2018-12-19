@@ -9,7 +9,7 @@ const fetchTvDetail = async (ids: $ReadOnlyArray<string>) => {
   const responses = await Promise.all(
     ids.map(id =>
       fetch(
-        `http://api.tvmaze.com/shows/${id}?embed[]=episodes&embed[]=nextepisode&embed[]=previousepisode`,
+        `http://api.tvmaze.com/shows/${id}?embed[]=episodes&embed[]=nextepisode&embed[]=previousepisode&embed[]=cast`,
       ),
     ),
   );

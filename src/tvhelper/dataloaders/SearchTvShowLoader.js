@@ -5,6 +5,17 @@ import fetch from '../../common/services/Fetch';
 
 import type { Episode } from './EpisodeLoader';
 
+export type Person = {|
+  +id: string,
+  +name: string,
+  +image: {| +original: string, +medium: string |},
+|};
+
+export type Cast = {|
+  +person: Person,
+  +character: Person,
+|};
+
 export type TvShow = {|
   +id: number,
   +name: string,
@@ -16,6 +27,7 @@ export type TvShow = {|
     +episodes?: ?$ReadOnlyArray<Episode>,
     +nextepisode?: ?Episode,
     +previousepisode?: ?Episode,
+    +cast?: ?$ReadOnlyArray<Cast>,
   |},
 |};
 

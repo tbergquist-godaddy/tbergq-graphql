@@ -19,6 +19,7 @@ import Episode from './Episode';
 import Summary from './Summary';
 import resolvePreviousEpisode from '../resolvers/ResolvePreviousEpisode';
 import resolveNextEpisode from '../resolvers/ResolveNextEpisode';
+import Cast from './Cast';
 
 export default new GraphQLObjectType({
   name: 'TvShow',
@@ -90,6 +91,10 @@ export default new GraphQLObjectType({
         { dataLoader }: GraphqlContextType,
       ) =>
         _embedded?.nextepisode?.airdate ?? resolveNextEpisode(dataLoader, id),
+    },
+    cast: {
+      type: GraphQLList(Cast),
+      resolve: ({ _embedded }: TvShow) => _embedded?.cast,
     },
   },
 });
