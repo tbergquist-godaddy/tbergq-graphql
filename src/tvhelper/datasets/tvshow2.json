@@ -1,0 +1,699 @@
+{
+    "id": 6,
+    "url": "http://www.tvmaze.com/shows/6/the-100",
+    "name": "The 100",
+    "type": "Scripted",
+    "language": "English",
+    "genres": [
+        "Action",
+        "Adventure",
+        "Science-Fiction"
+    ],
+    "status": "Running",
+    "runtime": 60,
+    "premiered": "2014-03-19",
+    "officialSite": "http://www.cwtv.com/shows/the-100/",
+    "schedule": {
+        "time": "20:00",
+        "days": [
+            "Tuesday"
+        ]
+    },
+    "rating": {
+        "average": 7.9
+    },
+    "weight": 98,
+    "network": {
+        "id": 5,
+        "name": "The CW",
+        "country": {
+            "name": "United States",
+            "code": "US",
+            "timezone": "America/New_York"
+        }
+    },
+    "webChannel": null,
+    "externals": {
+        "tvrage": 34770,
+        "thetvdb": 268592,
+        "imdb": "tt2661044"
+    },
+    "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/151/377511.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/151/377511.jpg"
+    },
+    "summary": "<p>Ninety-seven years ago, nuclear Armageddon decimated planet Earth, destroying civilization. The only survivors were the 400 inhabitants of 12 international space stations that were in orbit at the time. Three generations have been born in space, the survivors now number 4,000, and resources are running out on their dying \"Ark\" - the 12 stations now linked together and repurposed to keep the survivors alive. Draconian measures including capital punishment and population control are the order of the day, as the leaders of the Ark take ruthless steps to ensure their future, including secretly exiling a group of 100 juvenile prisoners to the Earth's surface to test whether it's habitable.</p>",
+    "updated": 1542730690,
+    "_links": {
+        "self": {
+            "href": "http://api.tvmaze.com/shows/6"
+        },
+        "previousepisode": {
+            "href": "http://api.tvmaze.com/episodes/1471697"
+        }
+    },
+    "_embedded": {
+        "cast": [
+            {
+                "person": {
+                    "id": 781,
+                    "url": "http://www.tvmaze.com/people/781/eliza-taylor-cotter",
+                    "name": "Eliza Taylor-Cotter",
+                    "country": {
+                        "name": "Australia",
+                        "code": "AU",
+                        "timezone": "Australia/Sydney"
+                    },
+                    "birthday": "1989-10-24",
+                    "deathday": null,
+                    "gender": "Female",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/3/7616.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/3/7616.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/781"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 661,
+                    "url": "http://www.tvmaze.com/characters/661/the-100-clarke-griffin",
+                    "name": "Clarke Griffin",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/67.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/67.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/661"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 785,
+                    "url": "http://www.tvmaze.com/people/785/bob-morley",
+                    "name": "Bob Morley",
+                    "country": {
+                        "name": "Australia",
+                        "code": "AU",
+                        "timezone": "Australia/Sydney"
+                    },
+                    "birthday": "1984-12-20",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/158/395976.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/158/395976.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/785"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 665,
+                    "url": "http://www.tvmaze.com/characters/665/the-100-bellamy-blake",
+                    "name": "Bellamy Blake",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/69.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/69.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/665"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 784,
+                    "url": "http://www.tvmaze.com/people/784/marie-avgeropoulos",
+                    "name": "Marie Avgeropoulos",
+                    "country": {
+                        "name": "Canada",
+                        "code": "CA",
+                        "timezone": "America/Halifax"
+                    },
+                    "birthday": "1986-06-17",
+                    "deathday": null,
+                    "gender": "Female",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/149/372647.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/149/372647.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/784"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 664,
+                    "url": "http://www.tvmaze.com/characters/664/the-100-octavia-blake",
+                    "name": "Octavia Blake",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/70.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/70.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/664"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 789,
+                    "url": "http://www.tvmaze.com/people/789/henry-ian-cusick",
+                    "name": "Henry Ian Cusick",
+                    "country": {
+                        "name": "Peru",
+                        "code": "PE",
+                        "timezone": "America/Lima"
+                    },
+                    "birthday": "1967-04-17",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/150/376197.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/150/376197.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/789"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 669,
+                    "url": "http://www.tvmaze.com/characters/669/the-100-marcus-kane",
+                    "name": "Marcus Kane",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/1054.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/1054.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/669"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 790,
+                    "url": "http://www.tvmaze.com/people/790/lindsey-morgan",
+                    "name": "Lindsey Morgan",
+                    "country": {
+                        "name": "United States",
+                        "code": "US",
+                        "timezone": "America/New_York"
+                    },
+                    "birthday": "1990-02-27",
+                    "deathday": null,
+                    "gender": "Female",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/1068.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/1068.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/790"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 670,
+                    "url": "http://www.tvmaze.com/characters/670/the-100-raven-reyes",
+                    "name": "Raven Reyes",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/40/100970.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/40/100970.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/670"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 782,
+                    "url": "http://www.tvmaze.com/people/782/paige-turco",
+                    "name": "Paige Turco",
+                    "country": {
+                        "name": "United States",
+                        "code": "US",
+                        "timezone": "America/New_York"
+                    },
+                    "birthday": "1965-05-17",
+                    "deathday": null,
+                    "gender": "Female",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/3/7617.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/3/7617.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/782"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 662,
+                    "url": "http://www.tvmaze.com/characters/662/the-100-abigail-griffin",
+                    "name": "Abigail Griffin",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/158/397252.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/158/397252.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/662"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 786,
+                    "url": "http://www.tvmaze.com/people/786/christopher-larkin",
+                    "name": "Christopher Larkin",
+                    "country": {
+                        "name": "Korea, Republic of",
+                        "code": "KR",
+                        "timezone": "Asia/Seoul"
+                    },
+                    "birthday": "1987-10-02",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/3/7620.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/3/7620.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/786"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 666,
+                    "url": "http://www.tvmaze.com/characters/666/the-100-monty-green",
+                    "name": "Monty Green",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/71.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/71.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/666"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 806,
+                    "url": "http://www.tvmaze.com/people/806/richard-harmon",
+                    "name": "Richard Harmon",
+                    "country": {
+                        "name": "Canada",
+                        "code": "CA",
+                        "timezone": "America/Halifax"
+                    },
+                    "birthday": "1991-08-18",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/88/222265.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/88/222265.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/806"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 675,
+                    "url": "http://www.tvmaze.com/characters/675/the-100-jonathan-murphy",
+                    "name": "Jonathan Murphy",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/8/22332.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/8/22332.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/675"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 788,
+                    "url": "http://www.tvmaze.com/people/788/isaiah-washington",
+                    "name": "Isaiah Washington",
+                    "country": {
+                        "name": "United States",
+                        "code": "US",
+                        "timezone": "America/New_York"
+                    },
+                    "birthday": "1963-08-03",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/3/7592.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/3/7592.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/788"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 668,
+                    "url": "http://www.tvmaze.com/characters/668/the-100-thelonious-jaha",
+                    "name": "Thelonious Jaha",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/1058.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/1058.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/668"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 787,
+                    "url": "http://www.tvmaze.com/people/787/devon-bostick",
+                    "name": "Devon Bostick",
+                    "country": {
+                        "name": "Canada",
+                        "code": "CA",
+                        "timezone": "America/Halifax"
+                    },
+                    "birthday": "1991-11-13",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/1059.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/1059.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/787"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 667,
+                    "url": "http://www.tvmaze.com/characters/667/the-100-jasper-jordan",
+                    "name": "Jasper Jordan",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/1548.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/1548.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/667"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 791,
+                    "url": "http://www.tvmaze.com/people/791/ricky-whittle",
+                    "name": "Ricky Whittle",
+                    "country": {
+                        "name": "United Kingdom",
+                        "code": "GB",
+                        "timezone": "Europe/London"
+                    },
+                    "birthday": "1981-12-31",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/1/4823.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/1/4823.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/791"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 671,
+                    "url": "http://www.tvmaze.com/characters/671/the-100-lincoln",
+                    "name": "Lincoln",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/51/128628.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/51/128628.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/671"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 783,
+                    "url": "http://www.tvmaze.com/people/783/thomas-mcdonell",
+                    "name": "Thomas McDonell",
+                    "country": {
+                        "name": "United States",
+                        "code": "US",
+                        "timezone": "America/New_York"
+                    },
+                    "birthday": "1986-05-02",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/3/7618.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/3/7618.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/783"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 663,
+                    "url": "http://www.tvmaze.com/characters/663/the-100-finn-collins",
+                    "name": "Finn Collins",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/66.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/66.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/663"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 6893,
+                    "url": "http://www.tvmaze.com/people/6893/tasya-teles",
+                    "name": "Tasya Teles",
+                    "country": {
+                        "name": "Canada",
+                        "code": "CA",
+                        "timezone": "America/Halifax"
+                    },
+                    "birthday": null,
+                    "deathday": null,
+                    "gender": "Female",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/8/22380.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/8/22380.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/6893"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 100220,
+                    "url": "http://www.tvmaze.com/characters/100220/the-100-echo",
+                    "name": "Echo",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/54/135431.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/54/135431.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/100220"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 28315,
+                    "url": "http://www.tvmaze.com/people/28315/zach-mcgowan",
+                    "name": "Zach McGowan",
+                    "country": {
+                        "name": "United States",
+                        "code": "US",
+                        "timezone": "America/New_York"
+                    },
+                    "birthday": "1981-10-25",
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/170/426324.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/170/426324.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/28315"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 233422,
+                    "url": "http://www.tvmaze.com/characters/233422/the-100-roan",
+                    "name": "Roan",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/96/240599.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/96/240599.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/233422"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 792,
+                    "url": "http://www.tvmaze.com/people/792/eli-goree",
+                    "name": "Eli Goree",
+                    "country": {
+                        "name": "Canada",
+                        "code": "CA",
+                        "timezone": "America/Halifax"
+                    },
+                    "birthday": null,
+                    "deathday": null,
+                    "gender": "Male",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/3/7627.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/3/7627.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/792"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 672,
+                    "url": "http://www.tvmaze.com/characters/672/the-100-wells-jaha",
+                    "name": "Wells Jaha",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/68.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/68.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/672"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            },
+            {
+                "person": {
+                    "id": 316,
+                    "url": "http://www.tvmaze.com/people/316/kelly-hu",
+                    "name": "Kelly Hu",
+                    "country": {
+                        "name": "United States",
+                        "code": "US",
+                        "timezone": "America/New_York"
+                    },
+                    "birthday": "1968-02-13",
+                    "deathday": null,
+                    "gender": "Female",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/1067.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/1067.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/people/316"
+                        }
+                    }
+                },
+                "character": {
+                    "id": 673,
+                    "url": "http://www.tvmaze.com/characters/673/the-100-callie-cartwig",
+                    "name": "Callie Cartwig",
+                    "image": {
+                        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/157/393673.jpg",
+                        "original": "http://static.tvmaze.com/uploads/images/original_untouched/157/393673.jpg"
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "http://api.tvmaze.com/characters/673"
+                        }
+                    }
+                },
+                "self": false,
+                "voice": false
+            }
+        ]
+    }
+}

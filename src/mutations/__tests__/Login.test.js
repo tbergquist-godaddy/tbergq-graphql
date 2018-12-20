@@ -14,10 +14,6 @@ jest.mock('password-hash', () => ({
   verify: jest.fn(input => input === 'password'),
 }));
 
-jest.mock('jsonwebtoken', () => ({
-  sign: jest.fn(() => 'tokenIsSigned'),
-}));
-
 describe('Login', () => {
   it('signs token for valid username and password', async () => {
     const query = graphql(`
