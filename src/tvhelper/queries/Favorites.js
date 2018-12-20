@@ -13,10 +13,15 @@ import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import type { TvShow as TvShowType } from '../dataloaders/SearchTvShowLoader';
 import SortOptions from '../types/input/SortOptions';
 
+type SortBy =
+  | 'name'
+  | '_embedded.nextepisode.airdate'
+  | '_embedded.previousepisode.airdate'
+  | 'status';
 type Args = {|
   +options: {|
     +sortDirection: 'ascending' | 'descending',
-    +sortBy: 'name' | 'nextEpisode' | 'previousEpisode' | 'status',
+    +sortBy: SortBy,
   |},
   ...$Exact<ConnectionArguments>,
 |};
