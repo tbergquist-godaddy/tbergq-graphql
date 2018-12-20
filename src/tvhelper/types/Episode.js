@@ -5,6 +5,7 @@ import {
   GraphQLID,
   GraphQLString,
   GraphQLInt,
+  GraphQLBoolean,
 } from 'graphql';
 import { toGlobalId } from 'graphql-relay';
 import { GraphQLDate } from 'graphql-iso-date';
@@ -12,6 +13,7 @@ import { GraphQLDate } from 'graphql-iso-date';
 import TvHelperImage from './TvHelperImage';
 import type { Episode } from '../dataloaders/EpisodeLoader';
 import Summary from './Summary';
+import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 
 export default new GraphQLObjectType({
   name: 'Episode',
@@ -47,5 +49,20 @@ export default new GraphQLObjectType({
       resolve: ({ airdate }: Episode) => airdate || null, // Failes with nullish coalescing maybe date can be emptystring, which is invalid date
     },
     summary: Summary,
+    watched: {
+      type: GraphQLBoolean,
+      resolve: async (
+        { id }: Episode,
+        _: mixed,
+        { user, dataLoader }: GraphqlContextType,
+      ) => {
+        if (user == null) {
+          return false;
+        }
+        const watched = await dataLoader.tvhelper.episodeWatched.load(id);
+
+        return watched != null;
+      },
+    },
   },
 });
