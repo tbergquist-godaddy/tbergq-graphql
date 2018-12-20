@@ -14,7 +14,6 @@ import { GraphQLDate } from 'graphql-iso-date';
 import type { TvShow } from '../dataloaders/SearchTvShowLoader';
 import TvHelperImage from './TvHelperImage';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
-import Favorites from '../db/models/FavoritesModel';
 import Episode from './Episode';
 import Summary from './Summary';
 import resolvePreviousEpisode from '../resolvers/ResolvePreviousEpisode';
@@ -48,19 +47,19 @@ export default new GraphQLObjectType({
     isFavorite: {
       type: GraphQLBoolean,
       resolve: async (
-        { id }: TvShow,
+        { id: serieId }: TvShow,
         _: mixed,
-        { user }: GraphqlContextType,
+        { user, dataLoader }: GraphqlContextType,
       ) => {
         if (user == null) {
           return null;
         }
-        const favorite = await Favorites.findOne({
-          where: {
-            userId: fromGlobalId(user.id).id,
-            serieId: id,
-          },
+        const { id: userId } = fromGlobalId(user.id);
+        const favorite = await dataLoader.tvhelper.favorite.load({
+          userId: parseInt(userId, 10),
+          serieId,
         });
+
         return favorite != null;
       },
     },

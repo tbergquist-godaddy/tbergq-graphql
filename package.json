@@ -16,6 +16,7 @@
     "graphql-iso-date": "^3.6.1",
     "graphql-relay": "^0.5.5",
     "jest-fetch-mock": "^2.0.1",
+    "json-stable-stringify": "^1.0.1",
     "jsonwebtoken": "^8.4.0",
     "mock-mongoose": "^7.4.0",
     "mongodb": "^3.1.10",
