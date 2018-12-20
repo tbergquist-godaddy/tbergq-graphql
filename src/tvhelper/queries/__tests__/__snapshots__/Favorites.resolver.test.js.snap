@@ -1,0 +1,585 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sorts by name ascending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
+
+exports[`sorts by name descending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
+
+exports[`sorts by nextepisode ascending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
+
+exports[`sorts by nextepisode descending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
+
+exports[`sorts by previousepisode ascending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
+
+exports[`sorts by previousepisode descending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
+
+exports[`sorts by status ascending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
+
+exports[`sorts by status descending 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-01-01T00:00:00.000Z,
+          },
+        },
+        "name": "Game of Thrones",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2017-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Elite",
+        "status": "running",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-05T00:00:00.000Z,
+          },
+        },
+        "name": "The 100",
+        "status": "in development",
+      },
+    },
+    Object {
+      "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "node": Object {
+        "_embedded": Object {
+          "nextepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+          "previousepisode": Object {
+            "airdate": 2018-12-01T00:00:00.000Z,
+          },
+        },
+        "name": "Animal kingdom",
+        "status": "ended",
+      },
+    },
+  ],
+  "pageInfo": Object {
+    "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+  },
+}
+`;
