@@ -11,7 +11,7 @@ import { toGlobalId } from 'graphql-relay';
 import { GraphQLDate } from 'graphql-iso-date';
 
 import TvHelperImage from './TvHelperImage';
-import type { Episode } from '../dataloaders/EpisodeLoader';
+import type { Episode } from '../dataloaders/TvShowEpisodesLoader';
 import Summary from './Summary';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 

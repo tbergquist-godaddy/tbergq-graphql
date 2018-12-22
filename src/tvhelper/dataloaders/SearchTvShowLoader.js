@@ -3,7 +3,7 @@
 import Dataloader from 'dataloader';
 import fetch from '../../common/services/Fetch';
 
-import type { Episode } from './EpisodeLoader';
+import type { Episode } from './TvShowEpisodesLoader';
 
 export type Person = {|
   +id: string,
