@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`works 1`] = `
+Object {
+  "data": Object {
+    "episode": Object {
+      "airdate": "2018-08-07",
+      "id": "ZXBpc29kZToxNDcxNjk3",
+      "image": Object {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_landscape/163/409348.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/163/409348.jpg",
+      },
+      "name": "Damocles – Part Two",
+      "number": 13,
+      "season": 5,
+      "seasonAndNumber": "S05E13",
+      "summary": "<p>Clarke and her friends must risk everything to fight one last battle for survival, only to glimpse an even darker threat to the last living valley on Earth.</p>",
+    },
+  },
+}
+`;
