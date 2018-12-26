@@ -3,22 +3,9 @@
 import Dataloader from 'dataloader';
 
 import fetch from '../../common/services/Fetch';
+import type { Episode } from './TvShowEpisodesLoader';
 
-export type Episode = {|
-  +id: number,
-  +name: string,
-  +season: number,
-  +number: number,
-  +airdate: Date,
-  +image: {| +medium: string, +original: string |},
-  +summary: string,
-|};
+const fetchEpisode = async (ids: $ReadOnlyArray<string>) =>
+  Promise.all(ids.map(id => fetch(`http://api.tvmaze.com/episodes/${id}`)));
 
-const fetchEpisodes = async (serieIds: $ReadOnlyArray<string>) => {
-  const responses: $ReadOnlyArray<Episode[]> = await Promise.all(
-    serieIds.map(id => fetch(`http://api.tvmaze.com/shows/${id}/episodes`)),
-  );
-  return responses;
-};
-
-export default () => new Dataloader<string, Episode[]>(fetchEpisodes);
+export default () => new Dataloader<string, Episode>(fetchEpisode);

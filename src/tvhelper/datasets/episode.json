@@ -1,0 +1,21 @@
+{
+    "id": 1471697,
+    "url": "http://www.tvmaze.com/episodes/1471697/the-100-5x13-damocles-part-two",
+    "name": "Damocles – Part Two",
+    "season": 5,
+    "number": 13,
+    "airdate": "2018-08-07",
+    "airtime": "20:00",
+    "airstamp": "2018-08-08T00:00:00+00:00",
+    "runtime": 60,
+    "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_landscape/163/409348.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/163/409348.jpg"
+    },
+    "summary": "<p>Clarke and her friends must risk everything to fight one last battle for survival, only to glimpse an even darker threat to the last living valley on Earth.</p>",
+    "_links": {
+        "self": {
+            "href": "http://api.tvmaze.com/episodes/1471697"
+        }
+    }
+}
