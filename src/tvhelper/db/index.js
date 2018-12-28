@@ -6,7 +6,25 @@ import { config } from 'dotenv';
 
 config();
 
-const sequelize = new Sequelize(process.env.TV_HELPER_DB);
+const { TV_HELPER_PASS } = process.env;
+
+const sequelize = new Sequelize(
+  'heroku_1545a01caaa1524',
+  'b07b5834278de6',
+  TV_HELPER_PASS,
+  {
+    host: 'eu-cdbr-west-01.cleardb.com',
+    dialect: 'mysql',
+    operatorsAliases: false,
+
+    pool: {
+      max: 90,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+  },
+);
 
 (async () => {
   try {

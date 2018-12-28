@@ -2,6 +2,7 @@
 
 import Dataloader from 'dataloader';
 import { fromGlobalId } from 'graphql-relay';
+import { Op } from 'sequelize';
 
 import WatchedEpisode from '../db/models/WatchedEpisodesModel';
 import type { LoggedInUser } from '../../common/services/GraphqlContext';
@@ -21,7 +22,7 @@ const loadWatchedEpisode = async (
   const watchedEpisodes = await WatchedEpisode.findAll({
     where: {
       episodeId: {
-        $in: args,
+        [Op.in]: args,
       },
       userId: parseInt(fromGlobalId(userId).id, 10),
     },
