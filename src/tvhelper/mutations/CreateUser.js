@@ -6,6 +6,7 @@ import {
   GraphQLObjectType,
   GraphQLBoolean,
 } from 'graphql';
+import { generate } from 'password-hash';
 
 import UserModel from '../db/models/UserModel';
 
@@ -40,7 +41,7 @@ export default {
   resolve: async (_: mixed, { username, password, email }: Args) => {
     await UserModel.create({
       username,
-      password,
+      password: generate(password),
       email,
     });
 
