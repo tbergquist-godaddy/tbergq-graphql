@@ -18,10 +18,11 @@ const sequelize = new Sequelize(
     operatorsAliases: false,
 
     pool: {
-      max: 90,
+      max: 10,
       min: 0,
-      acquire: 30000,
-      idle: 10000,
+      acquire: 10000,
+      idle: 2000,
+      evict: 2000,
     },
   },
 );
