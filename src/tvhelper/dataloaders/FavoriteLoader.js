@@ -7,7 +7,7 @@ import FavoritesModel from '../db/models/FavoritesModel';
 import type { Favorites } from './FavoritesLoader';
 
 export type FavoriteArgs = {|
-  +userId: number,
+  +userId: string,
   +serieId: number,
 |};
 
@@ -15,10 +15,8 @@ const fetchFavorites = async (args: $ReadOnlyArray<FavoriteArgs>) => {
   const responses = await Promise.all(
     args.map(({ userId, serieId }) =>
       FavoritesModel.findOne({
-        where: {
-          userId,
-          serieId,
-        },
+        userId,
+        serieId,
       }),
     ),
   );

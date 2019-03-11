@@ -8,7 +8,7 @@ import {
 } from 'graphql';
 import { generate } from 'password-hash';
 
-import UserModel from '../db/models/UserModel';
+import { createUser } from '../db/models/UserModel';
 
 type Args = {|
   +username: string,
@@ -39,7 +39,7 @@ export default {
     },
   },
   resolve: async (_: mixed, { username, password, email }: Args) => {
-    await UserModel.create({
+    await createUser({
       username,
       password: generate(password),
       email,

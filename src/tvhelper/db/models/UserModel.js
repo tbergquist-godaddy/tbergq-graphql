@@ -1,26 +1,39 @@
 // @flow
 
-import sequelize from 'sequelize';
+import { Schema } from 'mongoose';
+import mongoose from '../../../common/db/MongoDB';
 
-import db from '../index';
+export type UserType = {|
+  +id: string,
+  +username: string,
+  +password: string,
+|};
 
-const User = db.define('Users', {
-  id: {
-    primaryKey: true,
-    type: sequelize.INTEGER,
-    autoIncrement: true,
-  },
-  email: {
-    type: sequelize.STRING,
+const UserSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
     unique: true,
   },
   password: {
-    type: sequelize.STRING,
+    type: String,
+    required: true,
   },
-  username: {
-    type: sequelize.STRING,
+  email: {
+    type: String,
+    required: true,
     unique: true,
   },
 });
 
-export default User;
+const User = mongoose.model('users', UserSchema);
+
+export const findOne = (username: string) => User.findOne({ username });
+
+type CreateUserType = {|
+  +username: string,
+  +password: string,
+  +email: string,
+|};
+
+export const createUser = (user: CreateUserType) => User.create(new User(user));

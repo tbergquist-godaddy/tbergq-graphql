@@ -1,26 +1,25 @@
 // @flow
 
-import sequelize from 'sequelize';
+import { Schema } from 'mongoose';
+import mongoose from '../../../common/db/MongoDB';
 
-import db from '../index';
-import User from './UserModel';
-
-export default db.define('WatchedEpisodes', {
-  id: {
-    primaryKey: true,
-    type: sequelize.INTEGER,
-    autoIncrement: true,
-  },
+const WatchedEpisodesSchema = new Schema({
   userId: {
-    type: sequelize.INTEGER,
-    unique: 'userEpisodeIndex',
-    references: {
-      model: User,
-      key: 'id',
-    },
+    type: Schema.Types.ObjectId,
+    ref: 'users',
+    required: true,
   },
   episodeId: {
-    type: sequelize.INTEGER,
-    unique: 'userEpisodeIndex',
+    type: Number,
+    required: true,
   },
 });
+
+WatchedEpisodesSchema.index({ userId: 1, episodeId: -1 }, { unique: true });
+
+const WatchedEpisode = mongoose.model('watchedEpisodes', WatchedEpisodesSchema);
+
+export const addWatchedEpisode = ({ userId, episodeId }: Object) =>
+  WatchedEpisode.create(new WatchedEpisode({ userId, episodeId }));
+
+export default WatchedEpisode;

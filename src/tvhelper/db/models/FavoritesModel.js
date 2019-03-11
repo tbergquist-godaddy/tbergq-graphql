@@ -1,26 +1,32 @@
 // @flow
 
-import sequelize from 'sequelize';
+import { Schema } from 'mongoose';
 
-import db from '../index';
-import User from './UserModel';
+import mongoose from '../../../common/db/MongoDB';
 
-export default db.define('Favorites', {
-  id: {
-    primaryKey: true,
-    type: sequelize.INTEGER,
-    autoIncrement: true,
-  },
+const FavoritesSchema = new Schema({
   userId: {
-    type: sequelize.INTEGER,
-    unique: 'userSerieIndex',
-    references: {
-      model: User,
-      key: 'id',
-    },
+    type: Schema.Types.ObjectId,
+    ref: 'users',
   },
   serieId: {
-    type: sequelize.INTEGER,
-    unique: 'userSerieIndex',
+    type: Number,
   },
 });
+
+FavoritesSchema.index({ userId: 1, serieId: -1 }, { unique: true });
+
+const Favorites = mongoose.model('favorites', FavoritesSchema);
+
+export const createFavorite = (favorite: Object) =>
+  Favorites.create(new Favorites(favorite));
+
+export const deleteFavorite = ({ userId, serieId }: Object) =>
+  Favorites.deleteOne({
+    userId,
+    serieId,
+  });
+
+export const findFavorites = (userId: string) => Favorites.find({ userId });
+
+export default Favorites;

@@ -2,7 +2,7 @@
 
 import Dataloader from 'dataloader';
 
-import User from '../db/models/UserModel';
+import { findOne } from '../db/models/UserModel';
 
 export type UserType = {|
   +id: string,
@@ -11,15 +11,13 @@ export type UserType = {|
 |};
 
 const fetchUser = async (usernames: $ReadOnlyArray<string>) => {
-  const users = await Promise.all(
-    usernames.map(username => User.findOne({ where: { username } })),
-  );
+  const users = await Promise.all(usernames.map(username => findOne(username)));
   return users.map(user => {
     if (user == null) {
       return null;
     }
     return {
-      id: user.id.toString(),
+      id: user._id,
       username: user.username,
       password: user.password,
     };

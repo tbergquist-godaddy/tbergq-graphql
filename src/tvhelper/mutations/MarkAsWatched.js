@@ -4,7 +4,7 @@ import { GraphQLID, GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
-import WatchedEpisodes from '../db/models/WatchedEpisodesModel';
+import { addWatchedEpisode } from '../db/models/WatchedEpisodesModel';
 import loggedInResolver from '../../resolvers/LoggedInResolver';
 import MarkAsWatched from '../types/MarkAsWatched';
 
@@ -26,7 +26,7 @@ export default {
     const { id: userId } = fromGlobalId(verifiedUser.id);
     const { id: episodeId } = fromGlobalId(args.episodeId);
 
-    await WatchedEpisodes.create({
+    await addWatchedEpisode({
       userId,
       episodeId,
     });
