@@ -5,6 +5,7 @@ import { GraphQLObjectType } from 'graphql';
 import tvHelperLogin from './tvhelper/mutations/Login';
 import toggleFavorite from './tvhelper/mutations/ToggleFavorite';
 import markAsWatched from './tvhelper/mutations/MarkAsWatched';
+import deleteWatchedEpisode from './tvhelper/mutations/DeleteWatchedEpisode';
 import createUser from './tvhelper/mutations/CreateUser';
 
 export default new GraphQLObjectType({
@@ -12,6 +13,7 @@ export default new GraphQLObjectType({
   description: 'Root Mutation.',
   fields: {
     createUser,
+    deleteWatchedEpisode,
     markAsWatched,
     toggleFavorite,
     tvHelperLogin,

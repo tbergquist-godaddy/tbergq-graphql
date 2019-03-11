@@ -4,7 +4,7 @@ import { GraphQLID, GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
-import { addWatchedEpisode } from '../db/models/WatchedEpisodesModel';
+import WatchedEpisode from '../db/models/WatchedEpisodesModel';
 import loggedInResolver from '../../resolvers/LoggedInResolver';
 import EpisodeWatched from '../types/EpisodeWatched';
 
@@ -13,9 +13,9 @@ type Args = {|
 |};
 
 export default {
-  name: 'MarkAsWatched',
+  name: 'DeleteWatchedEpisode',
   type: EpisodeWatched,
-  description: 'Mark an episode as watched',
+  description: 'Delete an episode as watched',
   args: {
     episodeId: {
       type: GraphQLNonNull(GraphQLID),
@@ -26,7 +26,7 @@ export default {
     const { id: userId } = fromGlobalId(verifiedUser.id);
     const { id: episodeId } = fromGlobalId(args.episodeId);
 
-    await addWatchedEpisode({
+    await WatchedEpisode.deleteOne({
       userId,
       episodeId,
     });
