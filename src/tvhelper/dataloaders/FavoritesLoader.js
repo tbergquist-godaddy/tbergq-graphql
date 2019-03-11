@@ -2,7 +2,7 @@
 
 import Dataloader from 'dataloader';
 
-import FavoritesModel from '../db/models/FavoritesModel';
+import { findFavorites } from '../db/models/FavoritesModel';
 
 export type Favorites = {|
   +id: number,
@@ -12,13 +12,7 @@ export type Favorites = {|
 
 const fetchFavorites = async (userIds: $ReadOnlyArray<string>) => {
   const responses = await Promise.all(
-    userIds.map(userId =>
-      FavoritesModel.findAll({
-        where: {
-          userId,
-        },
-      }),
-    ),
+    userIds.map(userId => findFavorites(userId)),
   );
   return responses;
 };

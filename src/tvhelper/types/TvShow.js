@@ -56,7 +56,7 @@ export default new GraphQLObjectType({
         }
         const { id: userId } = fromGlobalId(user.id);
         const favorite = await dataLoader.tvhelper.favorite.load({
-          userId: parseInt(userId, 10),
+          userId,
           serieId,
         });
 

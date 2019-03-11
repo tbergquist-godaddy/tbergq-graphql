@@ -7,7 +7,7 @@ import tvshow from '../../datasets/tvshow.json';
 import tvshow2 from '../../datasets/tvshow2.json';
 
 jest.mock('../../db/models/FavoritesModel.js', () => ({
-  findAll: () => Promise.resolve([{ serieId: 139 }, { serieId: 6 }]),
+  findFavorites: () => Promise.resolve([{ serieId: 139 }, { serieId: 6 }]),
 }));
 const query = `
   query favorites {
