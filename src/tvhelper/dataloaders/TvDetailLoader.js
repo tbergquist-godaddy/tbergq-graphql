@@ -13,7 +13,28 @@ const fetchTvDetail = async (ids: $ReadOnlyArray<string>) => {
       ),
     ),
   );
-  return responses;
+  return responses.map(response => {
+    const nextDate = response?._embedded?.nextepisode?.airdate ?? null;
+    const previousDate = response?._embedded?.previousepisode?.airdate ?? null;
+    return {
+      ...response,
+      ...(response._embedded
+        ? {
+            _embedded: {
+              ...response._embedded,
+              nextepisode: {
+                ...response._embedded.nextepisode,
+                airdate: nextDate !== null ? new Date(nextDate) : null,
+              },
+              previousepisode: {
+                ...response._embedded.previousepisode,
+                airdate: previousDate !== null ? new Date(previousDate) : null,
+              },
+            },
+          }
+        : {}),
+    };
+  });
 };
 
 export default () => new Dataloader<string, TvShow>(fetchTvDetail);
