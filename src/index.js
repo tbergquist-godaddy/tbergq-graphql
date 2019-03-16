@@ -6,9 +6,11 @@ import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
 import '@babel/polyfill';
+import { matchQueryMiddleware } from 'relay-compiler-plus';
 
 import Schema from './Schema';
 import createContext from './common/services/GraphqlContext';
+import queryMap from '../persisted-queries.json';
 
 const port = process.env.PORT || 3001;
 
@@ -26,10 +28,15 @@ function createGraphqlServer(token: ?string) {
   });
 }
 
-app.use('/', (request: $Request, response: $Response) => {
-  const token = request.get('Authorization');
-  return createGraphqlServer(token)(request, response);
-});
+app.use(
+  '/',
+  matchQueryMiddleware(queryMap),
+  (request: $Request, response: $Response) => {
+    const token = request.get('Authorization');
+
+    return createGraphqlServer(token)(request, response);
+  },
+);
 
 if (process.env.NODE_ENV === 'production') {
   app.listen();

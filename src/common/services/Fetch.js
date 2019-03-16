@@ -9,7 +9,7 @@ export default async (url: string, options: Object = {}) => {
     const json = await response.json();
     return json;
   } catch (err) {
-    console.log(err);
+    console.log(err); // eslint-disable-line no-console
     throw err;
   }
 };
