@@ -2,19 +2,14 @@
 
 import { GraphQLObjectType, GraphQLBoolean, GraphQLID } from 'graphql';
 
-import TvShowNode from './TvShowNode';
-
 export default new GraphQLObjectType({
-  name: 'ToggleFavorite',
+  name: 'RangeDelete',
   fields: {
     success: {
       type: GraphQLBoolean,
     },
-    serieId: {
+    id: {
       type: GraphQLID,
-    },
-    tvShow: {
-      type: TvShowNode,
     },
   },
 });

@@ -17,6 +17,7 @@ export default {
   name: 'ToggleFavorite',
   type: GraphqlToggleFavorite,
   description: 'Toggle tv show from favorite list',
+  deprecationReason: 'Use deleteFavorite and addFavorite instead',
   args: {
     serieId: {
       type: GraphQLNonNull(GraphQLID),

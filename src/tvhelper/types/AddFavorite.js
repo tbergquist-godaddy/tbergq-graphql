@@ -1,17 +1,14 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLBoolean, GraphQLID } from 'graphql';
+import { GraphQLObjectType, GraphQLBoolean } from 'graphql';
 
 import TvShowNode from './TvShowNode';
 
 export default new GraphQLObjectType({
-  name: 'ToggleFavorite',
+  name: 'AddFavorite',
   fields: {
     success: {
       type: GraphQLBoolean,
-    },
-    serieId: {
-      type: GraphQLID,
     },
     tvShow: {
       type: TvShowNode,
