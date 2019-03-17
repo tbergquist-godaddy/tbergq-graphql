@@ -12,6 +12,7 @@ export type Episode = {|
   +airdate: Date,
   +image: {| +medium: string, +original: string |},
   +summary: string,
+  +isWatched?: boolean,
 |};
 
 const fetchEpisodes = async (serieIds: $ReadOnlyArray<string>) => {

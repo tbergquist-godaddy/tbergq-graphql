@@ -31,6 +31,6 @@ export default {
       episodeId,
     });
 
-    return { success: true, id: args.episodeId };
+    return { success: true, episode: { id: episodeId, isWatched: true } };
   },
 };

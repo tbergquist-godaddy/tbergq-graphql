@@ -52,12 +52,15 @@ export default new GraphQLObjectType({
     watched: {
       type: GraphQLBoolean,
       resolve: async (
-        { id }: Episode,
+        { id, isWatched }: Episode,
         _: mixed,
         { user, dataLoader }: GraphqlContextType,
       ) => {
         if (user == null) {
           return false;
+        }
+        if (isWatched != null) {
+          return isWatched;
         }
         const watched = await dataLoader.tvhelper.episodeWatched.load(id);
 

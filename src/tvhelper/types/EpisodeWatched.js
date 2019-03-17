@@ -1,6 +1,8 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLBoolean, GraphQLID } from 'graphql';
+import { GraphQLObjectType, GraphQLBoolean } from 'graphql';
+
+import Episode from './Episode';
 
 export default new GraphQLObjectType({
   name: 'EpisodeWatched',
@@ -8,8 +10,8 @@ export default new GraphQLObjectType({
     success: {
       type: GraphQLBoolean,
     },
-    id: {
-      type: GraphQLID,
+    episode: {
+      type: Episode,
     },
   },
 });
