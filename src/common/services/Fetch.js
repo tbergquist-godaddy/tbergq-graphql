@@ -4,7 +4,16 @@ import fetch from 'node-fetch';
 
 export default async (url: string, options: Object = {}) => {
   try {
-    const response = await fetch(url, options);
+    const defaultHeaders = {
+      'Content-Type': 'application/json',
+    };
+    const response = await fetch(url, {
+      ...options,
+      headers: {
+        ...defaultHeaders,
+        ...options.headers,
+      },
+    });
 
     const json = await response.json();
     return json;

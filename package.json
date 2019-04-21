@@ -34,7 +34,7 @@
     "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn run babel-node src/index.js",
     "now-build": "rimraf graphql/ && yarn webpack",
     "start": "node graphql/index.js",
-    "deploy": "yarn now-build && now",
+    "deploy": "yarn now-build && now --target production",
     "test": "DB_URL=url jest --setupTestFrameworkScriptFile=./scripts/setupTests.js",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",

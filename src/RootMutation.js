@@ -9,6 +9,7 @@ import deleteWatchedEpisode from './tvhelper/mutations/DeleteWatchedEpisode';
 import createUser from './tvhelper/mutations/CreateUser';
 import addFavorite from './tvhelper/mutations/addFavorite';
 import deleteFavorite from './tvhelper/mutations/deleteFavorite';
+import trainingJournalLogin from './trainingjournal/mutations/Login';
 
 export default new GraphQLObjectType({
   name: 'RootMutation',
@@ -20,6 +21,7 @@ export default new GraphQLObjectType({
     deleteWatchedEpisode,
     markAsWatched,
     toggleFavorite,
+    trainingJournalLogin,
     tvHelperLogin,
   },
 });
