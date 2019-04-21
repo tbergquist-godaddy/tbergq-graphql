@@ -3,10 +3,12 @@
 import fs from 'fs';
 import path from 'path';
 
-// $FlowExpectedError: Simple way to start using persisted queries, improve later
-import persistedQueries from '../../tvhelper-app/persisted-queries.json';
+const persistedQueries = fs.readFileSync(
+  path.join(__dirname, '..', '..', 'tvhelper-app', 'persisted-queries.json'),
+  'utf-8',
+);
 
 fs.writeFileSync(
   path.join(__dirname, '..', 'persisted-queries.json'),
-  JSON.stringify(persistedQueries, null, 2),
+  persistedQueries,
 );
