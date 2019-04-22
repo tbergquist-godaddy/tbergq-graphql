@@ -2,8 +2,8 @@
 
 import { GraphQLString, GraphQLNonNull } from 'graphql';
 
-import fetch from '../../common/services/Fetch';
-import LoginType from '../../types/LoginType';
+import fetch from '../../../common/services/Fetch';
+import LoginType from '../../../types/LoginType';
 
 type Args = {|
   +username: string,

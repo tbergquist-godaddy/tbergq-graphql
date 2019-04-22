@@ -981,6 +981,18 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@kiwicom/graphql-global-id@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/graphql-global-id/-/graphql-global-id-0.10.0.tgz#4a31c32e317b4a9c49ce6c7c289588c411efe66e"
+  integrity sha512-tIi8vgxHwFoM1ORWG5hztL3nSGOrg+ATAImx3JT8nE1NqPCTDr6E4ivpivrmxx/x1NSXFNc1o2XeWiyXktWbkQ==
+  dependencies:
+    "@kiwicom/js" "^0.8.0"
+
+"@kiwicom/js@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.8.0.tgz#a548fd07073599fb875d3e556f1009080744cc7d"
+  integrity sha512-CAdGRXvP8TmZpICJxyWRX1GLsmWQQDZ4U0hkhtByLIUf8p60JrdR4+kwUDEheEndcD1s4PJnDrcEflDZAdqsqA==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
