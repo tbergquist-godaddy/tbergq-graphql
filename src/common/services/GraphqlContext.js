@@ -24,6 +24,10 @@ import EpiosodeWatchedLoader, {
   type EpisodeWatched,
 } from '../../tvhelper/dataloaders/EpisodeWatchedLoader';
 import EpisodeLoader from '../../tvhelper/dataloaders/EpisodeLoader';
+import ProgramsLoader, {
+  type ProgramsParams,
+  type Programs,
+} from '../../trainingjournal/programs/dataloaders/ProgramsLoader';
 
 config();
 
@@ -36,6 +40,7 @@ export type LoggedInUser = {|
 
 export type GraphqlContextType = {|
   +user: ?LoggedInUser,
+  +rawToken: ?string,
   +dataLoader: {|
     +tvhelper: {|
       +searchTvShow: DataLoader<string, TvShow[]>,
@@ -46,6 +51,9 @@ export type GraphqlContextType = {|
       +favorite: DataLoader<FavoriteArgs, Favorites>,
       +episodeWatched: DataLoader<number, EpisodeWatched[]>,
       +episode: DataLoader<string, Episode>,
+    |},
+    +trainingjournal: {|
+      +programs: DataLoader<ProgramsParams, Programs>,
     |},
   |},
 |};
@@ -62,6 +70,7 @@ export default function createContext(token: ?string) {
   const user = decodeToken(token);
   return {
     user,
+    rawToken: token,
     dataLoader: {
       tvhelper: {
         searchTvShow: SearchTvShowLoader(),
@@ -72,6 +81,9 @@ export default function createContext(token: ?string) {
         favorite: FavoriteLoader(),
         episodeWatched: EpiosodeWatchedLoader(user),
         episode: EpisodeLoader(),
+      },
+      trainingjournal: {
+        programs: ProgramsLoader(),
       },
     },
   };
