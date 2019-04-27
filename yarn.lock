@@ -993,6 +993,13 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.8.0.tgz#a548fd07073599fb875d3e556f1009080744cc7d"
   integrity sha512-CAdGRXvP8TmZpICJxyWRX1GLsmWQQDZ4U0hkhtByLIUf8p60JrdR4+kwUDEheEndcD1s4PJnDrcEflDZAdqsqA==
 
+"@kiwicom/test-utils@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/test-utils/-/test-utils-0.9.0.tgz#91a3d9f84ea1eaa0024728cbdab4860c08504f54"
+  integrity sha512-tuyqT7yx0n4cZuWhxUtOXXErSdMrMgqs1mufaTaQZV8WEu555dCixq3sjF9q9XuFjbPXtFbpdvrqIs21F2STHQ==
+  dependencies:
+    "@kiwicom/js" "^0.8.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
