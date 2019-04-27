@@ -1,0 +1,1233 @@
+{
+  "id": 67,
+  "name": "Getting back in 2 it",
+  "date": "2017-08-08T09:20:11Z",
+  "user": 1,
+  "weeks": [
+    {
+      "id": 57,
+      "name": "Week 1",
+      "program": 67,
+      "days": [
+        {
+          "id": 142,
+          "name": "Day 1",
+          "week": 57,
+          "exercises": [
+            {
+              "id": 848,
+              "set": "4",
+              "reps": "5",
+              "day": 142,
+              "description": "lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 1,
+                "name": "Knebøy",
+                "youtube_link": "https://www.youtube.com/watch?v=Dy28eq2PjcM",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 849,
+              "set": "3",
+              "reps": "6-8",
+              "day": 142,
+              "description": "lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 19,
+                "name": "Bulgarsk utfall",
+                "youtube_link": "https://www.youtube.com/watch?v=zp89Arzfcg4",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 850,
+              "set": "3",
+              "reps": "8",
+              "day": 142,
+              "description": "rolig",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 14,
+                "name": "Hamstrings curl",
+                "youtube_link": "https://www.youtube.com/watch?v=r_IYOEnwGU4",
+                "muscle_group": {
+                  "id": 16,
+                  "name": "Hamstrings"
+                },
+                "description": "Eksentrisk"
+              }
+            },
+            {
+              "id": 851,
+              "set": "3",
+              "reps": "6",
+              "day": 142,
+              "description": "",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 8,
+                "name": "Pull ups",
+                "youtube_link": "https://www.youtube.com/watch?v=aL51AyAYcNU",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": "Overhåndstak"
+              }
+            },
+            {
+              "id": 852,
+              "set": "3",
+              "reps": "6-8",
+              "day": 142,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 4,
+                "name": "Curls",
+                "youtube_link": "https://www.youtube.com/watch?v=uO_CNYidOw0",
+                "muscle_group": {
+                  "id": 6,
+                  "name": "Biceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 853,
+              "set": "3",
+              "reps": "1",
+              "day": 142,
+              "description": "20-20-20",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 12,
+                "name": "Sideplanke-Planke-Sideplanke",
+                "youtube_link": "https://www.youtube.com/watch?v=5RSarojrzV8",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Week 2",
+      "program": 67,
+      "days": [
+        {
+          "id": 143,
+          "name": "Day 1",
+          "week": 58,
+          "exercises": [
+            {
+              "id": 854,
+              "set": "4",
+              "reps": "5",
+              "day": 143,
+              "description": "Lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 7,
+                "name": "Benkpress",
+                "youtube_link": "https://www.youtube.com/watch?v=0k57fpKM2L4",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 855,
+              "set": "3",
+              "reps": "8",
+              "day": 143,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 61,
+                "name": "Skrå flies",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 856,
+              "set": "3",
+              "reps": "8",
+              "day": 143,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 65,
+                "name": "Chest press",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 857,
+              "set": "3",
+              "reps": "12",
+              "day": 143,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 62,
+                "name": "Omvendt triceps press i kabel",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 12,
+                  "name": "Triceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 858,
+              "set": "3",
+              "reps": "12",
+              "day": 143,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 34,
+                "name": "Tricepspress i kabel",
+                "youtube_link": "https://www.youtube.com/watch?v=TVdYBC61s-A",
+                "muscle_group": {
+                  "id": 12,
+                  "name": "Triceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 859,
+              "set": "3",
+              "reps": "1",
+              "day": 143,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 23,
+                "name": "Planke",
+                "youtube_link": "https://www.youtube.com/watch?v=pSHjTRCQxIw",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 860,
+              "set": "3",
+              "reps": "10",
+              "day": 143,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 18,
+                "name": "Get up situp",
+                "youtube_link": "https://www.youtube.com/watch?v=rASjuHdAxew",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": 144,
+          "name": "Day 2",
+          "week": 58,
+          "exercises": [
+            {
+              "id": 861,
+              "set": "5",
+              "reps": "5",
+              "day": 144,
+              "description": "lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 13,
+                "name": "Sumo markløft",
+                "youtube_link": "https://www.youtube.com/watch?v=cXyZfbg1llA",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 862,
+              "set": "3",
+              "reps": "8",
+              "day": 144,
+              "description": "lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 32,
+                "name": "Utfall bakover",
+                "youtube_link": "https://www.youtube.com/watch?v=85DhQaxDL_Q",
+                "muscle_group": {
+                  "id": 15,
+                  "name": "Glutes"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 863,
+              "set": "3",
+              "reps": "6-8",
+              "day": 144,
+              "description": "lett",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 29,
+                "name": "Ett beins knebøy til boks",
+                "youtube_link": "https://www.youtube.com/watch?v=883RFo2ePvU",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 864,
+              "set": "3",
+              "reps": "8",
+              "day": 144,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 27,
+                "name": "Skulderpress",
+                "youtube_link": "https://www.youtube.com/watch?v=v5ZfdwEaHTI",
+                "muscle_group": {
+                  "id": 4,
+                  "name": "Shoulders"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 865,
+              "set": "3",
+              "reps": "8",
+              "day": 144,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 4,
+                "name": "Curls",
+                "youtube_link": "https://www.youtube.com/watch?v=uO_CNYidOw0",
+                "muscle_group": {
+                  "id": 6,
+                  "name": "Biceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 866,
+              "set": "3",
+              "reps": "2",
+              "day": 144,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 64,
+                "name": "Turkish get up",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 867,
+              "set": "3",
+              "reps": "10",
+              "day": 144,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 6,
+                "name": "Pike",
+                "youtube_link": "https://www.youtube.com/watch?v=n695qkA0yug",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Week 3",
+      "program": 67,
+      "days": [
+        {
+          "id": 145,
+          "name": "Day 1",
+          "week": 59,
+          "exercises": [
+            {
+              "id": 868,
+              "set": "4",
+              "reps": "5",
+              "day": 145,
+              "description": "Lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 7,
+                "name": "Benkpress",
+                "youtube_link": "https://www.youtube.com/watch?v=0k57fpKM2L4",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 869,
+              "set": "3",
+              "reps": "8",
+              "day": 145,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 61,
+                "name": "Skrå flies",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 870,
+              "set": "3",
+              "reps": "8",
+              "day": 145,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 65,
+                "name": "Chest press",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 871,
+              "set": "3",
+              "reps": "12",
+              "day": 145,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 62,
+                "name": "Omvendt triceps press i kabel",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 12,
+                  "name": "Triceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 872,
+              "set": "3",
+              "reps": "12",
+              "day": 145,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 34,
+                "name": "Tricepspress i kabel",
+                "youtube_link": "https://www.youtube.com/watch?v=TVdYBC61s-A",
+                "muscle_group": {
+                  "id": 12,
+                  "name": "Triceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 873,
+              "set": "3",
+              "reps": "1",
+              "day": 145,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 23,
+                "name": "Planke",
+                "youtube_link": "https://www.youtube.com/watch?v=pSHjTRCQxIw",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 874,
+              "set": "3",
+              "reps": "10",
+              "day": 145,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 18,
+                "name": "Get up situp",
+                "youtube_link": "https://www.youtube.com/watch?v=rASjuHdAxew",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": 146,
+          "name": "Day 2",
+          "week": 59,
+          "exercises": [
+            {
+              "id": 875,
+              "set": "5",
+              "reps": "5",
+              "day": 146,
+              "description": "lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 13,
+                "name": "Sumo markløft",
+                "youtube_link": "https://www.youtube.com/watch?v=cXyZfbg1llA",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 876,
+              "set": "3",
+              "reps": "8",
+              "day": 146,
+              "description": "lett",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 32,
+                "name": "Utfall bakover",
+                "youtube_link": "https://www.youtube.com/watch?v=85DhQaxDL_Q",
+                "muscle_group": {
+                  "id": 15,
+                  "name": "Glutes"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 877,
+              "set": "3",
+              "reps": "6-8",
+              "day": 146,
+              "description": "lett",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 29,
+                "name": "Ett beins knebøy til boks",
+                "youtube_link": "https://www.youtube.com/watch?v=883RFo2ePvU",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 878,
+              "set": "3",
+              "reps": "8",
+              "day": 146,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 27,
+                "name": "Skulderpress",
+                "youtube_link": "https://www.youtube.com/watch?v=v5ZfdwEaHTI",
+                "muscle_group": {
+                  "id": 4,
+                  "name": "Shoulders"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 879,
+              "set": "3",
+              "reps": "8",
+              "day": 146,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 4,
+                "name": "Curls",
+                "youtube_link": "https://www.youtube.com/watch?v=uO_CNYidOw0",
+                "muscle_group": {
+                  "id": 6,
+                  "name": "Biceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 880,
+              "set": "3",
+              "reps": "2",
+              "day": 146,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 64,
+                "name": "Turkish get up",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 881,
+              "set": "3",
+              "reps": "10",
+              "day": 146,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 6,
+                "name": "Pike",
+                "youtube_link": "https://www.youtube.com/watch?v=n695qkA0yug",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": 147,
+          "name": "Day 3",
+          "week": 59,
+          "exercises": [
+            {
+              "id": 882,
+              "set": "4",
+              "reps": "4",
+              "day": 147,
+              "description": "",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 3,
+                "name": "Chins",
+                "youtube_link": "https://www.youtube.com/watch?v=c8G0_NEJ-yA",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": "Underhåndstak"
+              }
+            },
+            {
+              "id": 883,
+              "set": "3",
+              "reps": "10",
+              "day": 147,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 53,
+                "name": "Sittende roing",
+                "youtube_link": "",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 884,
+              "set": "3",
+              "reps": "8",
+              "day": 147,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 47,
+                "name": "Face pulls",
+                "youtube_link": "https://www.youtube.com/watch?v=Ump40tRo318",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 885,
+              "set": "3",
+              "reps": "8",
+              "day": 147,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 16,
+                "name": "Hammer curls",
+                "youtube_link": "https://www.youtube.com/watch?v=zC3nLlEvin4",
+                "muscle_group": {
+                  "id": 6,
+                  "name": "Biceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 886,
+              "set": "3",
+              "reps": "12",
+              "day": 147,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 17,
+                "name": "Sidehev",
+                "youtube_link": "https://www.youtube.com/watch?v=FgXP-NWic-Y",
+                "muscle_group": {
+                  "id": 4,
+                  "name": "Shoulders"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 887,
+              "set": "3",
+              "reps": "10",
+              "day": 147,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 6,
+                "name": "Pike",
+                "youtube_link": "https://www.youtube.com/watch?v=n695qkA0yug",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 888,
+              "set": "3",
+              "reps": "1",
+              "day": 147,
+              "description": "20-20-20",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 12,
+                "name": "Sideplanke-Planke-Sideplanke",
+                "youtube_link": "https://www.youtube.com/watch?v=5RSarojrzV8",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": 148,
+          "name": "Day 4",
+          "week": 59,
+          "exercises": [
+            {
+              "id": 889,
+              "set": "4",
+              "reps": "6",
+              "day": 148,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 1,
+                "name": "Knebøy",
+                "youtube_link": "https://www.youtube.com/watch?v=Dy28eq2PjcM",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 890,
+              "set": "3",
+              "reps": "8",
+              "day": 148,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 14,
+                "name": "Hamstrings curl",
+                "youtube_link": "https://www.youtube.com/watch?v=r_IYOEnwGU4",
+                "muscle_group": {
+                  "id": 16,
+                  "name": "Hamstrings"
+                },
+                "description": "Eksentrisk"
+              }
+            },
+            {
+              "id": 891,
+              "set": "3",
+              "reps": "6",
+              "day": 148,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 42,
+                "name": "Rumensk markløft",
+                "youtube_link": "https://www.youtube.com/watch?v=ebTlZkohi-U",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 892,
+              "set": "3",
+              "reps": "10",
+              "day": 148,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 10,
+                "name": "Arnold Press",
+                "youtube_link": "https://www.youtube.com/watch?v=6Z15_WdXmVw",
+                "muscle_group": {
+                  "id": 4,
+                  "name": "Shoulders"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 893,
+              "set": "3",
+              "reps": "12",
+              "day": 148,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 17,
+                "name": "Sidehev",
+                "youtube_link": "https://www.youtube.com/watch?v=FgXP-NWic-Y",
+                "muscle_group": {
+                  "id": 4,
+                  "name": "Shoulders"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 894,
+              "set": "3",
+              "reps": "10",
+              "day": 148,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 18,
+                "name": "Get up situp",
+                "youtube_link": "https://www.youtube.com/watch?v=rASjuHdAxew",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 895,
+              "set": "3",
+              "reps": "1",
+              "day": 148,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 23,
+                "name": "Planke",
+                "youtube_link": "https://www.youtube.com/watch?v=pSHjTRCQxIw",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Week 4",
+      "program": 67,
+      "days": [
+        {
+          "id": 149,
+          "name": "Day 1",
+          "week": 60,
+          "exercises": [
+            {
+              "id": 896,
+              "set": "5",
+              "reps": "5",
+              "day": 149,
+              "description": "",
+              "break_time": "0",
+              "base_exercise": {
+                "id": 7,
+                "name": "Benkpress",
+                "youtube_link": "https://www.youtube.com/watch?v=0k57fpKM2L4",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 897,
+              "set": "5",
+              "reps": "8",
+              "day": 149,
+              "description": "",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 2,
+                "name": "Band pulls apart",
+                "youtube_link": "https://www.youtube.com/watch?v=BVehf-8FAxQ",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 898,
+              "set": "3",
+              "reps": "8",
+              "day": 149,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 24,
+                "name": "Skrå benk m/hantler",
+                "youtube_link": "https://www.youtube.com/watch?v=ekZ86fUJk_c",
+                "muscle_group": {
+                  "id": 5,
+                  "name": "Chest"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 899,
+              "set": "3",
+              "reps": "6",
+              "day": 149,
+              "description": "",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 8,
+                "name": "Pull ups",
+                "youtube_link": "https://www.youtube.com/watch?v=aL51AyAYcNU",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": "Overhåndstak"
+              }
+            },
+            {
+              "id": 900,
+              "set": "3",
+              "reps": "12",
+              "day": 149,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 45,
+                "name": "Tate press",
+                "youtube_link": "https://www.youtube.com/watch?v=Ciauw1daxhQ",
+                "muscle_group": {
+                  "id": 12,
+                  "name": "Triceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 901,
+              "set": "3",
+              "reps": "12",
+              "day": 149,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 34,
+                "name": "Tricepspress i kabel",
+                "youtube_link": "https://www.youtube.com/watch?v=TVdYBC61s-A",
+                "muscle_group": {
+                  "id": 12,
+                  "name": "Triceps"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 902,
+              "set": "3",
+              "reps": "1",
+              "day": 149,
+              "description": "20-20-20",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 12,
+                "name": "Sideplanke-Planke-Sideplanke",
+                "youtube_link": "https://www.youtube.com/watch?v=5RSarojrzV8",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": 150,
+          "name": "Day 2",
+          "week": 60,
+          "exercises": [
+            {
+              "id": 903,
+              "set": "5",
+              "reps": "5",
+              "day": 150,
+              "description": "",
+              "break_time": "0",
+              "base_exercise": {
+                "id": 1,
+                "name": "Knebøy",
+                "youtube_link": "https://www.youtube.com/watch?v=Dy28eq2PjcM",
+                "muscle_group": {
+                  "id": 9,
+                  "name": "Quads"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 904,
+              "set": "3",
+              "reps": "8-10",
+              "day": 150,
+              "description": "",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 2,
+                "name": "Band pulls apart",
+                "youtube_link": "https://www.youtube.com/watch?v=BVehf-8FAxQ",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 905,
+              "set": "3",
+              "reps": "8",
+              "day": 150,
+              "description": "",
+              "break_time": "0",
+              "base_exercise": {
+                "id": 20,
+                "name": "Hip thrust med ett bein",
+                "youtube_link": "https://www.youtube.com/watch?v=_WGkmU4ZMoQ",
+                "muscle_group": {
+                  "id": 15,
+                  "name": "Glutes"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 906,
+              "set": "3",
+              "reps": "8",
+              "day": 150,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 21,
+                "name": "Ett beins strak markølft",
+                "youtube_link": "https://www.youtube.com/watch?v=5G7PFNjvFzg",
+                "muscle_group": {
+                  "id": 15,
+                  "name": "Glutes"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 907,
+              "set": "4",
+              "reps": "4",
+              "day": 150,
+              "description": "",
+              "break_time": "3",
+              "base_exercise": {
+                "id": 8,
+                "name": "Pull ups",
+                "youtube_link": "https://www.youtube.com/watch?v=aL51AyAYcNU",
+                "muscle_group": {
+                  "id": 13,
+                  "name": "Middle Back"
+                },
+                "description": "Overhåndstak"
+              }
+            },
+            {
+              "id": 908,
+              "set": "3",
+              "reps": "10",
+              "day": 150,
+              "description": "",
+              "break_time": "2",
+              "base_exercise": {
+                "id": 27,
+                "name": "Skulderpress",
+                "youtube_link": "https://www.youtube.com/watch?v=v5ZfdwEaHTI",
+                "muscle_group": {
+                  "id": 4,
+                  "name": "Shoulders"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 909,
+              "set": "3",
+              "reps": "10",
+              "day": 150,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 18,
+                "name": "Get up situp",
+                "youtube_link": "https://www.youtube.com/watch?v=rASjuHdAxew",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            },
+            {
+              "id": 910,
+              "set": "3",
+              "reps": "1",
+              "day": 150,
+              "description": "",
+              "break_time": "1",
+              "base_exercise": {
+                "id": 23,
+                "name": "Planke",
+                "youtube_link": "https://www.youtube.com/watch?v=pSHjTRCQxIw",
+                "muscle_group": {
+                  "id": 1,
+                  "name": "Core"
+                },
+                "description": ""
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

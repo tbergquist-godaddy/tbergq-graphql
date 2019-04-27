@@ -28,6 +28,9 @@ import ProgramsLoader, {
   type ProgramsParams,
   type Programs,
 } from '../../trainingjournal/programs/dataloaders/ProgramsLoader';
+import ProgramLoader, {
+  type Program,
+} from '../../trainingjournal/programs/dataloaders/ProgramLoader';
 
 config();
 
@@ -54,6 +57,7 @@ export type GraphqlContextType = {|
     |},
     +trainingjournal: {|
       +programs: DataLoader<ProgramsParams, Programs>,
+      +program: DataLoader<string, Program>,
     |},
   |},
 |};
@@ -84,6 +88,7 @@ export default function createContext(token: ?string) {
       },
       trainingjournal: {
         programs: ProgramsLoader(),
+        program: ProgramLoader(token),
       },
     },
   };

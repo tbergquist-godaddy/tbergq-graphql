@@ -7,6 +7,7 @@ import tvShowDetail from './tvhelper/queries/TvShowDetail';
 import favorites from './tvhelper/queries/Favorites';
 import episode from './tvhelper/queries/Episode';
 import programs from './trainingjournal/programs/queries/progams';
+import program from './trainingjournal/programs/queries/program';
 
 export default new GraphQLObjectType({
   name: 'RootQuery',
@@ -14,6 +15,7 @@ export default new GraphQLObjectType({
   fields: {
     episode,
     favorites,
+    program,
     programs,
     searchTvShow,
     tvShowDetail,
