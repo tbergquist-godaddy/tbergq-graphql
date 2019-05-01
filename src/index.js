@@ -5,7 +5,6 @@ import graphqlHTTP from 'express-graphql';
 import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
-import '@babel/polyfill';
 import { matchQueryMiddleware } from 'relay-compiler-plus';
 
 import Schema from './Schema';
