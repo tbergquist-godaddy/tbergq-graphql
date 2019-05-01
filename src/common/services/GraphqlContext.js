@@ -30,7 +30,9 @@ import ProgramsLoader, {
 } from '../../trainingjournal/programs/dataloaders/ProgramsLoader';
 import ProgramLoader, {
   type Program,
+  type Day,
 } from '../../trainingjournal/programs/dataloaders/ProgramLoader';
+import DayLoader from '../../trainingjournal/programs/dataloaders/DayLoader';
 
 config();
 
@@ -58,6 +60,7 @@ export type GraphqlContextType = {|
     +trainingjournal: {|
       +programs: DataLoader<ProgramsParams, Programs>,
       +program: DataLoader<string, Program>,
+      +day: DataLoader<string, Day>,
     |},
   |},
 |};
@@ -89,6 +92,7 @@ export default function createContext(token: ?string) {
       trainingjournal: {
         programs: ProgramsLoader(),
         program: ProgramLoader(token),
+        day: DayLoader(token),
       },
     },
   };

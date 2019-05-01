@@ -12,7 +12,7 @@ import {
 import ExerciseConnection from './Exercise';
 import type { Day as DayType, Exercise } from '../../dataloaders/ProgramLoader';
 
-const Day = new GraphQLObjectType({
+export const Day = new GraphQLObjectType({
   name: 'Day',
   fields: {
     id: GlobalID(({ id }) => id),

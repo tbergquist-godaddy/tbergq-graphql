@@ -1,0 +1,115 @@
+{
+  "id": 142,
+  "name": "Day 1",
+  "week": 57,
+  "exercises": [
+    {
+      "id": 848,
+      "set": "4",
+      "reps": "5",
+      "day": 142,
+      "description": "lett",
+      "break_time": "3",
+      "base_exercise": {
+        "id": 1,
+        "name": "Knebøy",
+        "youtube_link": "https://www.youtube.com/watch?v=Dy28eq2PjcM",
+        "muscle_group": {
+          "id": 9,
+          "name": "Quads"
+        },
+        "description": ""
+      }
+    },
+    {
+      "id": 849,
+      "set": "3",
+      "reps": "6-8",
+      "day": 142,
+      "description": "lett",
+      "break_time": "3",
+      "base_exercise": {
+        "id": 19,
+        "name": "Bulgarsk utfall",
+        "youtube_link": "https://www.youtube.com/watch?v=zp89Arzfcg4",
+        "muscle_group": {
+          "id": 9,
+          "name": "Quads"
+        },
+        "description": ""
+      }
+    },
+    {
+      "id": 850,
+      "set": "3",
+      "reps": "8",
+      "day": 142,
+      "description": "rolig",
+      "break_time": "2",
+      "base_exercise": {
+        "id": 14,
+        "name": "Hamstrings curl",
+        "youtube_link": "https://www.youtube.com/watch?v=r_IYOEnwGU4",
+        "muscle_group": {
+          "id": 16,
+          "name": "Hamstrings"
+        },
+        "description": "Eksentrisk"
+      }
+    },
+    {
+      "id": 851,
+      "set": "3",
+      "reps": "6",
+      "day": 142,
+      "description": "",
+      "break_time": "3",
+      "base_exercise": {
+        "id": 8,
+        "name": "Pull ups",
+        "youtube_link": "https://www.youtube.com/watch?v=aL51AyAYcNU",
+        "muscle_group": {
+          "id": 13,
+          "name": "Middle Back"
+        },
+        "description": "Overhåndstak"
+      }
+    },
+    {
+      "id": 852,
+      "set": "3",
+      "reps": "6-8",
+      "day": 142,
+      "description": "",
+      "break_time": "2",
+      "base_exercise": {
+        "id": 4,
+        "name": "Curls",
+        "youtube_link": "https://www.youtube.com/watch?v=uO_CNYidOw0",
+        "muscle_group": {
+          "id": 6,
+          "name": "Biceps"
+        },
+        "description": ""
+      }
+    },
+    {
+      "id": 853,
+      "set": "3",
+      "reps": "1",
+      "day": 142,
+      "description": "20-20-20",
+      "break_time": "1",
+      "base_exercise": {
+        "id": 12,
+        "name": "Sideplanke-Planke-Sideplanke",
+        "youtube_link": "https://www.youtube.com/watch?v=5RSarojrzV8",
+        "muscle_group": {
+          "id": 1,
+          "name": "Core"
+        },
+        "description": ""
+      }
+    }
+  ]
+}
