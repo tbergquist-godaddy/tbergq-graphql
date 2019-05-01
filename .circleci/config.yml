@@ -2,14 +2,19 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
+defaults: &defaults
+  working_directory: ~/tbergq-graphql
+  docker:
+    - image: circleci/node:11
+
 version: 2
 jobs:
   test:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/tbergq-graphql
+    <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/tbergq-graphql
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -19,10 +24,25 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: .
+          paths: .
       - run: yarn test-ci
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tbergq-graphql
+      - run: yarn deploy --token=$ZEIT_TOKEN
 
 workflows:
   version: 2
   test-and-release:
     jobs:
       - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
