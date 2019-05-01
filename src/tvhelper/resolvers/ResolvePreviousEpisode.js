@@ -5,7 +5,7 @@ import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 type DataLoader = $PropertyType<GraphqlContextType, 'dataLoader'>;
 
 const resolvePreviusEpisode = async (dataLoader: DataLoader, id: number) => {
-  const episodes = await dataLoader.tvhelper.episodes.load(id.toString());
+  const episodes = await await dataLoader.tvhelper.episodes.load(id.toString());
   const today = new Date();
   const tomorrow = new Date(
     Date.UTC(today.getFullYear(), today.getMonth(), today.getDate() + 1),

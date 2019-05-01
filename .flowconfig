@@ -1,5 +1,7 @@
 [ignore]
 <PROJECT_ROOT>/node_modules/@kiwicom/test-utils/src/index.js.flow
+<PROJECT_ROOT>/node_modules/graphql-iso-date/dist/time/index.js.flow
+
 [include]
 
 [untyped]
