@@ -1,6 +1,7 @@
 // @flow
 
 import { Schema } from 'mongoose';
+
 import mongoose from '../../../common/db/MongoDB';
 
 const WatchedEpisodesSchema = new Schema({

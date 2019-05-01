@@ -11,13 +11,10 @@ if (uri == null) {
   throw Error('No db url found');
 }
 
-mongoose.connect(
-  uri,
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-  },
-);
+mongoose.connect(uri, {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+});
 
 mongoose.set('debug', NODE_ENV === 'development');
 

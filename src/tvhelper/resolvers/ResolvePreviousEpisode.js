@@ -4,8 +4,8 @@ import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 
 type DataLoader = $PropertyType<GraphqlContextType, 'dataLoader'>;
 
-export default async (dataLoader: DataLoader, id: number) => {
-  const episodes = await dataLoader.tvhelper.episodes.load(id.toString());
+const resolvePreviusEpisode = async (dataLoader: DataLoader, id: number) => {
+  const episodes = await await dataLoader.tvhelper.episodes.load(id.toString());
   const today = new Date();
   const tomorrow = new Date(
     Date.UTC(today.getFullYear(), today.getMonth(), today.getDate() + 1),
@@ -24,3 +24,5 @@ export default async (dataLoader: DataLoader, id: number) => {
 
   return date;
 };
+
+export default resolvePreviusEpisode;

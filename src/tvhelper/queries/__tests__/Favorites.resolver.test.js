@@ -11,7 +11,7 @@ const user = {
 const dataLoader = {
   tvhelper: {
     favorites: {
-      load: async () =>
+      load: () =>
         Promise.resolve([
           { serieId: 1 },
           { serieId: 2 },
@@ -20,7 +20,7 @@ const dataLoader = {
         ]),
     },
     tvDetail: {
-      loadMany: async () =>
+      loadMany: () =>
         Promise.resolve([
           {
             name: 'Game of Thrones',

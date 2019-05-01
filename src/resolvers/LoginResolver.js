@@ -20,7 +20,7 @@ const loginFailed = () => ({
   success: false,
 });
 
-export default (user: ?User, password: string) => {
+const LoginResolver = (user: ?User, password: string) => {
   if (user == null) {
     return loginFailed();
   }
@@ -40,3 +40,5 @@ export default (user: ?User, password: string) => {
   );
   return { token, success: true };
 };
+
+export default LoginResolver;

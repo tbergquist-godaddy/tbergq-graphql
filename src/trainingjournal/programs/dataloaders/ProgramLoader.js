@@ -60,10 +60,12 @@ const fetchPrograms = (ids: $ReadOnlyArray<string>, token: string) =>
     ),
   );
 
-export default (token: ?string) =>
+const ProgramLoader = (token: ?string) =>
   new Dataloader<string, Program>(
     (ids: $ReadOnlyArray<string>) => fetchPrograms(ids, token ?? ''),
     {
       cacheKeyFn: stringify,
     },
   );
+
+export default ProgramLoader;

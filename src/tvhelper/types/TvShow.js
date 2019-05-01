@@ -74,7 +74,7 @@ export default new GraphQLObjectType({
     },
     previousEpisode: {
       type: GraphQLDate,
-      resolve: async (
+      resolve: (
         { _embedded, id }: TvShow,
         _: mixed,
         { dataLoader }: GraphqlContextType,
@@ -84,7 +84,7 @@ export default new GraphQLObjectType({
     },
     nextEpisode: {
       type: GraphQLDate,
-      resolve: async (
+      resolve: (
         { _embedded, id }: TvShow,
         _: mixed,
         { dataLoader }: GraphqlContextType,

@@ -17,4 +17,7 @@ const fetchFavorites = async (userIds: $ReadOnlyArray<string>) => {
   return responses;
 };
 
-export default () => new Dataloader<string, Favorites[]>(fetchFavorites);
+const FavoritesLoader = () =>
+  new Dataloader<string, Favorites[]>(fetchFavorites);
+
+export default FavoritesLoader;

@@ -37,4 +37,6 @@ const fetchTvDetail = async (ids: $ReadOnlyArray<string>) => {
   });
 };
 
-export default () => new Dataloader<string, TvShow>(fetchTvDetail);
+const TvDetailLoader = () => new Dataloader<string, TvShow>(fetchTvDetail);
+
+export default TvDetailLoader;
