@@ -1,6 +1,7 @@
 // @flow
 
 import { graphql as originalGraphQL } from 'graphql';
+
 import schema from '../../Schema';
 import createContext from './GraphqlContext';
 
@@ -9,7 +10,7 @@ jest.mock('jsonwebtoken', () => ({
   sign: jest.fn(() => 'tokenIsSigned'),
 }));
 
-export const graphql = async (
+export const graphql = (
   query: string,
   variables: ?Object,
   token?: string,

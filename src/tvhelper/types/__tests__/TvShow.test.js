@@ -12,9 +12,9 @@ const ancestor = { id: 1 };
 const args = null;
 
 it('returns null when not logged in', async () => {
-  expect(await resolve(ancestor, args, { user: null, dataLoader: {} })).toBe(
-    null,
-  );
+  expect(
+    await resolve(ancestor, args, { user: null, dataLoader: {} }),
+  ).toBeNull();
 });
 
 it('returns true when show is favorite', async () => {
@@ -24,7 +24,7 @@ it('returns true when show is favorite', async () => {
   const dataLoader = {
     tvhelper: {
       favorite: {
-        load: async () => Promise.resolve({ userId: 1, serieId: 1 }),
+        load: () => Promise.resolve({ userId: 1, serieId: 1 }),
       },
     },
   };
@@ -39,7 +39,7 @@ it('returns false when show is not favorite', async () => {
   const dataLoader = {
     tvhelper: {
       favorite: {
-        load: async () => Promise.resolve(null),
+        load: () => Promise.resolve(null),
       },
     },
   };

@@ -27,7 +27,9 @@ const loadWatchedEpisode = async (
   );
 };
 
-export default (user: ?LoggedInUser) =>
-  new Dataloader<number, EpisodeWatched[]>(
-    async (args: $ReadOnlyArray<number>) => loadWatchedEpisode(args, user),
+const EpisodeWatchedLoader = (user: ?LoggedInUser) =>
+  new Dataloader<number, EpisodeWatched[]>((args: $ReadOnlyArray<number>) =>
+    loadWatchedEpisode(args, user),
   );
+
+export default EpisodeWatchedLoader;

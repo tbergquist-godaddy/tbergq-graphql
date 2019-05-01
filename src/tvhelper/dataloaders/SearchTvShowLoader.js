@@ -1,8 +1,8 @@
 // @flow
 
 import Dataloader from 'dataloader';
-import fetch from '../../common/services/Fetch';
 
+import fetch from '../../common/services/Fetch';
 import type { Episode } from './TvShowEpisodesLoader';
 
 export type Person = {|
@@ -47,7 +47,9 @@ const fetchTvShows = async (queries: $ReadOnlyArray<string>) => {
   return responses.map(response => response.map(item => item.show));
 };
 
-export default () =>
+const SearchTvShowLoader = () =>
   new Dataloader<string, TvShow[]>((queries: $ReadOnlyArray<string>) =>
     fetchTvShows(queries),
   );
+
+export default SearchTvShowLoader;

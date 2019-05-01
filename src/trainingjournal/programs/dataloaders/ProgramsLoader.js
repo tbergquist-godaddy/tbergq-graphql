@@ -38,7 +38,9 @@ const fetchPrograms = (params: $ReadOnlyArray<ProgramsParams>) =>
     }),
   );
 
-export default () =>
+const ProgramsLoader = () =>
   new Dataloader<ProgramsParams, Programs>(fetchPrograms, {
     cacheKeyFn: stringify,
   });
+
+export default ProgramsLoader;

@@ -2,7 +2,7 @@
 
 import fetch from 'node-fetch';
 
-export default async (url: string, options: Object = {}) => {
+const Fetch = async (url: string, options: Object = {}) => {
   try {
     const defaultHeaders = {
       'Content-Type': 'application/json',
@@ -22,3 +22,5 @@ export default async (url: string, options: Object = {}) => {
     throw err;
   }
 };
+
+export default Fetch;

@@ -28,6 +28,7 @@
     "ramda": "^0.26.1",
     "relay-compiler-plus": "^1.8.3",
     "striptags": "^3.1.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.30.0"
   },
   "scripts": {
@@ -49,6 +50,7 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-flow": "^7.0.0",
     "@kiwicom/babel-preset-kiwicom": "^2.8.0",
+    "@kiwicom/eslint-config": "^4.0.1",
     "@kiwicom/test-utils": "^0.9.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
@@ -58,20 +60,10 @@
     "babel-preset-minify": "^0.5.0",
     "concurrently": "^4.1.0",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-flowtype": "^3.2.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.86.0",
     "jest": "^24.7.1",
-    "prettier": "^1.15.2",
-    "prettier-eslint": "^8.8.2",
     "regenerator-runtime": "^0.13.2",
     "rimraf": "^2.6.3",
-    "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack-cli": "^3.3.1"
   },
   "resolutions": {

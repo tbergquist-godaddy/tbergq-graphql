@@ -23,7 +23,9 @@ const fetchFavorites = async (args: $ReadOnlyArray<FavoriteArgs>) => {
   return responses;
 };
 
-export default () =>
+const FavoriteLoader = () =>
   new Dataloader<FavoriteArgs, Favorites>(fetchFavorites, {
     cacheKeyFn: stringify,
   });
+
+export default FavoriteLoader;

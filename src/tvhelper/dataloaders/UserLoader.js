@@ -24,4 +24,6 @@ const fetchUser = async (usernames: $ReadOnlyArray<string>) => {
   });
 };
 
-export default () => new Dataloader<string, ?UserType>(fetchUser);
+const UserLoader = () => new Dataloader<string, ?UserType>(fetchUser);
+
+export default UserLoader;
