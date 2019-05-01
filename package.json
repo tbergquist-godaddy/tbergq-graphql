@@ -35,7 +35,7 @@
     "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn run babel-node src/index.js",
     "now-build": "rimraf graphql/ && yarn webpack",
     "start": "node graphql/index.js",
-    "deploy": "now --target production",
+    "deploy": "yarn now-build && now --target production",
     "test": "DB_URL=url jest --setupTestFrameworkScriptFile=./scripts/setupTests.js",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",
@@ -62,6 +62,7 @@
     "eslint": "^5.16.0",
     "flow-bin": "^0.98.0",
     "jest": "^24.7.1",
+    "now": "^15.0.11",
     "regenerator-runtime": "^0.13.2",
     "rimraf": "^2.6.3",
     "webpack-cli": "^3.3.1"
