@@ -31,8 +31,12 @@ const Exercise = new GraphQLObjectType({
   },
 });
 
-const { connectionType: ExerciseConnection } = connectionDefinitions({
+const {
+  connectionType: ExerciseConnection,
+  edgeType: ExerciseEdge,
+} = connectionDefinitions({
   nodeType: Exercise,
 });
 
+export { ExerciseEdge };
 export default ExerciseConnection;
