@@ -1,7 +1,5 @@
 // @flow
 
-import fetch from 'node-fetch';
-
 import { graphql } from '../../../common/services/TestingTools';
 import tvshow from '../../datasets/tvshow.json';
 
