@@ -1,6 +1,6 @@
 // @flow
 
-import fetch from 'node-fetch';
+import fetch from '@kiwicom/fetch';
 
 const Fetch = async (url: string, options: Object = {}) => {
   try {

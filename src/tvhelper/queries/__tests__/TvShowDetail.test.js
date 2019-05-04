@@ -1,6 +1,5 @@
 // @flow
 
-import fetch from 'node-fetch';
 import { toGlobalId } from 'graphql-relay';
 
 import { graphql } from '../../../common/services/TestingTools';
