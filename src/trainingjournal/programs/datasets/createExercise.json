@@ -1,0 +1,18 @@
+{
+  "id": 1283,
+  "set": "2",
+  "reps": "2",
+  "day": 201,
+  "description": "2",
+  "break_time": "2",
+  "base_exercise": {
+    "id": 10,
+    "name": "Arnold Press",
+    "youtube_link": "https://www.youtube.com/watch?v=6Z15_WdXmVw",
+    "muscle_group": {
+      "id": 4,
+      "name": "Shoulders"
+    },
+    "description": ""
+  }
+}

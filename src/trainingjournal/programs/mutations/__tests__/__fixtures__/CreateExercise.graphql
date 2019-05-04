@@ -1,0 +1,17 @@
+mutation createExercise {
+  createExercise(exercise: {breakTime: 1, dayId: "RGF5OjIwMQ==", description: "Nopw", reps: "2", set: "2", baseExerciseId: "YmFzZUV4ZXJjaXNlOjM4"}) {
+    exerciseEdge {
+      node {
+        id
+        name
+        set
+        reps
+        breakTime
+        baseExercise {
+          id
+          name
+        }
+      }
+    }
+  }
+}
