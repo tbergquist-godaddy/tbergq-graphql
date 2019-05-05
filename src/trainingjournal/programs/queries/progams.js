@@ -1,10 +1,12 @@
 // @flow
 
 import { GraphQLString } from 'graphql';
-import { connectionArgs, cursorToOffset, offsetToCursor } from 'graphql-relay';
+import { connectionArgs, cursorToOffset } from 'graphql-relay';
 
 import ProgramConnection from '../types/output/ProgramConnection';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
+import toConnection from '../../common/toConnection';
+import { type ProgramsItem } from '../dataloaders/ProgramsLoader';
 
 type Args = {|
   +first: number,
@@ -36,22 +38,10 @@ export default {
       token: rawToken,
     });
 
-    const edges = programs.results.map((value, index) => ({
-      cursor: offsetToCursor(offset + index),
-      node: value,
-    }));
-
-    const firstEdge = edges[0];
-    const lastEdge = edges[edges.length - 1];
-
-    return {
-      edges,
-      pageInfo: {
-        startCursor: firstEdge ? firstEdge.cursor : null,
-        endCursor: lastEdge ? lastEdge.cursor : null,
-        hasPreviousPage: programs.previous != null,
-        hasNextPage: programs.next != null,
-      },
-    };
+    return toConnection<ProgramsItem>(programs.results, {
+      offset,
+      next: programs.next,
+      previous: programs.previous,
+    });
   },
 };

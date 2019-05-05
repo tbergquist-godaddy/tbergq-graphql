@@ -3,8 +3,8 @@
 import { GraphQLObjectType, GraphQLString } from 'graphql';
 import GlobalID from '@kiwicom/graphql-global-id';
 
-import type { BaseExercise } from '../../dataloaders/ProgramLoader';
 import MuscleGroup from './MuscleGroup';
+import { type BaseExercise } from '../../../programs/dataloaders/ProgramLoader';
 
 export default new GraphQLObjectType({
   name: 'BaseExercise',

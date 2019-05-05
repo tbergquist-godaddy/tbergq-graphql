@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches expected output: BaseExercises.graphql 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+query baseExercisesQuery {
+  baseExercises {
+    edges {
+      node {
+        id
+        name
+        muscleGroup {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+{
+  "data": {
+    "baseExercises": {
+      "edges": [
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjM4",
+            "name": "Alternerende benkpress med hantler",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6NQ==",
+              "name": "Chest"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjEw",
+            "name": "Arnold Press",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6NA==",
+              "name": "Shoulders"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjI=",
+            "name": "Band pulls apart",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6MTM=",
+              "name": "Middle Back"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjc=",
+            "name": "Benkpress",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6NQ==",
+              "name": "Chest"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjM2",
+            "name": "Benkpress m/hantler",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6NQ==",
+              "name": "Chest"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjYz",
+            "name": "Biceps i kabelmaskin",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6Ng==",
+              "name": "Biceps"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjE5",
+            "name": "Bulgarsk utfall",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6OQ==",
+              "name": "Quads"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjY3",
+            "name": "Cable cross",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6NQ==",
+              "name": "Chest"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjY2",
+            "name": "Cable cross rygg",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6MTM=",
+              "name": "Middle Back"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "QmFzZUV4ZXJjaXNlOjY1",
+            "name": "Chest press",
+            "muscleGroup": {
+              "id": "TXVzY2xlR3JvdXA6NQ==",
+              "name": "Chest"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+`;

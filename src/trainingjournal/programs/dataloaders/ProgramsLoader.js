@@ -11,14 +11,16 @@ export type ProgramsParams = {|
   +token: ?string,
 |};
 
+export type ProgramsItem = {|
+  +id: number,
+  +name: string,
+|};
+
 export type Programs = {|
   +count: number,
   +next: ?string,
   +previous: ?string,
-  +results: {|
-    +id: number,
-    +name: string,
-  |},
+  +results: ProgramsItem[],
 |};
 
 const fetchPrograms = (params: $ReadOnlyArray<ProgramsParams>) =>
