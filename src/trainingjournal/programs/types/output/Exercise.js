@@ -5,7 +5,7 @@ import GlobalID from '@kiwicom/graphql-global-id';
 import { connectionDefinitions } from 'graphql-relay';
 
 import type { Exercise as ExerciseType } from '../../dataloaders/ProgramLoader';
-import BaseExercise from './BaseExercise';
+import BaseExercise from '../../../baseExercise/types/output/BaseExercise';
 
 const Exercise = new GraphQLObjectType({
   name: 'Exercise',

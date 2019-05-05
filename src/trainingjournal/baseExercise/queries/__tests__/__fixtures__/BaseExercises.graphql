@@ -1,0 +1,14 @@
+query baseExercisesQuery {
+  baseExercises {
+    edges {
+      node {
+        id
+        name
+        muscleGroup {
+          id
+          name
+        }
+      }
+    }
+  }
+}
