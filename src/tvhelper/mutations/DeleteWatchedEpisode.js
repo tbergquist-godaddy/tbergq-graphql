@@ -4,8 +4,7 @@ import { GraphQLID, GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
-import WatchedEpisode from '../db/models/WatchedEpisodesModel';
-import loggedInResolver from '../../resolvers/LoggedInResolver';
+import { deleteWatchedEpisode } from '../db/models/WatchedEpisodesModel';
 import EpisodeWatched from '../types/EpisodeWatched';
 
 type Args = {|
@@ -22,12 +21,10 @@ export default {
     },
   },
   resolve: async (_: mixed, args: Args, { user }: GraphqlContextType) => {
-    const verifiedUser = loggedInResolver(user);
-    const { id: userId } = fromGlobalId(verifiedUser.id);
     const { id: episodeId } = fromGlobalId(args.episodeId);
 
-    await WatchedEpisode.deleteOne({
-      userId,
+    await deleteWatchedEpisode({
+      userId: user?.id,
       episodeId,
     });
 

@@ -1,8 +1,7 @@
 // @flow
 
 import DataLoader from 'dataloader';
-import jwt from 'jsonwebtoken';
-import { config } from 'dotenv';
+import { type $Request } from 'express';
 
 import SearchTvShowLoader, {
   type TvShow,
@@ -38,18 +37,15 @@ import BaseExerciseLoader, {
   type BaseExercisesArgs,
 } from '../../trainingjournal/baseExercise/dataloaders/BaseExercisesLoader';
 
-config();
-
-const { JWT_SECRET } = process.env;
-
 export type LoggedInUser = {|
-  +id: string,
+  +id?: string,
   +username: string,
+  +email?: string,
+  +token?: string,
 |};
 
 export type GraphqlContextType = {|
   +user: ?LoggedInUser,
-  +rawToken: ?string,
   +dataLoader: {|
     +tvhelper: {|
       +searchTvShow: DataLoader<string, TvShow[]>,
@@ -70,19 +66,10 @@ export type GraphqlContextType = {|
   |},
 |};
 
-const decodeToken = (token: ?string) => {
-  try {
-    return token == null ? null : jwt.verify(token, JWT_SECRET);
-  } catch (err) {
-    return null;
-  }
-};
-
-export default function createContext(token: ?string) {
-  const user = decodeToken(token);
+export default function createContext(request: $Request) {
+  const user = request?.user;
   return {
     user,
-    rawToken: token,
     dataLoader: {
       tvhelper: {
         searchTvShow: SearchTvShowLoader(),
@@ -95,10 +82,10 @@ export default function createContext(token: ?string) {
         episode: EpisodeLoader(),
       },
       trainingjournal: {
-        programs: ProgramsLoader(),
-        program: ProgramLoader(token),
-        day: DayLoader(token),
-        baseExercises: BaseExerciseLoader(token),
+        programs: ProgramsLoader(user?.token),
+        program: ProgramLoader(user?.token),
+        day: DayLoader(user?.token),
+        baseExercises: BaseExerciseLoader(user?.token),
       },
     },
   };

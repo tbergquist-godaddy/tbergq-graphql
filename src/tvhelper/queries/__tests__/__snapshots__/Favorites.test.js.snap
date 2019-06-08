@@ -1,16 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`throws error when not loggend in 1`] = `
-Object {
-  "data": Object {
-    "favorites": null,
-  },
-  "errors": Array [
-    [GraphQLError: You must be signed in to use this query],
-  ],
-}
-`;
-
 exports[`works 1`] = `
 Object {
   "data": Object {

@@ -60,7 +60,6 @@ const dataLoader = {
 };
 const context = {
   user,
-  rawToken: null,
   dataLoader,
 };
 

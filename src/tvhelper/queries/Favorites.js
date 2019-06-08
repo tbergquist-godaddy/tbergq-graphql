@@ -1,7 +1,6 @@
 // @flow
 
 import {
-  fromGlobalId,
   connectionFromArray,
   connectionArgs,
   type ConnectionArguments,
@@ -44,12 +43,10 @@ export default {
     args: Args,
     { user, dataLoader }: GraphqlContextType,
   ) => {
-    if (user == null) {
-      throw Error('You must be signed in to use this query');
-    }
+    const savedFavorites = await dataLoader.tvhelper.favorites.load(
+      user?.id ?? '',
+    );
 
-    const { id } = fromGlobalId(user.id);
-    const savedFavorites = await dataLoader.tvhelper.favorites.load(id);
     const serieIds = savedFavorites.map(item => item.serieId.toString());
     const favorites = await dataLoader.tvhelper.tvDetail.loadMany(serieIds);
 

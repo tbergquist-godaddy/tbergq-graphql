@@ -5,7 +5,6 @@ import { fromGlobalId } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import { addWatchedEpisode } from '../db/models/WatchedEpisodesModel';
-import loggedInResolver from '../../resolvers/LoggedInResolver';
 import EpisodeWatched from '../types/EpisodeWatched';
 
 type Args = {|
@@ -22,12 +21,10 @@ export default {
     },
   },
   resolve: async (_: mixed, args: Args, { user }: GraphqlContextType) => {
-    const verifiedUser = loggedInResolver(user);
-    const { id: userId } = fromGlobalId(verifiedUser.id);
     const { id: episodeId } = fromGlobalId(args.episodeId);
 
     await addWatchedEpisode({
-      userId,
+      userId: user?.id,
       episodeId,
     });
 

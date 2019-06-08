@@ -20,11 +20,10 @@ const query = `
   }
   `;
 
-it('throws error when not loggend in', async () => {
-  expect(await graphql(query)).toMatchSnapshot();
-});
-
 it('works', async () => {
   fetch.mockResponses([JSON.stringify(tvshow)], [JSON.stringify(tvshow2)]);
-  expect(await graphql(query, {}, 'token')).toMatchSnapshot();
+  expect(
+    // $FlowExpectedError: this is ok
+    await graphql(query, {}, { user: { token: 'token', id: '5' } }),
+  ).toMatchSnapshot();
 });
