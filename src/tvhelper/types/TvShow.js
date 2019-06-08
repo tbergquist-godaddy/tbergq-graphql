@@ -8,7 +8,7 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import { toGlobalId, fromGlobalId } from 'graphql-relay';
+import { toGlobalId } from 'graphql-relay';
 import { GraphQLDate } from 'graphql-iso-date';
 
 import type { TvShow } from '../dataloaders/SearchTvShowLoader';
@@ -51,10 +51,10 @@ export default new GraphQLObjectType({
         _: mixed,
         { user, dataLoader }: GraphqlContextType,
       ) => {
-        if (user == null) {
+        const userId = user?.id;
+        if (userId == null) {
           return null;
         }
-        const { id: userId } = fromGlobalId(user.id);
         const favorite = await dataLoader.tvhelper.favorite.load({
           userId,
           serieId,

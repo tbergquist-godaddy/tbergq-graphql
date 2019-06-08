@@ -17,7 +17,7 @@ export default function executeTestQuery(
     schema,
     query,
     null,
-    createContext('token'),
+    createContext({ user: { token: 'token' } }),
     variables,
   );
 }

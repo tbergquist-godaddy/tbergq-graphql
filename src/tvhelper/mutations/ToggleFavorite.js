@@ -5,7 +5,6 @@ import { fromGlobalId } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import { createFavorite, deleteFavorite } from '../db/models/FavoritesModel';
-import loggedInResolver from '../../resolvers/LoggedInResolver';
 import GraphqlToggleFavorite from '../types/ToggleFavorite';
 
 type Args = {|
@@ -31,12 +30,10 @@ export default {
     args: Args,
     { user, dataLoader }: GraphqlContextType,
   ) => {
-    const verifiedUser = loggedInResolver(user);
-    const { id: userId } = fromGlobalId(verifiedUser.id);
     const { id: serieId } = fromGlobalId(args.serieId);
     if (args.add) {
       await createFavorite({
-        userId,
+        userId: user?.id,
         serieId,
       });
       const tvShow = await dataLoader.tvhelper.tvDetail.load(serieId);
@@ -46,7 +43,7 @@ export default {
       };
     }
     await deleteFavorite({
-      userId,
+      userId: user?.id,
       serieId,
     });
     return { success: true, serieId: args.serieId };

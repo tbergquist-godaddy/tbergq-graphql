@@ -6,17 +6,31 @@ import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
 import { matchQueryMiddleware } from 'relay-compiler-plus';
+import passport from 'passport';
+import passportJwt from 'passport-jwt';
 
 import Schema from './Schema';
 import createContext from './common/services/GraphqlContext';
 import queryMap from '../persisted-queries.json';
+import { jwtFromRequest, tokenToUser, attachUserToRequest } from './auth';
 
 const port = process.env.PORT || 3001;
+const secret = process.env.JWT_SECRET;
+passport.use(
+  new passportJwt.Strategy(
+    {
+      secretOrKey: secret,
+      jwtFromRequest,
+    },
+    tokenToUser,
+  ),
+);
 
 const app = express();
 app.use(cors({ methods: ['GET', 'POST'] }));
 app.use(compression());
 app.use(morgan('dev'));
+passport.initialize();
 
 function createGraphqlServer(token: ?string) {
   const context = createContext(token);
@@ -29,11 +43,10 @@ function createGraphqlServer(token: ?string) {
 
 app.use(
   '/',
+  attachUserToRequest,
   matchQueryMiddleware(queryMap),
   (request: $Request, response: $Response) => {
-    const token = request.get('Authorization');
-
-    return createGraphqlServer(token)(request, response);
+    return createGraphqlServer(request)(request, response);
   },
 );
 

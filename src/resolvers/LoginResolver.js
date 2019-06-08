@@ -1,19 +1,15 @@
 // @flow
 
 import { verify } from 'password-hash';
-import jwt from 'jsonwebtoken';
 import { toGlobalId } from 'graphql-relay';
-import { config } from 'dotenv';
 
-config();
+import { signToken } from '../auth';
 
 type User = {|
   +id: string,
   +password: string,
   +username: string,
 |};
-
-const { JWT_SECRET } = process.env;
 
 const loginFailed = () => ({
   token: null,
@@ -28,16 +24,11 @@ const LoginResolver = (user: ?User, password: string) => {
   if (!isCorrect) {
     return loginFailed();
   }
-  const token = jwt.sign(
-    {
-      id: toGlobalId('User', user.id),
-      username: user.username,
-    },
-    JWT_SECRET,
-    {
-      expiresIn: '1y',
-    },
-  );
+  const token = signToken({
+    id: toGlobalId('User', user.id),
+    username: user.username,
+  });
+
   return { token, success: true };
 };
 

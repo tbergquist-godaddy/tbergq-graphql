@@ -4,6 +4,11 @@ import { Schema } from 'mongoose';
 
 import mongoose from '../../../common/db/MongoDB';
 
+type WatchedEpisodeType = {|
+  +userId: ?string,
+  +episodeId: string,
+|};
+
 const WatchedEpisodesSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
@@ -20,7 +25,38 @@ WatchedEpisodesSchema.index({ userId: 1, episodeId: -1 }, { unique: true });
 
 const WatchedEpisode = mongoose.model('watchedEpisodes', WatchedEpisodesSchema);
 
-export const addWatchedEpisode = ({ userId, episodeId }: Object) =>
-  WatchedEpisode.create(new WatchedEpisode({ userId, episodeId }));
+const throwNotLoggedInError = () => {
+  throw Error('You must be logged in to add a watched episode.');
+};
+export const addWatchedEpisode = ({
+  userId,
+  episodeId,
+}: WatchedEpisodeType) => {
+  if (userId == null) {
+    throwNotLoggedInError();
+  }
+  return WatchedEpisode.create(new WatchedEpisode({ userId, episodeId }));
+};
 
-export default WatchedEpisode;
+export const deleteWatchedEpisode = ({
+  userId,
+  episodeId,
+}: WatchedEpisodeType) => {
+  if (userId == null) {
+    throwNotLoggedInError();
+  }
+  return WatchedEpisode.deleteOne({
+    userId,
+    episodeId,
+  });
+};
+
+export const findWatchedEpisodes = (
+  episodeIds: $ReadOnlyArray<number>,
+  userId: string,
+) => {
+  return WatchedEpisode.find({
+    episodeId: { $in: episodeIds },
+    userId,
+  });
+};

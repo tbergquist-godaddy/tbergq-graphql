@@ -4,6 +4,7 @@ import { GraphQLString, GraphQLNonNull } from 'graphql';
 
 import fetch from '../../../common/services/Fetch';
 import LoginType from '../../../types/LoginType';
+import { signToken } from '../../../auth';
 
 type Args = {|
   +username: string,
@@ -31,10 +32,20 @@ export default {
         }),
       },
     );
+    let token;
+    if (response.token != null) {
+      token = signToken(
+        {
+          username,
+          token: response.token,
+        },
+        'tronbe.pythonanywhere.com',
+      );
+    }
 
     return {
-      success: response.token != null,
-      token: response.token,
+      success: token != null,
+      token,
     };
   },
 };

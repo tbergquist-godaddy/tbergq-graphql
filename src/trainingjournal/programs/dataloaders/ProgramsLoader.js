@@ -8,7 +8,6 @@ import fetch from '../../../common/services/Fetch';
 export type ProgramsParams = {|
   +limit: number,
   +offset: number,
-  +token: ?string,
 |};
 
 export type ProgramsItem = {|
@@ -23,10 +22,12 @@ export type Programs = {|
   +results: ProgramsItem[],
 |};
 
-const fetchPrograms = (params: $ReadOnlyArray<ProgramsParams>) =>
+const fetchPrograms = (
+  params: $ReadOnlyArray<ProgramsParams>,
+  token?: string = '',
+) =>
   Promise.all(
     params.map(param => {
-      const token = param.token ?? '';
       return fetch(
         `https://tronbe.pythonanywhere.com/api/Program/programs/?limit=${
           param.limit
@@ -40,9 +41,12 @@ const fetchPrograms = (params: $ReadOnlyArray<ProgramsParams>) =>
     }),
   );
 
-const ProgramsLoader = () =>
-  new Dataloader<ProgramsParams, Programs>(fetchPrograms, {
-    cacheKeyFn: stringify,
-  });
+const ProgramsLoader = (token?: string) =>
+  new Dataloader<ProgramsParams, Programs>(
+    (params: $ReadOnlyArray<ProgramsParams>) => fetchPrograms(params, token),
+    {
+      cacheKeyFn: stringify,
+    },
+  );
 
 export default ProgramsLoader;

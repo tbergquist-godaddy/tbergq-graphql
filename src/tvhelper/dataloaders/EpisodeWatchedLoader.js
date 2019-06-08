@@ -3,7 +3,7 @@
 import Dataloader from 'dataloader';
 import { fromGlobalId } from 'graphql-relay';
 
-import WatchedEpisode from '../db/models/WatchedEpisodesModel';
+import { findWatchedEpisodes } from '../db/models/WatchedEpisodesModel';
 import type { LoggedInUser } from '../../common/services/GraphqlContext';
 
 export type EpisodeWatched = {|
@@ -18,10 +18,11 @@ const loadWatchedEpisode = async (
 ) => {
   const userId = user?.id ?? '';
 
-  const watchedEpisodes = await WatchedEpisode.find({
-    episodeId: { $in: args },
-    userId: fromGlobalId(userId).id,
-  });
+  const watchedEpisodes = await findWatchedEpisodes(
+    args,
+    fromGlobalId(userId).id,
+  );
+
   return args.map(arg =>
     watchedEpisodes.find(episode => episode.episodeId === arg),
   );

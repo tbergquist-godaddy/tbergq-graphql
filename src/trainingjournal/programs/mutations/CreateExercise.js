@@ -24,7 +24,7 @@ export default {
   resolve: async (
     _: mixed,
     { exercise }: Args,
-    { rawToken }: GraphqlContextType,
+    { user }: GraphqlContextType,
   ) => {
     const body = {
       base_exercise: fromGlobalId(exercise.baseExerciseId),
@@ -34,7 +34,7 @@ export default {
       reps: exercise.reps,
       set: exercise.set,
     };
-    const token = rawToken ?? '';
+    const token = user?.token ?? '';
     const newExercise = await fetch(
       'https://tronbe.pythonanywhere.com/api/Program/exercises/',
       {

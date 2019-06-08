@@ -26,16 +26,11 @@ export default {
       type: GraphQLString,
     },
   },
-  resolve: async (
-    _: mixed,
-    args: Args,
-    { dataLoader, rawToken }: GraphqlContextType,
-  ) => {
+  resolve: async (_: mixed, args: Args, { dataLoader }: GraphqlContextType) => {
     const offset = args.after ? cursorToOffset(args.after) + 1 : 0;
     const programs = await await dataLoader.trainingjournal.programs.load({
       limit: args.first,
       offset,
-      token: rawToken,
     });
 
     return toConnection<ProgramsItem>(programs.results, {
