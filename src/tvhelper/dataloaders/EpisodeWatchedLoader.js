@@ -1,7 +1,6 @@
 // @flow
 
 import Dataloader from 'dataloader';
-import { fromGlobalId } from 'graphql-relay';
 
 import { findWatchedEpisodes } from '../db/models/WatchedEpisodesModel';
 import type { LoggedInUser } from '../../common/services/GraphqlContext';
@@ -16,12 +15,7 @@ const loadWatchedEpisode = async (
   args: $ReadOnlyArray<number>,
   user: ?LoggedInUser,
 ) => {
-  const userId = user?.id ?? '';
-
-  const watchedEpisodes = await findWatchedEpisodes(
-    args,
-    fromGlobalId(userId).id,
-  );
+  const watchedEpisodes = await findWatchedEpisodes(args, user?.id);
 
   return args.map(arg =>
     watchedEpisodes.find(episode => episode.episodeId === arg),

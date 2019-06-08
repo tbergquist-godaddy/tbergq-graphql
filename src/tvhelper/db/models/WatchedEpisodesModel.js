@@ -26,7 +26,7 @@ WatchedEpisodesSchema.index({ userId: 1, episodeId: -1 }, { unique: true });
 const WatchedEpisode = mongoose.model('watchedEpisodes', WatchedEpisodesSchema);
 
 const throwNotLoggedInError = () => {
-  throw Error('You must be logged in to add a watched episode.');
+  throw Error('You must be logged in for this operation');
 };
 export const addWatchedEpisode = ({
   userId,
@@ -53,8 +53,11 @@ export const deleteWatchedEpisode = ({
 
 export const findWatchedEpisodes = (
   episodeIds: $ReadOnlyArray<number>,
-  userId: string,
+  userId: ?string,
 ) => {
+  if (userId == null) {
+    throwNotLoggedInError();
+  }
   return WatchedEpisode.find({
     episodeId: { $in: episodeIds },
     userId,
