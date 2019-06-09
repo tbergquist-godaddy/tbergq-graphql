@@ -5,14 +5,13 @@ import graphqlHTTP from 'express-graphql';
 import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
-import { matchQueryMiddleware } from 'relay-compiler-plus';
 import passport from 'passport';
 import passportJwt from 'passport-jwt';
 
 import Schema from './Schema';
 import createContext from './common/services/GraphqlContext';
-import queryMap from '../persisted-queries.json';
 import { jwtFromRequest, tokenToUser, attachUserToRequest } from './auth';
+import matchQueryMiddleware from './middleware/getPersistedQueries';
 
 const port = process.env.PORT || 3001;
 const secret = process.env.JWT_SECRET;
@@ -44,7 +43,7 @@ function createGraphqlServer(token: ?string) {
 app.use(
   '/',
   attachUserToRequest,
-  matchQueryMiddleware(queryMap),
+  matchQueryMiddleware(),
   (request: $Request, response: $Response) => {
     return createGraphqlServer(request)(request, response);
   },
