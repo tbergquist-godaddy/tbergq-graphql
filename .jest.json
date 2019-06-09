@@ -1,9 +1,4 @@
 {
-  "collectCoverage": true,
-  "collectCoverageFrom": [
-    "src/**.js"
-  ],
-  "coverageReporters": [
-    "text-summary"
-  ]
+  "collectCoverage": false,
+  "testEnvironment": "node"
 }

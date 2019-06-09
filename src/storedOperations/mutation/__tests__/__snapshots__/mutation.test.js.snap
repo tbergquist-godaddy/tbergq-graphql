@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches expected output: createStoredOperations.graphql 1`] = `
+~~~~~~~~~~ INPUT ~~~~~~~~~~
+mutation {
+  createdStoredOperations(storedOperations: [{operationId: "123", text:"lol"},{operationId: "321", text:"lol2"}]) {
+    createdOperations {
+      operationId
+      text
+    }
+  }
+}
+
+~~~~~~~~~~ OUTPUT ~~~~~~~~~~
+{
+  "data": {
+    "createdStoredOperations": {
+      "createdOperations": [
+        {
+          "operationId": "123",
+          "text": "lol"
+        },
+        {
+          "operationId": "321",
+          "text": "lol2"
+        }
+      ]
+    }
+  }
+}
+`;

@@ -1,0 +1,8 @@
+mutation {
+  createdStoredOperations(storedOperations: [{operationId: "123", text:"lol"},{operationId: "321", text:"lol2"}]) {
+    createdOperations {
+      operationId
+      text
+    }
+  }
+}
