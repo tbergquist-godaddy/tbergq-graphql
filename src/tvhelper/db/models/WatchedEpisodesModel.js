@@ -2,7 +2,7 @@
 
 import { Schema } from 'mongoose';
 
-import mongoose from '../../../common/db/MongoDB';
+import { tvhelperConnection as mongoose } from '../../../common/db/MongoDB';
 
 type WatchedEpisodeType = {|
   +userId: ?string,
