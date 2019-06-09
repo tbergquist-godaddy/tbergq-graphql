@@ -38,7 +38,7 @@
     "now-build": "rimraf graphql/ && yarn webpack",
     "start": "node graphql/index.js",
     "deploy": "yarn now-build && now --target production",
-    "test": "DB_URL=url jest --setupTestFrameworkScriptFile=./scripts/setupTests.js",
+    "test": "DB_URL=url GRAPHQL_DB_URL=db jest --setupTestFrameworkScriptFile=./scripts/setupTests.js -c ./.jest.json",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",
     "test-ci": "yarn lint && yarn flow && yarn test",

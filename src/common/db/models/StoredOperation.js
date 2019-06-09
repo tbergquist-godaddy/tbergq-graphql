@@ -30,10 +30,19 @@ export const getOperation = (operationId: string) => {
   return StoredOperation.findOne({ operationId });
 };
 
-export const addOperations = (
+export const addOperations = async (
   operations: $ReadOnlyArray<StoredOperationType>,
 ) => {
-  return StoredOperation.create(operations);
+  const operationIds = operations.map(i => i.operationId);
+  const existingOperations = await StoredOperation.find({
+    operationId: { $in: operationIds },
+  });
+  const existingOperationIds = existingOperations.map(i => i.operationId);
+  const operationsToAdd = operations.filter(
+    i => !existingOperationIds.includes(i.operationId),
+  );
+
+  return StoredOperation.create(operationsToAdd);
 };
 
 StoredOperationSchema.indexes();
