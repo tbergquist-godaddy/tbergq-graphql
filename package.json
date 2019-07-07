@@ -29,15 +29,13 @@
     "passport-jwt": "^4.0.0",
     "password-hash": "^1.2.2",
     "ramda": "^0.26.1",
-    "striptags": "^3.1.1",
-    "uglifyjs-webpack-plugin": "^2.1.3",
-    "webpack": "^4.33.0"
+    "striptags": "^3.1.1"
   },
   "scripts": {
     "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn run babel-node src/index.js",
-    "now-build": "rimraf graphql/ && yarn webpack",
+    "now-build": "rimraf graphql/ && npx babel src --out-dir graphql",
     "start": "node graphql/index.js",
-    "deploy": "yarn now-build && now --target production",
+    "deploy": "yarn now --target production",
     "test": "DB_URL=url GRAPHQL_DB_URL=db jest --setupTestFrameworkScriptFile=./scripts/setupTests.js -c ./.jest.json",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",
@@ -65,8 +63,7 @@
     "jest": "^24.8.0",
     "now": "^15.4.0",
     "regenerator-runtime": "^0.13.2",
-    "rimraf": "^2.6.3",
-    "webpack-cli": "^3.3.3"
+    "rimraf": "^2.6.3"
   },
   "resolutions": {
     "**/babel-core": "7.0.0-bridge.0"
