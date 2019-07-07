@@ -22,30 +22,37 @@ export default {
     },
   },
   resolve: async (_: mixed, { username, password }: Args) => {
-    const response = await fetch(
-      'https://tronbe.pythonanywhere.com/api/Account/auth/',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          username,
-          password,
-        }),
-      },
-    );
-    let token;
-    if (response.token != null) {
-      token = signToken(
+    try {
+      const response = await fetch(
+        'https://tronbe.pythonanywhere.com/api/Account/auth/',
         {
-          username,
-          token: response.token,
+          method: 'POST',
+          body: JSON.stringify({
+            username,
+            password,
+          }),
         },
-        'tronbe.pythonanywhere.com',
       );
-    }
+      let token;
+      if (response.token != null) {
+        token = signToken(
+          {
+            username,
+            token: response.token,
+          },
+          'tronbe.pythonanywhere.com',
+        );
+      }
 
-    return {
-      success: token != null,
-      token,
-    };
+      return {
+        success: token != null,
+        token,
+      };
+    } catch {
+      return {
+        success: false,
+        token: null,
+      };
+    }
   },
 };
