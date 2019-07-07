@@ -33,9 +33,9 @@
   },
   "scripts": {
     "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn run babel-node src/index.js",
-    "now-build": "rimraf graphql/ && npx babel src --out-dir graphql",
+    "build": "rimraf graphql/ && npx babel src --out-dir graphql",
     "start": "node graphql/index.js",
-    "deploy": "yarn now --target production",
+    "deploy": "yarn build && yarn now --target production",
     "test": "DB_URL=url GRAPHQL_DB_URL=db jest --setupTestFrameworkScriptFile=./scripts/setupTests.js -c ./.jest.json",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",
