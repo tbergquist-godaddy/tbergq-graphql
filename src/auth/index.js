@@ -50,12 +50,9 @@ export const attachUserToRequest = (
   })(req, res, next);
 };
 
-export const signToken = (
-  user: { [string]: mixed, ... },
-  issuer: ?string = 'tbergq-graphql.now.sh',
-) => {
+export const signToken = (user: { [string]: mixed, ... }) => {
   return jwt.sign(user, JWT_SECRET, {
     expiresIn: '1y',
-    issuer,
+    issuer: 'tbergq-graphql.now.sh',
   });
 };

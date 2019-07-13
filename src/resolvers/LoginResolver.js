@@ -11,12 +11,14 @@ type User = {|
   +username: string,
 |};
 
+type Apps = 'tvhelper' | 'trainingjournal';
+
 const loginFailed = () => ({
   token: null,
   success: false,
 });
 
-const LoginResolver = (user: ?User, password: string) => {
+const LoginResolver = (user: ?User, password: string, app: Apps) => {
   if (user == null) {
     return loginFailed();
   }
@@ -27,6 +29,7 @@ const LoginResolver = (user: ?User, password: string) => {
   const token = signToken({
     id: toGlobalId('User', user.id),
     username: user.username,
+    app,
   });
 
   return { token, success: true };

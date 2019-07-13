@@ -28,6 +28,6 @@ export default {
   ) => {
     const user = await dataLoader.tvhelper.user.load(username);
 
-    return loginResolver(user, password);
+    return loginResolver(user, password, 'tvhelper');
   },
 };
