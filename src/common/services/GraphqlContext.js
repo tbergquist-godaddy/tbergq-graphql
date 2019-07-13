@@ -36,12 +36,14 @@ import BaseExerciseLoader, {
   type BaseExerciseResponse,
   type BaseExercisesArgs,
 } from '../../trainingjournal/baseExercise/dataloaders/BaseExercisesLoader';
+import type { Apps } from '../../resolvers/LoginResolver';
 
 export type LoggedInUser = {|
   +id?: string,
   +username: string,
   +email?: string,
   +token?: string,
+  +app: Apps,
 |};
 
 export type GraphqlContextType = {|

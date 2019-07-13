@@ -11,7 +11,7 @@ type User = {|
   +username: string,
 |};
 
-type Apps = 'tvhelper' | 'trainingjournal';
+export type Apps = 'tvhelper' | 'trainingjournal';
 
 const loginFailed = () => ({
   token: null,

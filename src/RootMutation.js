@@ -13,12 +13,14 @@ import trainingJournalLogin from './trainingjournal/account/mutations/Login';
 import createExercise from './trainingjournal/programs/mutations/CreateExercise';
 import createdStoredOperations from './storedOperations/mutation/createStoredOperations';
 import createTrainingjournalUser from './trainingjournal/account/mutations/CreateUser';
+import createBaseExercise from './trainingjournal/baseExercise/mutation/CreateBaseExercise';
 
 export default new GraphQLObjectType({
   name: 'RootMutation',
   description: 'Root Mutation.',
   fields: {
     addFavorite,
+    createBaseExercise,
     createExercise,
     createdStoredOperations,
     createTrainingjournalUser,
