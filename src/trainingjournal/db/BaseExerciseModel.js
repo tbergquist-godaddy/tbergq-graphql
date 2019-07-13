@@ -49,3 +49,25 @@ export const createExercise = (
   }
   return null;
 };
+
+export const getBaseExercises = async (
+  user: ?LoggedInUser,
+  skip: number,
+  limit: number,
+) => {
+  if (user?.app === 'trainingjournal') {
+    const [count, baseExercises] = await Promise.all([
+      BaseExercise.where({ user: user?.id }).countDocuments(),
+      BaseExercise.where({ user: user?.id })
+        .skip(skip)
+        .limit(limit)
+        .select('-user'),
+    ]);
+
+    return {
+      baseExercises,
+      count,
+    };
+  }
+  return null;
+};

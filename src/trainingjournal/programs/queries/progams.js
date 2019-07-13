@@ -35,8 +35,8 @@ export default {
 
     return toConnection<ProgramsItem>(programs.results, {
       offset,
-      next: programs.next,
-      previous: programs.previous,
+      next: programs.next != null,
+      previous: programs.previous != null,
     });
   },
 };

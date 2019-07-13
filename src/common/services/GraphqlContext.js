@@ -87,7 +87,7 @@ export default function createContext(request: $Request) {
         programs: ProgramsLoader(user?.token),
         program: ProgramLoader(user?.token),
         day: DayLoader(user?.token),
-        baseExercises: BaseExerciseLoader(user?.token),
+        baseExercises: BaseExerciseLoader(),
       },
     },
   };

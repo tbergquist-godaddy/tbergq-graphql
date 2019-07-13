@@ -3,44 +3,36 @@
 import Dataloader from 'dataloader';
 import stringify from 'json-stable-stringify';
 
-import fetch from '../../../common/services/Fetch';
-import type { BaseExercise } from '../../programs/dataloaders/ProgramLoader';
+import { getBaseExercises } from '../../db/BaseExerciseModel';
 
 export type BaseExercisesArgs = {|
   +limit: number,
   +offset: number,
+  +user: ?Object,
 |};
 
-export type BaseExerciseResponse = {|
+export type BaseExerciseType = {|
+  +_id: string,
+  +videoLink?: string,
+  +description?: string,
+  +muscleGroup: string,
+|};
+
+export type BaseExerciseResponse = ?{|
   +count: number,
-  +next: ?string,
-  +previous: ?string,
-  +results: BaseExercise[],
+  +baseExercises: $ReadOnlyArray<BaseExerciseType>,
 |};
 
-const fetchBaseExercises = (
-  args: $ReadOnlyArray<BaseExercisesArgs>,
-  token: string,
-) =>
+const fetchBaseExercises = (args: $ReadOnlyArray<BaseExercisesArgs>) =>
   Promise.all(
-    args.map(arg =>
-      fetch(
-        `https://tronbe.pythonanywhere.com/api/Program/baseExercises/?limit=${
-          arg.limit
-        }&offset=${arg.offset}`,
-        {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        },
-      ),
-    ),
+    args.map(arg => {
+      return getBaseExercises(arg.user, arg.offset, arg.limit);
+    }),
   );
 
-export default function createBaseExerciseLoader(token: ?string) {
+export default function createBaseExerciseLoader() {
   return new Dataloader<BaseExercisesArgs, BaseExerciseResponse>(
-    (args: $ReadOnlyArray<BaseExercisesArgs>) =>
-      fetchBaseExercises(args, token ?? ''),
+    (args: $ReadOnlyArray<BaseExercisesArgs>) => fetchBaseExercises(args),
     {
       cacheKeyFn: stringify,
     },

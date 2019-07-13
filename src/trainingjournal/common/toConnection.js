@@ -4,10 +4,13 @@ import { offsetToCursor } from 'graphql-relay';
 
 type Config = {|
   +offset: number,
-  +previous: ?string,
-  +next: ?string,
+  +previous: boolean,
+  +next: boolean,
 |};
-export default function toConnection<T>(items: T[], config: Config) {
+export default function toConnection<T>(
+  items: $ReadOnlyArray<T>,
+  config: Config,
+) {
   const edges = items.map<any>((value, index) => ({
     cursor: offsetToCursor(config.offset + index),
     node: value,
@@ -21,8 +24,8 @@ export default function toConnection<T>(items: T[], config: Config) {
     pageInfo: {
       startCursor: firstEdge ? firstEdge.cursor : null,
       endCursor: lastEdge ? lastEdge.cursor : null,
-      hasPreviousPage: config.previous != null,
-      hasNextPage: config.next != null,
+      hasPreviousPage: config.previous,
+      hasNextPage: config.next,
     },
   };
 }
