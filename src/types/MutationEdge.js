@@ -4,6 +4,15 @@ import { GraphQLObjectType, GraphQLBoolean } from 'graphql';
 
 import { nodeInterface } from './node/node';
 
+const MutationNode = new GraphQLObjectType({
+  name: 'MutationNode',
+  fields: {
+    node: {
+      type: nodeInterface,
+    },
+  },
+});
+
 export default new GraphQLObjectType({
   name: 'MutationEdge',
   fields: {
@@ -11,7 +20,12 @@ export default new GraphQLObjectType({
       type: GraphQLBoolean,
     },
     edge: {
-      type: nodeInterface,
+      type: MutationNode,
+      resolve: parent => {
+        return {
+          node: parent.edge,
+        };
+      },
     },
   },
 });
