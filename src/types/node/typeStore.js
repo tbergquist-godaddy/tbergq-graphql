@@ -10,11 +10,13 @@ import type { GraphQLObjectType } from 'graphql';
 type Types = {|
   BaseExercise: ?GraphQLObjectType,
   Program: ?GraphQLObjectType,
+  Week: ?GraphQLObjectType,
 |};
 
 const types: Types = {
   BaseExercise: null,
   Program: null,
+  Week: null,
 };
 
 export function register(type: $Keys<typeof types>, value: GraphQLObjectType) {

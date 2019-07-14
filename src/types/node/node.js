@@ -13,6 +13,7 @@ function detectType(value) {
   switch (value.type) {
     case 'BaseExercise':
     case 'Program':
+    case 'Week':
       return getType(value.type);
     default:
       return null;

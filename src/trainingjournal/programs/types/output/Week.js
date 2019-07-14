@@ -11,9 +11,12 @@ import {
 
 import DayConnection from './Day';
 import type { Day, Week as WeekType } from '../../dataloaders/ProgramLoader';
+import { nodeInterface } from '../../../../types/node/node';
+import { register } from '../../../../types/node/typeStore';
 
 const Week = new GraphQLObjectType({
   name: 'Week',
+  interfaces: [nodeInterface],
   fields: {
     id: GlobalID(({ id }) => id),
     name: {
@@ -34,5 +37,7 @@ const Week = new GraphQLObjectType({
 const { connectionType: WeekConnection } = connectionDefinitions({
   nodeType: Week,
 });
+
+register('Week', Week);
 
 export default WeekConnection;

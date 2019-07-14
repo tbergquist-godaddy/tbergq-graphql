@@ -4,6 +4,7 @@ import { Schema } from 'mongoose';
 
 import { trainingjournalConnection as mongoose } from '../../common/db/MongoDB';
 import type { LoggedInUser } from '../../common/services/GraphqlContext';
+import verifyAccess from './verifyAccess';
 
 export type Program = {|
   +id: string,
@@ -28,10 +29,6 @@ const ProgramSchema = new Schema({
 });
 
 const ProgramModel = mongoose.model('program', ProgramSchema);
-
-const verifyAccess = (user: ?LoggedInUser) => {
-  return user?.app === 'trainingjournal';
-};
 
 export const createProgram = (name: string, user: ?LoggedInUser) => {
   if (verifyAccess(user)) {
@@ -80,6 +77,27 @@ export const getPrograms = async (
     return aggregate[0];
   }
   return null;
+};
+
+export const getProgram = (programId: string, user: ?LoggedInUser) => {
+  if (verifyAccess(user)) {
+    return ProgramModel.findOne({ _id: programId, user: user?.id });
+  }
+  return null;
+};
+
+export const userHasAccessToProgram = async (
+  programId: string,
+  user: ?LoggedInUser,
+) => {
+  if (verifyAccess(user)) {
+    const program = await ProgramModel.findOne({
+      programId,
+      user: user?.id,
+    }).lean();
+    return program != null;
+  }
+  return false;
 };
 
 export default ProgramModel;
