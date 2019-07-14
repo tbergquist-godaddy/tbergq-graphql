@@ -7,16 +7,27 @@ import {
   connectionArgs,
   type ConnectionArguments,
 } from 'graphql-relay';
+import { GraphQLDate } from 'graphql-iso-date';
 
 import WeekConnection from './Week';
-import type { Program, Week } from '../../dataloaders/ProgramLoader';
+import type {
+  Program as ProgramType,
+  Week,
+} from '../../dataloaders/ProgramLoader';
+import { register } from '../../../../types/node/typeStore';
+import { nodeInterface } from '../../../../types/node/node';
 
-export default new GraphQLObjectType({
+const Program = new GraphQLObjectType({
   name: 'Program',
+  interfaces: [nodeInterface],
   fields: {
     id: GlobalID(({ id }) => id),
     name: {
       type: GraphQLString,
+    },
+
+    date: {
+      type: GraphQLDate,
     },
 
     weeks: {
@@ -24,8 +35,13 @@ export default new GraphQLObjectType({
       args: {
         ...connectionArgs,
       },
-      resolve: ({ weeks }: Program, args: ConnectionArguments) =>
-        connectionFromArray<Week>(weeks, args),
+      resolve: ({ weeks }: ProgramType, args: ConnectionArguments) => {
+        return weeks != null ? connectionFromArray<Week>(weeks, args) : null;
+      },
     },
   },
 });
+
+register('Program', Program);
+
+export default Program;

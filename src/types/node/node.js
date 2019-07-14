@@ -12,6 +12,7 @@ function loadType() {
 function detectType(value) {
   switch (value.type) {
     case 'BaseExercise':
+    case 'Program':
       return getType(value.type);
     default:
       return null;
