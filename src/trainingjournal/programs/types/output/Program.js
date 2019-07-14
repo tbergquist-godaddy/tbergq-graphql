@@ -21,7 +21,7 @@ const Program = new GraphQLObjectType({
   name: 'Program',
   interfaces: [nodeInterface],
   fields: {
-    id: GlobalID(({ id }) => id),
+    id: GlobalID(({ id, _id }) => id ?? _id),
     name: {
       type: GraphQLString,
     },
