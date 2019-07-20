@@ -28,8 +28,9 @@ const Week = new GraphQLObjectType({
       args: {
         ...connectionArgs,
       },
-      resolve: ({ days }: WeekType, args: ConnectionArguments) =>
-        connectionFromArray<Day>(days, args),
+      resolve: ({ days }: WeekType, args: ConnectionArguments) => {
+        return days == null ? null : connectionFromArray<Day>(days, args);
+      },
     },
   },
 });

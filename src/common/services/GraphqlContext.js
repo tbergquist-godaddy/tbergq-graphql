@@ -85,7 +85,7 @@ export default function createContext(request: $Request) {
       },
       trainingjournal: {
         programs: ProgramsLoader(),
-        program: ProgramLoader(user?.token),
+        program: ProgramLoader(user),
         day: DayLoader(user?.token),
         baseExercises: BaseExerciseLoader(),
       },

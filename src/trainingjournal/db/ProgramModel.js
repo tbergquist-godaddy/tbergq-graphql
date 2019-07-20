@@ -2,7 +2,7 @@
 
 import { Schema } from 'mongoose';
 
-import { trainingjournalConnection as mongoose } from '../../common/db/MongoDB';
+import { trainingjournalConnection } from '../../common/db/MongoDB';
 import type { LoggedInUser } from '../../common/services/GraphqlContext';
 import verifyAccess from './verifyAccess';
 
@@ -28,7 +28,7 @@ const ProgramSchema = new Schema({
   },
 });
 
-const ProgramModel = mongoose.model('program', ProgramSchema);
+const ProgramModel = trainingjournalConnection.model('program', ProgramSchema);
 
 export const createProgram = (name: string, user: ?LoggedInUser) => {
   if (verifyAccess(user)) {
@@ -81,7 +81,10 @@ export const getPrograms = async (
 
 export const getProgram = (programId: string, user: ?LoggedInUser) => {
   if (verifyAccess(user)) {
-    return ProgramModel.findOne({ _id: programId, user: user?.id });
+    return ProgramModel.findOne({
+      _id: programId,
+      user: user?.id,
+    });
   }
   return null;
 };

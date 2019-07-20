@@ -49,42 +49,6 @@ query program {
   program(programId: "UHJvZ3JhbTo2Nw==") {
     id
     name
-    weeks(first: 1) {
-      edges {
-        node {
-          name
-          id
-          days(first: 1) {
-            edges {
-              node {
-                id
-                name
-                exercises(first: 1) {
-                  edges {
-                    node {
-                      id
-                      set
-                      reps
-                      breakTime
-                      baseExercise {
-                        name
-                        id
-                        videoLink
-                        description
-                        muscleGroup {
-                          id
-                          name
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
 
@@ -93,49 +57,7 @@ query program {
   "data": {
     "program": {
       "id": "UHJvZ3JhbTo2Nw==",
-      "name": "Getting back in 2 it",
-      "weeks": {
-        "edges": [
-          {
-            "node": {
-              "name": "Week 1",
-              "id": "V2Vlazo1Nw==",
-              "days": {
-                "edges": [
-                  {
-                    "node": {
-                      "id": "RGF5OjE0Mg==",
-                      "name": "Day 1",
-                      "exercises": {
-                        "edges": [
-                          {
-                            "node": {
-                              "id": "RXhlcmNpc2U6ODQ4",
-                              "set": "4",
-                              "reps": "5",
-                              "breakTime": "3",
-                              "baseExercise": {
-                                "name": "Knebøy",
-                                "id": "QmFzZUV4ZXJjaXNlOjE=",
-                                "videoLink": "https://www.youtube.com/watch?v=Dy28eq2PjcM",
-                                "description": "",
-                                "muscleGroup": {
-                                  "id": "TXVzY2xlR3JvdXA6OQ==",
-                                  "name": "Quads"
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      }
+      "name": "Getting back in 2 it"
     }
   }
 }

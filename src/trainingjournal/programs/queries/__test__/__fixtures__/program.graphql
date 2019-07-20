@@ -2,41 +2,5 @@ query program {
   program(programId: "UHJvZ3JhbTo2Nw==") {
     id
     name
-    weeks(first: 1) {
-      edges {
-        node {
-          name
-          id
-          days(first: 1) {
-            edges {
-              node {
-                id
-                name
-                exercises(first: 1) {
-                  edges {
-                    node {
-                      id
-                      set
-                      reps
-                      breakTime
-                      baseExercise {
-                        name
-                        id
-                        videoLink
-                        description
-                        muscleGroup {
-                          id
-                          name
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
