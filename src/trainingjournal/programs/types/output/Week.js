@@ -18,7 +18,7 @@ const Week = new GraphQLObjectType({
   name: 'Week',
   interfaces: [nodeInterface],
   fields: {
-    id: GlobalID(({ id }) => id),
+    id: GlobalID(({ id, _id }) => id ?? _id),
     name: {
       type: GraphQLString,
     },

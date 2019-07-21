@@ -35,8 +35,17 @@ const Program = new GraphQLObjectType({
       args: {
         ...connectionArgs,
       },
-      resolve: ({ weeks }: ProgramType, args: ConnectionArguments) => {
-        return weeks != null ? connectionFromArray<Week>(weeks, args) : null;
+      resolve: async (
+        { weeks }: ProgramType,
+        args: ConnectionArguments,
+        { dataLoader }: Object,
+      ) => {
+        const dbWeeks =
+          (await dataLoader.trainingjournal.week.loadMany(weeks)) ?? [];
+
+        return dbWeeks != null
+          ? connectionFromArray<Week>(dbWeeks, args)
+          : null;
       },
     },
   },

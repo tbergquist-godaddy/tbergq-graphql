@@ -26,6 +26,12 @@ const ProgramSchema = new Schema({
     ref: 'users',
     required: true,
   },
+  weeks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'week',
+    },
+  ],
 });
 
 const ProgramModel = trainingjournalConnection.model('program', ProgramSchema);
@@ -97,7 +103,7 @@ export const userHasAccessToProgram = async (
     const program = await ProgramModel.findOne({
       programId,
       user: user?.id,
-    }).lean();
+    }).exists();
     return program != null;
   }
   return false;

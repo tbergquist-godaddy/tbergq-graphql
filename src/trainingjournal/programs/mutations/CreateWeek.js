@@ -5,7 +5,7 @@ import { fromGlobalId } from '@kiwicom/graphql-global-id';
 
 import MutationEdge from '../../../types/MutationEdge';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
-import { createWeek } from '../../db/WeekModel';
+import ProgramRepository from '../repositories/ProgramRepository';
 
 type Args = {|
   +name: string,
@@ -26,7 +26,8 @@ export default {
   },
   resolve: async (_: mixed, args: Args, { user }: GraphqlContextType) => {
     const programId = fromGlobalId(args.programId);
-    const week = await createWeek(args.name, programId, user);
+    const repository = new ProgramRepository(user, 'trainingjournal');
+    const week = await repository.addWeek(programId, args.name);
     return {
       success: week != null,
       edge: {

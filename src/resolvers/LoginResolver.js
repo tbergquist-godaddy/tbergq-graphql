@@ -13,6 +13,14 @@ type User = {|
 
 export type Apps = 'tvhelper' | 'trainingjournal';
 
+export type LoggedInUser = {|
+  +id?: string,
+  +username: string,
+  +email?: string,
+  +token?: string,
+  +app: Apps,
+|};
+
 const loginFailed = () => ({
   token: null,
   success: false,

@@ -30,10 +30,18 @@ export const createWeek = async (
     // Verify that program belongs to user
     return null;
   }
-  return WeekModel.create({
+  const week = await WeekModel.create({
     name,
     program: programId,
   });
+  program.weeks.push(week);
+  program.save();
+  return week;
 };
+
+export const getWeeks = (ids: $ReadOnlyArray<string>) =>
+  WeekModel.find({
+    _id: { $in: ids },
+  });
 
 export default WeekModel;

@@ -37,6 +37,9 @@ import BaseExerciseLoader, {
   type BaseExercisesArgs,
 } from '../../trainingjournal/baseExercise/dataloaders/BaseExercisesLoader';
 import type { Apps } from '../../resolvers/LoginResolver';
+import createWeeekLoader, {
+  type Week,
+} from '../../trainingjournal/programs/dataloaders/WeekLoader';
 
 export type LoggedInUser = {|
   +id?: string,
@@ -64,6 +67,7 @@ export type GraphqlContextType = {|
       +program: DataLoader<string, Program>,
       +day: DataLoader<string, Day>,
       +baseExercises: DataLoader<BaseExercisesArgs, BaseExerciseResponse>,
+      +week: DataLoader<string, Week>,
     |},
   |},
 |};
@@ -88,6 +92,7 @@ export default function createContext(request: $Request) {
         program: ProgramLoader(user),
         day: DayLoader(user?.token),
         baseExercises: BaseExerciseLoader(),
+        week: createWeeekLoader(user),
       },
     },
   };
