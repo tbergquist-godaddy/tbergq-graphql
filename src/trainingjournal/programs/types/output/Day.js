@@ -18,7 +18,7 @@ export const Day = new GraphQLObjectType({
   name: 'Day',
   interfaces: [nodeInterface],
   fields: {
-    id: GlobalID(({ id }) => id),
+    id: GlobalID(({ id, _id }) => id ?? _id),
     name: {
       type: GraphQLString,
     },

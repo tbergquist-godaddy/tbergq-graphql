@@ -38,7 +38,7 @@ export type Week = {|
   +id: number,
   +name: string,
   +program: number,
-  +days: Day[],
+  +days: $ReadOnlyArray<string>,
 |};
 
 export type Program = {|

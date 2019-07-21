@@ -12,4 +12,9 @@ export default class DayRepository extends TrainingJournalRepository {
     await day.save({ session });
     return day;
   }
+
+  getDays(ids: $ReadOnlyArray<string>) {
+    super.hasAccess();
+    return DayModel.find({ _id: { $in: ids } });
+  }
 }

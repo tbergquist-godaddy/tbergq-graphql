@@ -29,9 +29,10 @@ import ProgramsLoader, {
 } from '../../trainingjournal/programs/dataloaders/ProgramsLoader';
 import ProgramLoader, {
   type Program,
-  type Day,
 } from '../../trainingjournal/programs/dataloaders/ProgramLoader';
-import DayLoader from '../../trainingjournal/programs/dataloaders/DayLoader';
+import DayLoader, {
+  type Day,
+} from '../../trainingjournal/programs/dataloaders/DayLoader';
 import BaseExerciseLoader, {
   type BaseExerciseResponse,
   type BaseExercisesArgs,
@@ -90,7 +91,7 @@ export default function createContext(request: $Request) {
       trainingjournal: {
         programs: ProgramsLoader(),
         program: ProgramLoader(user),
-        day: DayLoader(user?.token),
+        day: DayLoader(user),
         baseExercises: BaseExerciseLoader(),
         week: createWeeekLoader(user),
       },
