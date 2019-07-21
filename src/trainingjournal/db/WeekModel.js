@@ -16,6 +16,12 @@ const WeekSchema = new Schema({
     ref: 'program',
     required: true,
   },
+  days: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'day',
+    },
+  ],
 });
 
 const WeekModel = mongoose.model('week', WeekSchema);

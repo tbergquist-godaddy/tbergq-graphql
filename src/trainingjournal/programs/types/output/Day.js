@@ -11,9 +11,12 @@ import {
 
 import ExerciseConnection from './Exercise';
 import type { Day as DayType, Exercise } from '../../dataloaders/ProgramLoader';
+import { nodeInterface } from '../../../../types/node/node';
+import { register } from '../../../../types/node/typeStore';
 
 export const Day = new GraphQLObjectType({
   name: 'Day',
+  interfaces: [nodeInterface],
   fields: {
     id: GlobalID(({ id }) => id),
     name: {
@@ -37,5 +40,7 @@ export const Day = new GraphQLObjectType({
 const { connectionType: DayConnection } = connectionDefinitions({
   nodeType: Day,
 });
+
+register('Day', Day);
 
 export default DayConnection;

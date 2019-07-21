@@ -36,4 +36,14 @@ export default class ProgramRepository extends BaseRepository {
     }
     return null;
   }
+
+  async userHasAccessToProgram(programId: string) {
+    super.hasAccess();
+    const user = super.getUser();
+    const program = await programModel.findOne({
+      _id: programId,
+      user: user?.id,
+    });
+    return program != null;
+  }
 }

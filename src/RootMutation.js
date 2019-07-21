@@ -16,6 +16,7 @@ import createTrainingjournalUser from './trainingjournal/account/mutations/Creat
 import createBaseExercise from './trainingjournal/baseExercise/mutation/CreateBaseExercise';
 import createProgram from './trainingjournal/programs/mutations/CreateProgram';
 import createWeek from './trainingjournal/programs/mutations/CreateWeek';
+import createDay from './trainingjournal/programs/mutations/CreateDay';
 
 export default new GraphQLObjectType({
   name: 'RootMutation',
@@ -23,6 +24,7 @@ export default new GraphQLObjectType({
   fields: {
     addFavorite,
     createBaseExercise,
+    createDay,
     createExercise,
     createProgram,
     createdStoredOperations,

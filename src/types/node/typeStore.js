@@ -11,12 +11,14 @@ type Types = {|
   BaseExercise: ?GraphQLObjectType,
   Program: ?GraphQLObjectType,
   Week: ?GraphQLObjectType,
+  Day: ?GraphQLObjectType,
 |};
 
 const types: Types = {
   BaseExercise: null,
   Program: null,
   Week: null,
+  Day: null,
 };
 
 export function register(type: $Keys<typeof types>, value: GraphQLObjectType) {

@@ -14,6 +14,7 @@ function detectType(value) {
     case 'BaseExercise':
     case 'Program':
     case 'Week':
+    case 'Day':
       return getType(value.type);
     default:
       return null;
