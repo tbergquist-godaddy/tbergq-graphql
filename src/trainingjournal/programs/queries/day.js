@@ -5,6 +5,7 @@ import { fromGlobalId } from '@kiwicom/graphql-global-id';
 
 import { Day } from '../types/output/Day';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
+import DayRepository from '../repositories/DayRepository';
 
 type Args = {|
   +dayId: string,
@@ -18,9 +19,10 @@ export default {
       type: GraphQLNonNull(GraphQLID),
     },
   },
-  resolve: async (_: mixed, args: Args, { dataLoader }: GraphqlContextType) => {
+  resolve: async (_: mixed, args: Args, { user }: GraphqlContextType) => {
     const dayId = fromGlobalId(args.dayId);
-    const day = await dataLoader.trainingjournal.day.load(dayId);
+    const repository = new DayRepository(user);
+    const day = await repository.getDay(dayId);
 
     return day;
   },
