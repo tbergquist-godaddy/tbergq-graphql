@@ -1,12 +1,12 @@
 // @flow
 
-import BaseRepository from '../../../common/repositories/BaseRepository';
+import TrainingJournalRepository from './TrainingJournalRepository';
 import WeekModel, { getWeeks } from '../../db/WeekModel';
 import ProgramRepository from './ProgramRepository';
 import DayRepository from './DayRepository';
 import { trainingjournalConnection } from '../../../common/db/MongoDB';
 
-export default class WeekRepository extends BaseRepository {
+export default class WeekRepository extends TrainingJournalRepository {
   getWeeks(ids: $ReadOnlyArray<string>) {
     super.hasAccess();
     return getWeeks(ids);
@@ -24,9 +24,8 @@ export default class WeekRepository extends BaseRepository {
 
   async addDay(dayName: string, weekId: string) {
     const user = super.getUser();
-    const app = super.getApp();
-    const programRepository = new ProgramRepository(user, app);
-    const dayRepository = new DayRepository(user, app);
+    const programRepository = new ProgramRepository(user);
+    const dayRepository = new DayRepository(user);
     const week = await WeekModel.findById(weekId);
 
     if (

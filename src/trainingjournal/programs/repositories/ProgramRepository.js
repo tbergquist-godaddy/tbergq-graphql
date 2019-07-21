@@ -1,15 +1,22 @@
 // @flow
 
 import { trainingjournalConnection } from '../../../common/db/MongoDB';
-import BaseRepository from '../../../common/repositories/BaseRepository';
+import TrainingJournalRepository from './TrainingJournalRepository';
 import programModel from '../../db/ProgramModel';
-import WeekRepository from './WeekRepository';
+import WeekModel from '../../db/WeekModel';
+import type { LoggedInUser } from '../../../resolvers/LoginResolver';
 
-export default class ProgramRepository extends BaseRepository {
+export default class ProgramRepository extends TrainingJournalRepository {
+  #user: ?LoggedInUser;
+  constructor(user: ?LoggedInUser) {
+    super(user);
+
+    this.#user = user;
+  }
+
   getProgram(id: string) {
     super.hasAccess();
-    const user = super.getUser();
-    return programModel.findOne({ _id: id, user: user?.id });
+    return programModel.findOne({ _id: id, user: this.#user?.id });
   }
 
   async addWeek(programId: string, weekName: string) {
@@ -18,15 +25,15 @@ export default class ProgramRepository extends BaseRepository {
     if (program == null) {
       return null;
     }
-    const weekRepository = new WeekRepository(super.getUser(), super.getApp());
+
     const session = await trainingjournalConnection.startSession();
     try {
       session.startTransaction();
-      const week = await weekRepository.createWeek(
-        weekName,
-        programId,
-        session,
-      );
+      const week = new WeekModel({
+        name: weekName,
+        program: programId,
+      });
+      await week.save({ session });
       program.weeks.push(week);
       program.save({ session });
       session.commitTransaction();
@@ -39,10 +46,9 @@ export default class ProgramRepository extends BaseRepository {
 
   async userHasAccessToProgram(programId: string) {
     super.hasAccess();
-    const user = super.getUser();
     const program = await programModel.findOne({
       _id: programId,
-      user: user?.id,
+      user: this.#user?.id,
     });
     return program != null;
   }

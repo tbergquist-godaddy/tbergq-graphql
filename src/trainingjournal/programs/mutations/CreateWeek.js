@@ -26,7 +26,7 @@ export default {
   },
   resolve: async (_: mixed, args: Args, { user }: GraphqlContextType) => {
     const programId = fromGlobalId(args.programId);
-    const repository = new ProgramRepository(user, 'trainingjournal');
+    const repository = new ProgramRepository(user);
     const week = await repository.addWeek(programId, args.name);
     return {
       success: week != null,

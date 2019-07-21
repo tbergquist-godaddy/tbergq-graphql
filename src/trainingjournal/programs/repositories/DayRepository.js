@@ -1,9 +1,9 @@
 // @flow
 
-import BaseRepository from '../../../common/repositories/BaseRepository';
+import TrainingJournalRepository from './TrainingJournalRepository';
 import DayModel from '../../db/DayModel';
 
-export default class DayRepository extends BaseRepository {
+export default class DayRepository extends TrainingJournalRepository {
   async createDay(dayName: string, weekId: string, session: $FlowFixMe) {
     const day = new DayModel({
       name: dayName,

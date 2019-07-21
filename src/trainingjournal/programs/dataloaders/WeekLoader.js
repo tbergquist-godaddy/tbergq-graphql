@@ -11,7 +11,7 @@ export type Week = {|
 |};
 
 const fetchWeeks = (ids: $ReadOnlyArray<string>, user: ?Object) => {
-  const repository = new WeekRepository(user, 'trainingjournal');
+  const repository = new WeekRepository(user);
   return repository.getWeeks(ids);
 };
 
