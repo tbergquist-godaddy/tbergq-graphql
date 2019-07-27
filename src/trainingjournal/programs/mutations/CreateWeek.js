@@ -31,7 +31,7 @@ export default {
     return {
       success: week != null,
       edge: {
-        id: week?._id,
+        id: week?._id ?? '',
         name: week?.name,
         type: 'Week',
       },

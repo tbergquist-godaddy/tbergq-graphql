@@ -3,19 +3,19 @@
 import { GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from '@kiwicom/graphql-global-id';
 
-import fetch from '../../../common/services/Fetch';
 import ExerciseInput, {
   type ExerciseInputType,
 } from '../types/input/ExerciseInput';
 import { type GraphqlContextType } from '../../../common/services/GraphqlContext';
-import CreateExerciseEdge from '../types/output/CreateExerciseEdge';
+import MutationEdge from '../../../types/MutationEdge';
+import DayRepository from '../repositories/DayRepository';
 
 type Args = {|
   +exercise: ExerciseInputType,
 |};
 
 export default {
-  type: CreateExerciseEdge,
+  type: MutationEdge,
   args: {
     exercise: {
       type: GraphQLNonNull(ExerciseInput),
@@ -26,25 +26,29 @@ export default {
     { exercise }: Args,
     { user }: GraphqlContextType,
   ) => {
+    const repository = new DayRepository(user);
+    const dayId = fromGlobalId(exercise.dayId);
     const body = {
-      base_exercise: fromGlobalId(exercise.baseExerciseId),
-      break_time: exercise.breakTime,
-      day: fromGlobalId(exercise.dayId),
+      baseExercise: fromGlobalId(exercise.baseExerciseId),
+      breakTime: exercise.breakTime,
+      day: dayId,
       description: exercise.description ?? '',
       reps: exercise.reps,
-      set: exercise.set,
+      sets: exercise.sets,
     };
-    const token = user?.token ?? '';
-    const newExercise = await fetch(
-      'https://tronbe.pythonanywhere.com/api/Program/exercises/',
-      {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          Authorization: `Token ${token}`,
-        },
+    const dbExercise = await repository.addExercise(dayId, body);
+
+    return {
+      success: dbExercise != null,
+      edge: {
+        id: dbExercise?._id ?? '',
+        name: dbExercise?.name,
+        sets: dbExercise?.sets,
+        reps: dbExercise?.reps,
+        breakTime: dbExercise?.breakTime,
+        baseExercise: dbExercise?.baseExercise,
+        type: 'Exercise',
       },
-    );
-    return { node: newExercise };
+    };
   },
 };

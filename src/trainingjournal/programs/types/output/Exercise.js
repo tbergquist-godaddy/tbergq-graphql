@@ -4,17 +4,16 @@ import { GraphQLObjectType, GraphQLString } from 'graphql';
 import GlobalID from '@kiwicom/graphql-global-id';
 import { connectionDefinitions } from 'graphql-relay';
 
-import type { Exercise as ExerciseType } from '../../dataloaders/ProgramLoader';
 import BaseExercise from '../../../baseExercise/types/output/BaseExercise';
+import { nodeInterface } from '../../../../types/node/node';
+import { register } from '../../../../types/node/typeStore';
 
 const Exercise = new GraphQLObjectType({
   name: 'Exercise',
+  interfaces: [nodeInterface],
   fields: {
-    id: GlobalID(({ id }) => id),
-    name: {
-      type: GraphQLString,
-    },
-    set: {
+    id: GlobalID(({ id, _id }) => id ?? _id),
+    sets: {
       type: GraphQLString,
     },
     reps: {
@@ -22,11 +21,9 @@ const Exercise = new GraphQLObjectType({
     },
     breakTime: {
       type: GraphQLString,
-      resolve: ({ break_time: breakTime }: ExerciseType) => breakTime,
     },
     baseExercise: {
       type: BaseExercise,
-      resolve: ({ base_exercise: baseExercise }: ExerciseType) => baseExercise,
     },
   },
 });
@@ -37,6 +34,8 @@ const {
 } = connectionDefinitions({
   nodeType: Exercise,
 });
+
+register('Exercise', Exercise);
 
 export { ExerciseEdge };
 export default ExerciseConnection;

@@ -14,6 +14,12 @@ const DaySchema = new Schema({
     ref: 'week',
     required: true,
   },
+  exercises: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'exercise',
+    },
+  ],
 });
 
 const DayModel = mongoose.model('day', DaySchema);

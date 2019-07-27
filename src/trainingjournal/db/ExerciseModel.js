@@ -4,6 +4,15 @@ import { Schema } from 'mongoose';
 
 import { trainingjournalConnection as mongoose } from '../../common/db/MongoDB';
 
+export type ExerciseType = {|
+  baseExercise: string,
+  sets: string,
+  reps: string,
+  day: string,
+  breakTime?: string,
+  description?: string,
+|};
+
 const ExerciseSchema = new Schema({
   baseExercise: {
     type: Schema.Types.ObjectId,
@@ -24,6 +33,9 @@ const ExerciseSchema = new Schema({
     required: true,
   },
   breakTime: {
+    type: String,
+  },
+  description: {
     type: String,
   },
 });
