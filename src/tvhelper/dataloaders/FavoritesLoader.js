@@ -11,13 +11,10 @@ export type Favorites = {|
 |};
 
 const fetchFavorites = async (userIds: $ReadOnlyArray<string>) => {
-  const responses = await Promise.all(
-    userIds.map(userId => findFavorites(userId)),
-  );
+  const responses = await Promise.all(userIds.map(userId => findFavorites(userId)));
   return responses;
 };
 
-const FavoritesLoader = () =>
-  new Dataloader<string, Favorites[]>(fetchFavorites);
+const FavoritesLoader = () => new Dataloader<string, Favorites[]>(fetchFavorites);
 
 export default FavoritesLoader;

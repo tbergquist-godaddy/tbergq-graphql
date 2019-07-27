@@ -25,11 +25,7 @@ export default {
       type: GraphQLNonNull(GraphQLBoolean),
     },
   },
-  resolve: async (
-    _: mixed,
-    args: Args,
-    { user, dataLoader }: GraphqlContextType,
-  ) => {
+  resolve: async (_: mixed, args: Args, { user, dataLoader }: GraphqlContextType) => {
     const { id: serieId } = fromGlobalId(args.serieId);
     if (args.add) {
       await createFavorite({

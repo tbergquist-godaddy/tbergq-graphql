@@ -1,11 +1,6 @@
 // @flow
 
-import {
-  GraphQLInputObjectType,
-  GraphQLString,
-  GraphQLID,
-  GraphQLNonNull,
-} from 'graphql';
+import { GraphQLInputObjectType, GraphQLString, GraphQLID, GraphQLNonNull } from 'graphql';
 
 export type ExerciseInputType = {|
   +breakTime: string,

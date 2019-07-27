@@ -46,11 +46,7 @@ export const createProgram = (name: string, user: ?LoggedInUser) => {
   return null;
 };
 
-export const getPrograms = async (
-  user: ?LoggedInUser,
-  skip: number,
-  limit: number,
-) => {
+export const getPrograms = async (user: ?LoggedInUser, skip: number, limit: number) => {
   if (verifyAccess(user)) {
     const aggregate = await ProgramModel.aggregate([
       {
@@ -61,11 +57,7 @@ export const getPrograms = async (
       },
       {
         $facet: {
-          programs: [
-            { $skip: skip },
-            { $limit: limit },
-            { $project: { user: 0 } },
-          ],
+          programs: [{ $skip: skip }, { $limit: limit }, { $project: { user: 0 } }],
           count: [{ $count: 'total' }],
         },
       },
@@ -95,10 +87,7 @@ export const getProgram = (programId: string, user: ?LoggedInUser) => {
   return null;
 };
 
-export const userHasAccessToProgram = async (
-  programId: string,
-  user: ?LoggedInUser,
-) => {
+export const userHasAccessToProgram = async (programId: string, user: ?LoggedInUser) => {
   if (verifyAccess(user)) {
     const program = await ProgramModel.findOne({
       programId,

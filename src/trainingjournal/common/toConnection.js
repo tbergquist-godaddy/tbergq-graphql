@@ -7,10 +7,7 @@ type Config = {|
   +previous: boolean,
   +next: boolean,
 |};
-export default function toConnection<T>(
-  items: $ReadOnlyArray<T>,
-  config: Config,
-) {
+export default function toConnection<T>(items: $ReadOnlyArray<T>, config: Config) {
   const edges = items.map<any>((value, index) => ({
     cursor: offsetToCursor(config.offset + index),
     node: value,

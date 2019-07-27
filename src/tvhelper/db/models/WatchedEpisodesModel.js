@@ -28,20 +28,14 @@ const WatchedEpisode = mongoose.model('watchedEpisodes', WatchedEpisodesSchema);
 const throwNotLoggedInError = () => {
   throw Error('You must be logged in for this operation');
 };
-export const addWatchedEpisode = ({
-  userId,
-  episodeId,
-}: WatchedEpisodeType) => {
+export const addWatchedEpisode = ({ userId, episodeId }: WatchedEpisodeType) => {
   if (userId == null) {
     throwNotLoggedInError();
   }
   return WatchedEpisode.create(new WatchedEpisode({ userId, episodeId }));
 };
 
-export const deleteWatchedEpisode = ({
-  userId,
-  episodeId,
-}: WatchedEpisodeType) => {
+export const deleteWatchedEpisode = ({ userId, episodeId }: WatchedEpisodeType) => {
   if (userId == null) {
     throwNotLoggedInError();
   }
@@ -51,10 +45,7 @@ export const deleteWatchedEpisode = ({
   });
 };
 
-export const findWatchedEpisodes = (
-  episodeIds: $ReadOnlyArray<number>,
-  userId: ?string,
-) => {
+export const findWatchedEpisodes = (episodeIds: $ReadOnlyArray<number>, userId: ?string) => {
   if (userId == null) {
     throwNotLoggedInError();
   }

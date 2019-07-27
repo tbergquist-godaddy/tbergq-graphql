@@ -11,13 +11,7 @@ const user = {
 const dataLoader = {
   tvhelper: {
     favorites: {
-      load: () =>
-        Promise.resolve([
-          { serieId: 1 },
-          { serieId: 2 },
-          { serieId: 3 },
-          { serieId: 4 },
-        ]),
+      load: () => Promise.resolve([{ serieId: 1 }, { serieId: 2 }, { serieId: 3 }, { serieId: 4 }]),
     },
     tvDetail: {
       loadMany: () =>
@@ -79,31 +73,19 @@ it('sorts by name ascending', async () => {
 
 it('sorts by name descending', async () => {
   expect(
-    await resolve(
-      ancestor,
-      { options: { sortDirection: descending, sortBy: 'name' } },
-      context,
-    ),
+    await resolve(ancestor, { options: { sortDirection: descending, sortBy: 'name' } }, context),
   ).toMatchSnapshot();
 });
 
 it('sorts by status ascending', async () => {
   expect(
-    await resolve(
-      ancestor,
-      { options: { sortDirection: ascending, sortBy: 'status' } },
-      context,
-    ),
+    await resolve(ancestor, { options: { sortDirection: ascending, sortBy: 'status' } }, context),
   ).toMatchSnapshot();
 });
 
 it('sorts by status descending', async () => {
   expect(
-    await resolve(
-      ancestor,
-      { options: { sortDirection: descending, sortBy: 'status' } },
-      context,
-    ),
+    await resolve(ancestor, { options: { sortDirection: descending, sortBy: 'status' } }, context),
   ).toMatchSnapshot();
 });
 

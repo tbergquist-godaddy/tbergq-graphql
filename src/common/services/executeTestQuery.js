@@ -9,10 +9,7 @@ import createContext from './GraphqlContext';
  * Executes GraphQL query using our schema. This function should
  * be used only during testing because it uses faked context.
  */
-export default function executeTestQuery(
-  query: string,
-  variables: ?Object,
-): Promise<Object> {
+export default function executeTestQuery(query: string, variables: ?Object): Promise<Object> {
   return originalGraphQL(
     schema,
     query,

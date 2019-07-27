@@ -26,11 +26,7 @@ export default {
       type: GraphQLString,
     },
   },
-  resolve: async (
-    _: mixed,
-    args: Args,
-    { dataLoader, user }: GraphqlContextType,
-  ) => {
+  resolve: async (_: mixed, args: Args, { dataLoader, user }: GraphqlContextType) => {
     const offset = args.after ? cursorToOffset(args.after) + 1 : 0;
     const programsResponse = await dataLoader.trainingjournal.programs.load({
       limit: args.first,

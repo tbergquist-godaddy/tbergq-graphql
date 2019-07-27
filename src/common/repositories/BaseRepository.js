@@ -13,9 +13,7 @@ export default class BaseRepository {
 
   hasAccess() {
     if (this.#user?.app !== this.#app) {
-      throw new Error(
-        `Expected user to have access to ${this.#app}, but user has not.`,
-      );
+      throw new Error(`Expected user to have access to ${this.#app}, but user has not.`);
     }
   }
 

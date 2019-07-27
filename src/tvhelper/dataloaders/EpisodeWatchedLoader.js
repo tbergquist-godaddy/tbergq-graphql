@@ -11,15 +11,10 @@ export type EpisodeWatched = {|
   +id: number,
 |};
 
-const loadWatchedEpisode = async (
-  args: $ReadOnlyArray<number>,
-  user: ?LoggedInUser,
-) => {
+const loadWatchedEpisode = async (args: $ReadOnlyArray<number>, user: ?LoggedInUser) => {
   const watchedEpisodes = await findWatchedEpisodes(args, user?.id);
 
-  return args.map(arg =>
-    watchedEpisodes.find(episode => episode.episodeId === arg),
-  );
+  return args.map(arg => watchedEpisodes.find(episode => episode.episodeId === arg));
 };
 
 const EpisodeWatchedLoader = (user: ?LoggedInUser) =>

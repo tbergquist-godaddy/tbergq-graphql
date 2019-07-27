@@ -2,18 +2,11 @@
 
 import { GraphQLObjectType, GraphQLString } from 'graphql';
 import GlobalID from '@kiwicom/graphql-global-id';
-import {
-  connectionFromArray,
-  connectionArgs,
-  type ConnectionArguments,
-} from 'graphql-relay';
+import { connectionFromArray, connectionArgs, type ConnectionArguments } from 'graphql-relay';
 import { GraphQLDate } from 'graphql-iso-date';
 
 import WeekConnection from './Week';
-import type {
-  Program as ProgramType,
-  Week,
-} from '../../dataloaders/ProgramLoader';
+import type { Program as ProgramType, Week } from '../../dataloaders/ProgramLoader';
 import { register } from '../../../../types/node/typeStore';
 import { nodeInterface } from '../../../../types/node/node';
 
@@ -40,12 +33,9 @@ const Program = new GraphQLObjectType({
         args: ConnectionArguments,
         { dataLoader }: Object,
       ) => {
-        const dbWeeks =
-          (await dataLoader.trainingjournal.week.loadMany(weeks)) ?? [];
+        const dbWeeks = (await dataLoader.trainingjournal.week.loadMany(weeks)) ?? [];
 
-        return dbWeeks != null
-          ? connectionFromArray<Week>(dbWeeks, args)
-          : null;
+        return dbWeeks != null ? connectionFromArray<Week>(dbWeeks, args) : null;
       },
     },
   },

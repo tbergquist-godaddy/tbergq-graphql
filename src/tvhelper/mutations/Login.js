@@ -21,11 +21,7 @@ export default {
       type: GraphQLNonNull(GraphQLString),
     },
   },
-  resolve: async (
-    _: mixed,
-    { username, password }: Args,
-    { dataLoader }: GraphqlContextType,
-  ) => {
+  resolve: async (_: mixed, { username, password }: Args, { dataLoader }: GraphqlContextType) => {
     const user = await dataLoader.tvhelper.user.load(username);
 
     return loginResolver(user, password, 'tvhelper');

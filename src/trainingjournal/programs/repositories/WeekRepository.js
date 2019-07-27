@@ -28,10 +28,7 @@ export default class WeekRepository extends TrainingJournalRepository {
     const dayRepository = new DayRepository(user);
     const week = await WeekModel.findById(weekId);
 
-    if (
-      !(await programRepository.userHasAccessToProgram(week?.program)) ||
-      week == null
-    ) {
+    if (!(await programRepository.userHasAccessToProgram(week?.program)) || week == null) {
       return null;
     }
     const session = await trainingjournalConnection.startSession();

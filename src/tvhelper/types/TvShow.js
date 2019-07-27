@@ -66,29 +66,19 @@ export default new GraphQLObjectType({
     episodes: {
       type: GraphQLList(Episode),
       resolve: async ({ id, _embedded }: TvShow, _: mixed, { dataLoader }) => {
-        const episodes =
-          _embedded?.episodes ?? (await dataLoader.tvhelper.episodes.load(id));
+        const episodes = _embedded?.episodes ?? (await dataLoader.tvhelper.episodes.load(id));
 
         return episodes;
       },
     },
     previousEpisode: {
       type: GraphQLDate,
-      resolve: (
-        { _embedded, id }: TvShow,
-        _: mixed,
-        { dataLoader }: GraphqlContextType,
-      ) =>
-        _embedded?.previousepisode?.airdate ??
-        resolvePreviousEpisode(dataLoader, id),
+      resolve: ({ _embedded, id }: TvShow, _: mixed, { dataLoader }: GraphqlContextType) =>
+        _embedded?.previousepisode?.airdate ?? resolvePreviousEpisode(dataLoader, id),
     },
     nextEpisode: {
       type: GraphQLDate,
-      resolve: (
-        { _embedded, id }: TvShow,
-        _: mixed,
-        { dataLoader }: GraphqlContextType,
-      ) =>
+      resolve: ({ _embedded, id }: TvShow, _: mixed, { dataLoader }: GraphqlContextType) =>
         _embedded?.nextepisode?.airdate ?? resolveNextEpisode(dataLoader, id),
     },
     cast: {

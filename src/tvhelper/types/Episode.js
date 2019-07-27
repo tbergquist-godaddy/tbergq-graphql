@@ -1,12 +1,6 @@
 // @flow
 
-import {
-  GraphQLObjectType,
-  GraphQLID,
-  GraphQLString,
-  GraphQLInt,
-  GraphQLBoolean,
-} from 'graphql';
+import { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLInt, GraphQLBoolean } from 'graphql';
 import { toGlobalId } from 'graphql-relay';
 import { GraphQLDate } from 'graphql-iso-date';
 

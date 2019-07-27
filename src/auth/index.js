@@ -16,8 +16,7 @@ type JwtPayload = {|
   +app?: Apps,
 |};
 
-export const jwtFromRequest = (request: $Request) =>
-  request.get('Authorization');
+export const jwtFromRequest = (request: $Request) => request.get('Authorization');
 
 const getFindUserFunction = (app: ?Apps) => {
   switch (app) {
@@ -45,11 +44,7 @@ export const tokenToUser = async (jwtPayload: JwtPayload, done: Function) => {
   }
 };
 
-export const attachUserToRequest = (
-  req: $Request,
-  res: $Response,
-  next: Function,
-) => {
+export const attachUserToRequest = (req: $Request, res: $Response, next: Function) => {
   // eslint-disable-next-line handle-callback-err
   passport.authenticate('jwt', { session: false }, (err, user) => {
     if (user) {

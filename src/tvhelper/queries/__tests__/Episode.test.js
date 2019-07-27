@@ -24,8 +24,7 @@ const query = `
   `;
 
 it('works', async () => {
+  // $FlowFixMe
   fetch.mockResponse(JSON.stringify(episode));
-  expect(
-    await graphql(query, { id: toGlobalId('episode', '1471697') }),
-  ).toMatchSnapshot();
+  expect(await graphql(query, { id: toGlobalId('episode', '1471697') })).toMatchSnapshot();
 });

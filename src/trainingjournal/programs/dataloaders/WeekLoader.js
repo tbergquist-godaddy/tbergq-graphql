@@ -16,7 +16,5 @@ const fetchWeeks = (ids: $ReadOnlyArray<string>, user: ?Object) => {
 };
 
 export default function createWeeksLoader(user: ?Object) {
-  return new DataLoader<string, Week>((ids: $ReadOnlyArray<string>) =>
-    fetchWeeks(ids, user),
-  );
+  return new DataLoader<string, Week>((ids: $ReadOnlyArray<string>) => fetchWeeks(ids, user));
 }

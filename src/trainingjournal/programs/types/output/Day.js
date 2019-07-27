@@ -29,9 +29,7 @@ export const Day = new GraphQLObjectType({
         ...connectionArgs,
       },
       resolve: ({ exercises }: DayType, args: ConnectionArguments) => {
-        return exercises == null
-          ? null
-          : connectionFromArray<Exercise>(exercises, args);
+        return exercises == null ? null : connectionFromArray<Exercise>(exercises, args);
       },
     },
   },
