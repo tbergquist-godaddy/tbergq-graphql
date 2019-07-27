@@ -22,7 +22,6 @@ const fetchEpisodes = async (serieIds: $ReadOnlyArray<string>) => {
   return responses;
 };
 
-const TvShowEpisodeLoader = () =>
-  new Dataloader<string, Episode[]>(fetchEpisodes);
+const TvShowEpisodeLoader = () => new Dataloader<string, Episode[]>(fetchEpisodes);
 
 export default TvShowEpisodeLoader;

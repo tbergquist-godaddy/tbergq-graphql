@@ -26,11 +26,7 @@ const WeekSchema = new Schema({
 
 const WeekModel = mongoose.model('week', WeekSchema);
 
-export const createWeek = async (
-  name: string,
-  programId: string,
-  user: ?LoggedInUser,
-) => {
+export const createWeek = async (name: string, programId: string, user: ?LoggedInUser) => {
   const program = await getProgram(programId, user);
   if (program == null) {
     // Verify that program belongs to user

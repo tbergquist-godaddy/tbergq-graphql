@@ -22,7 +22,4 @@ function detectType(value) {
   }
 }
 
-export const { nodeInterface, nodeField } = nodeDefinitions(
-  loadType,
-  detectType,
-);
+export const { nodeInterface, nodeField } = nodeDefinitions(loadType, detectType);

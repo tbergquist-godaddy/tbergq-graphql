@@ -1,11 +1,7 @@
 // @flow
 
 import { GraphQLString, GraphQLNonNull } from 'graphql';
-import {
-  connectionFromArray,
-  connectionArgs,
-  type ConnectionArguments,
-} from 'graphql-relay';
+import { connectionFromArray, connectionArgs, type ConnectionArguments } from 'graphql-relay';
 
 import TvShowConnection from '../types/TvShowConnection';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';

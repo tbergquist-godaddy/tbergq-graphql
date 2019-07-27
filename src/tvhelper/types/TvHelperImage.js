@@ -13,8 +13,7 @@ export default new GraphQLObjectType({
   fields: {
     id: {
       type: GraphQLID,
-      resolve: ({ original }: Ancestor) =>
-        toGlobalId('tvHelperImage', original),
+      resolve: ({ original }: Ancestor) => toGlobalId('tvHelperImage', original),
     },
     original: {
       type: GraphQLString,

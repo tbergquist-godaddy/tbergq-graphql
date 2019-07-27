@@ -1,10 +1,6 @@
 // @flow
 
-import {
-  connectionArgs,
-  type ConnectionArguments,
-  cursorToOffset,
-} from 'graphql-relay';
+import { connectionArgs, type ConnectionArguments, cursorToOffset } from 'graphql-relay';
 
 import BaseExerciseConnection from '../types/output/BaseExerciseConnection';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';

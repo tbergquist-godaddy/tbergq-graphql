@@ -1,10 +1,6 @@
 // @flow
 
-import {
-  connectionFromArray,
-  connectionArgs,
-  type ConnectionArguments,
-} from 'graphql-relay';
+import { connectionFromArray, connectionArgs, type ConnectionArguments } from 'graphql-relay';
 import * as R from 'ramda';
 
 import TvShowConnection from '../types/TvShowConnection';
@@ -38,14 +34,8 @@ export default {
       },
     },
   },
-  resolve: async (
-    _: mixed,
-    args: Args,
-    { user, dataLoader }: GraphqlContextType,
-  ) => {
-    const savedFavorites = await dataLoader.tvhelper.favorites.load(
-      user?.id ?? '',
-    );
+  resolve: async (_: mixed, args: Args, { user, dataLoader }: GraphqlContextType) => {
+    const savedFavorites = await dataLoader.tvhelper.favorites.load(user?.id ?? '');
 
     const serieIds = savedFavorites.map(item => item.serieId.toString());
     const favorites = await dataLoader.tvhelper.tvDetail.loadMany(serieIds);

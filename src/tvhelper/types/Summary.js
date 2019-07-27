@@ -5,6 +5,7 @@ import striptags from 'striptags';
 
 type Ancestor = {
   +summary: string,
+  ...
 };
 
 export default {

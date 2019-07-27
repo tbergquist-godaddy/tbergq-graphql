@@ -4,6 +4,7 @@ import { graphql } from '../../../common/services/TestingTools';
 import tvshow from '../../datasets/tvshow.json';
 
 it('works', async () => {
+  // $FlowFixMe
   fetch.mockResponse(
     JSON.stringify([
       {

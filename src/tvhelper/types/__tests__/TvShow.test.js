@@ -12,9 +12,7 @@ const ancestor = { id: 1 };
 const args = null;
 
 it('returns null when not logged in', async () => {
-  expect(
-    await resolve(ancestor, args, { user: null, dataLoader: {} }),
-  ).toBeNull();
+  expect(await resolve(ancestor, args, { user: null, dataLoader: {} })).toBeNull();
 });
 
 it('returns true when show is favorite', async () => {

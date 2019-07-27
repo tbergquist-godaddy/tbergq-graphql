@@ -3,9 +3,7 @@
 import { GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from '@kiwicom/graphql-global-id';
 
-import ExerciseInput, {
-  type ExerciseInputType,
-} from '../types/input/ExerciseInput';
+import ExerciseInput, { type ExerciseInputType } from '../types/input/ExerciseInput';
 import { type GraphqlContextType } from '../../../common/services/GraphqlContext';
 import MutationEdge from '../../../types/MutationEdge';
 import DayRepository from '../repositories/DayRepository';
@@ -21,11 +19,7 @@ export default {
       type: GraphQLNonNull(ExerciseInput),
     },
   },
-  resolve: async (
-    _: mixed,
-    { exercise }: Args,
-    { user }: GraphqlContextType,
-  ) => {
+  resolve: async (_: mixed, { exercise }: Args, { user }: GraphqlContextType) => {
     const repository = new DayRepository(user);
     const dayId = fromGlobalId(exercise.dayId);
     const body = {

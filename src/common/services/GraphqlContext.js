@@ -3,22 +3,16 @@
 import DataLoader from 'dataloader';
 import { type $Request } from 'express';
 
-import SearchTvShowLoader, {
-  type TvShow,
-} from '../../tvhelper/dataloaders/SearchTvShowLoader';
+import SearchTvShowLoader, { type TvShow } from '../../tvhelper/dataloaders/SearchTvShowLoader';
 import TvDetailLoader from '../../tvhelper/dataloaders/TvDetailLoader';
 import TvHelperUserLoader, {
   type UserType as TvHelperUser,
 } from '../../tvhelper/dataloaders/UserLoader';
-import FavoritesLoader, {
-  type Favorites,
-} from '../../tvhelper/dataloaders/FavoritesLoader';
+import FavoritesLoader, { type Favorites } from '../../tvhelper/dataloaders/FavoritesLoader';
 import TvShowEpisodesLoader, {
   type Episode,
 } from '../../tvhelper/dataloaders/TvShowEpisodesLoader';
-import FavoriteLoader, {
-  type FavoriteArgs,
-} from '../../tvhelper/dataloaders/FavoriteLoader';
+import FavoriteLoader, { type FavoriteArgs } from '../../tvhelper/dataloaders/FavoriteLoader';
 import EpiosodeWatchedLoader, {
   type EpisodeWatched,
 } from '../../tvhelper/dataloaders/EpisodeWatchedLoader';
@@ -30,9 +24,7 @@ import ProgramsLoader, {
 import ProgramLoader, {
   type Program,
 } from '../../trainingjournal/programs/dataloaders/ProgramLoader';
-import DayLoader, {
-  type Day,
-} from '../../trainingjournal/programs/dataloaders/DayLoader';
+import DayLoader, { type Day } from '../../trainingjournal/programs/dataloaders/DayLoader';
 import BaseExerciseLoader, {
   type BaseExerciseResponse,
   type BaseExercisesArgs,

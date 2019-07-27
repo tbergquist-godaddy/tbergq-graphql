@@ -21,6 +21,7 @@ const query = `
   `;
 
 it('works', async () => {
+  // $FlowFixMe
   fetch.mockResponses([JSON.stringify(tvshow)], [JSON.stringify(tvshow2)]);
   expect(
     // $FlowExpectedError: this is ok

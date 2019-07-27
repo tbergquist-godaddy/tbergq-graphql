@@ -16,8 +16,6 @@ const fetchDay = (ids: $ReadOnlyArray<string>, user: ?LoggedInUser) => {
 };
 
 const DayLoader = (user: ?LoggedInUser) =>
-  new Dataloader<string, Day>((ids: $ReadOnlyArray<string>) =>
-    fetchDay(ids, user),
-  );
+  new Dataloader<string, Day>((ids: $ReadOnlyArray<string>) => fetchDay(ids, user));
 
 export default DayLoader;

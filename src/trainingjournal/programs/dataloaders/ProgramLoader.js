@@ -53,11 +53,8 @@ const fetchProgram = (ids: $ReadOnlyArray<string>, user: ?Object) =>
   Promise.all(ids.map(id => getProgram(id, user)));
 
 const ProgramLoader = (user: ?Object) =>
-  new Dataloader<string, ?Program>(
-    (ids: $ReadOnlyArray<string>) => fetchProgram(ids, user),
-    {
-      cacheKeyFn: stringify,
-    },
-  );
+  new Dataloader<string, ?Program>((ids: $ReadOnlyArray<string>) => fetchProgram(ids, user), {
+    cacheKeyFn: stringify,
+  });
 
 export default ProgramLoader;

@@ -21,26 +21,19 @@ const StoredOperationSchema = new Schema({
   },
 });
 
-const StoredOperation = graphqlConnection.model(
-  'persistedquery',
-  StoredOperationSchema,
-);
+const StoredOperation = graphqlConnection.model('persistedquery', StoredOperationSchema);
 
 export const getOperation = (operationId: string) => {
   return StoredOperation.findOne({ operationId });
 };
 
-export const addOperations = async (
-  operations: $ReadOnlyArray<StoredOperationType>,
-) => {
+export const addOperations = async (operations: $ReadOnlyArray<StoredOperationType>) => {
   const operationIds = operations.map(i => i.operationId);
   const existingOperations = await StoredOperation.find({
     operationId: { $in: operationIds },
   });
   const existingOperationIds = existingOperations.map(i => i.operationId);
-  const operationsToAdd = operations.filter(
-    i => !existingOperationIds.includes(i.operationId),
-  );
+  const operationsToAdd = operations.filter(i => !existingOperationIds.includes(i.operationId));
 
   return StoredOperation.create(operationsToAdd);
 };

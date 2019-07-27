@@ -8,6 +8,4 @@ jest.mock('../../../common/db/models/StoredOperation', () => ({
   addOperations: jest.fn(input => Promise.resolve(input)),
 }));
 
-generateTestsFromFixtures(`${__dirname}/__fixtures__`, input =>
-  executeTestQuery(input),
-);
+generateTestsFromFixtures(`${__dirname}/__fixtures__`, input => executeTestQuery(input));

@@ -20,11 +20,7 @@ export default {
       type: GraphQLNonNull(GraphQLID),
     },
   },
-  resolve: async (
-    _: mixed,
-    args: Args,
-    { user, dataLoader }: GraphqlContextType,
-  ) => {
+  resolve: async (_: mixed, args: Args, { user, dataLoader }: GraphqlContextType) => {
     const { id: serieId } = fromGlobalId(args.serieId);
 
     await createFavorite({

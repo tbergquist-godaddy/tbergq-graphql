@@ -33,6 +33,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/tbergq-graphql
+      - run: yarn build
       - run: yarn deploy --token=$ZEIT_TOKEN
 
 workflows:

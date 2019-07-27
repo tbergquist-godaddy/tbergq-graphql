@@ -11,8 +11,7 @@ export default new GraphQLObjectType({
   fields: {
     id: {
       type: GraphQLID,
-      resolve: ({ person, character }: Cast) =>
-        toGlobalId('cast', `${person.id}:${character.id}`),
+      resolve: ({ person, character }: Cast) => toGlobalId('cast', `${person.id}:${character.id}`),
     },
     person: {
       type: Person,

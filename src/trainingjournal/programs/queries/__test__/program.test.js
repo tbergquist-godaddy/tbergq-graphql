@@ -25,6 +25,4 @@ jest.mock(
     },
 );
 
-generateTestsFromFixtures(`${__dirname}/__fixtures__`, input =>
-  executeTestQuery(input),
-);
+generateTestsFromFixtures(`${__dirname}/__fixtures__`, input => executeTestQuery(input));

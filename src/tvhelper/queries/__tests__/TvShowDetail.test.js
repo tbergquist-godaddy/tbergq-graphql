@@ -6,6 +6,7 @@ import { graphql } from '../../../common/services/TestingTools';
 import tvshow from '../../datasets/tvshow.json';
 
 it('works', async () => {
+  // $FlowFixMe
   fetch.mockResponse(JSON.stringify(tvshow));
   const query = `
   query detail($id: ID!) {
@@ -23,7 +24,5 @@ it('works', async () => {
     }
   }
   `;
-  expect(
-    await graphql(query, { id: toGlobalId('test', '123') }),
-  ).toMatchSnapshot();
+  expect(await graphql(query, { id: toGlobalId('test', '123') })).toMatchSnapshot();
 });

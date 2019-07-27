@@ -3,9 +3,7 @@
 import { GraphQLNonNull } from 'graphql';
 
 import MutationEdge from '../../../types/MutationEdge';
-import BaseExerciseInput, {
-  type BaseExerciseInputType,
-} from '../types/input/BaseExerciseInput';
+import BaseExerciseInput, { type BaseExerciseInputType } from '../types/input/BaseExerciseInput';
 import { createExercise } from '../../db/BaseExerciseModel';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 

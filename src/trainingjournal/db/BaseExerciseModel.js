@@ -37,10 +37,7 @@ const BaseExerciseSchema = new Schema({
 
 const BaseExercise = mongoose.model('baseexercise', BaseExerciseSchema);
 
-export const createExercise = (
-  exercise: BaseExerciseType,
-  user: ?LoggedInUser,
-) => {
+export const createExercise = (exercise: BaseExerciseType, user: ?LoggedInUser) => {
   if (user?.app === 'trainingjournal') {
     return BaseExercise.create({
       ...exercise,
@@ -50,11 +47,7 @@ export const createExercise = (
   return null;
 };
 
-export const getBaseExercises = async (
-  user: ?LoggedInUser,
-  skip: number,
-  limit: number,
-) => {
+export const getBaseExercises = async (user: ?LoggedInUser, skip: number, limit: number) => {
   if (user?.app === 'trainingjournal') {
     const [count, baseExercises] = await Promise.all([
       BaseExercise.where({ user: user?.id }).countDocuments(),

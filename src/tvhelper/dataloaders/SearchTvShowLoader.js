@@ -48,8 +48,6 @@ const fetchTvShows = async (queries: $ReadOnlyArray<string>) => {
 };
 
 const SearchTvShowLoader = () =>
-  new Dataloader<string, TvShow[]>((queries: $ReadOnlyArray<string>) =>
-    fetchTvShows(queries),
-  );
+  new Dataloader<string, TvShow[]>((queries: $ReadOnlyArray<string>) => fetchTvShows(queries));
 
 export default SearchTvShowLoader;

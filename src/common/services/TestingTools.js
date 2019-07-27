@@ -10,9 +10,5 @@ jest.mock('jsonwebtoken', () => ({
   sign: jest.fn(() => 'tokenIsSigned'),
 }));
 
-export const graphql = (
-  query: string,
-  variables: ?Object,
-  token?: string,
-): Promise<Object> =>
+export const graphql = (query: string, variables: ?Object, token?: string): Promise<Object> =>
   originalGraphQL(schema, query, null, createContext(token), variables);
