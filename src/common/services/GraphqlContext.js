@@ -29,19 +29,25 @@ import ProgramsLoader, {
 } from '../../trainingjournal/programs/dataloaders/ProgramsLoader';
 import ProgramLoader, {
   type Program,
-  type Day,
 } from '../../trainingjournal/programs/dataloaders/ProgramLoader';
-import DayLoader from '../../trainingjournal/programs/dataloaders/DayLoader';
+import DayLoader, {
+  type Day,
+} from '../../trainingjournal/programs/dataloaders/DayLoader';
 import BaseExerciseLoader, {
   type BaseExerciseResponse,
   type BaseExercisesArgs,
 } from '../../trainingjournal/baseExercise/dataloaders/BaseExercisesLoader';
+import type { Apps } from '../../resolvers/LoginResolver';
+import createWeeekLoader, {
+  type Week,
+} from '../../trainingjournal/programs/dataloaders/WeekLoader';
 
 export type LoggedInUser = {|
   +id?: string,
   +username: string,
   +email?: string,
   +token?: string,
+  +app: Apps,
 |};
 
 export type GraphqlContextType = {|
@@ -62,6 +68,7 @@ export type GraphqlContextType = {|
       +program: DataLoader<string, Program>,
       +day: DataLoader<string, Day>,
       +baseExercises: DataLoader<BaseExercisesArgs, BaseExerciseResponse>,
+      +week: DataLoader<string, Week>,
     |},
   |},
 |};
@@ -82,10 +89,11 @@ export default function createContext(request: $Request) {
         episode: EpisodeLoader(),
       },
       trainingjournal: {
-        programs: ProgramsLoader(user?.token),
-        program: ProgramLoader(user?.token),
-        day: DayLoader(user?.token),
-        baseExercises: BaseExerciseLoader(user?.token),
+        programs: ProgramsLoader(),
+        program: ProgramLoader(user),
+        day: DayLoader(user),
+        baseExercises: BaseExerciseLoader(),
+        week: createWeeekLoader(user),
       },
     },
   };

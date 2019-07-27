@@ -1,28 +1,23 @@
 // @flow
 
 import Dataloader from 'dataloader';
-import stringify from 'json-stable-stringify';
 
-import type { Day } from './ProgramLoader';
-import fetch from '../../../common/services/Fetch';
+import type { LoggedInUser } from '../../../resolvers/LoginResolver';
+import DayRepository from '../repositories/DayRepository';
 
-const fetchDay = (ids: $ReadOnlyArray<string>, token: string) =>
-  Promise.all(
-    ids.map(id =>
-      fetch(`https://tronbe.pythonanywhere.com/api/Program/days/${id}/`, {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      }),
-    ),
-  );
+export type Day = {|
+  +_id: string,
+  +name: string,
+|};
 
-const DayLoader = (token: ?string) =>
-  new Dataloader<string, Day>(
-    (ids: $ReadOnlyArray<string>) => fetchDay(ids, token ?? ''),
-    {
-      cacheKeyFn: stringify,
-    },
+const fetchDay = (ids: $ReadOnlyArray<string>, user: ?LoggedInUser) => {
+  const repository = new DayRepository(user);
+  return repository.getDays(ids);
+};
+
+const DayLoader = (user: ?LoggedInUser) =>
+  new Dataloader<string, Day>((ids: $ReadOnlyArray<string>) =>
+    fetchDay(ids, user),
   );
 
 export default DayLoader;

@@ -6,7 +6,7 @@ import { connectionArgs, cursorToOffset } from 'graphql-relay';
 import ProgramConnection from '../types/output/ProgramConnection';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 import toConnection from '../../common/toConnection';
-import { type ProgramsItem } from '../dataloaders/ProgramsLoader';
+import type { Program } from '../../db/ProgramModel';
 
 type Args = {|
   +first: number,
@@ -14,7 +14,7 @@ type Args = {|
 |};
 
 export default {
-  name: 'Progrms',
+  name: 'Program',
   type: ProgramConnection,
   args: {
     ...connectionArgs,
@@ -26,17 +26,25 @@ export default {
       type: GraphQLString,
     },
   },
-  resolve: async (_: mixed, args: Args, { dataLoader }: GraphqlContextType) => {
+  resolve: async (
+    _: mixed,
+    args: Args,
+    { dataLoader, user }: GraphqlContextType,
+  ) => {
     const offset = args.after ? cursorToOffset(args.after) + 1 : 0;
-    const programs = await await dataLoader.trainingjournal.programs.load({
+    const programsResponse = await dataLoader.trainingjournal.programs.load({
       limit: args.first,
       offset,
+      user,
     });
 
-    return toConnection<ProgramsItem>(programs.results, {
+    const programs = programsResponse?.programs ?? [];
+    const count = programsResponse?.count ?? 0;
+
+    return toConnection<Program>(programs, {
       offset,
-      next: programs.next,
-      previous: programs.previous,
+      next: count > offset + args.first,
+      previous: offset > 0,
     });
   },
 };

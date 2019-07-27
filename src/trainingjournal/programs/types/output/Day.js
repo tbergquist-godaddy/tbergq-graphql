@@ -11,11 +11,14 @@ import {
 
 import ExerciseConnection from './Exercise';
 import type { Day as DayType, Exercise } from '../../dataloaders/ProgramLoader';
+import { nodeInterface } from '../../../../types/node/node';
+import { register } from '../../../../types/node/typeStore';
 
 export const Day = new GraphQLObjectType({
   name: 'Day',
+  interfaces: [nodeInterface],
   fields: {
-    id: GlobalID(({ id }) => id),
+    id: GlobalID(({ id, _id }) => id ?? _id),
     name: {
       type: GraphQLString,
     },
@@ -25,8 +28,11 @@ export const Day = new GraphQLObjectType({
       args: {
         ...connectionArgs,
       },
-      resolve: ({ exercises }: DayType, args: ConnectionArguments) =>
-        connectionFromArray<Exercise>(exercises, args),
+      resolve: ({ exercises }: DayType, args: ConnectionArguments) => {
+        return exercises == null
+          ? null
+          : connectionFromArray<Exercise>(exercises, args);
+      },
     },
   },
 });
@@ -34,5 +40,7 @@ export const Day = new GraphQLObjectType({
 const { connectionType: DayConnection } = connectionDefinitions({
   nodeType: Day,
 });
+
+register('Day', Day);
 
 export default DayConnection;

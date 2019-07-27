@@ -1,29 +1,16 @@
 // @flow
 
-import {
-  GraphQLString,
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLBoolean,
-} from 'graphql';
+import { GraphQLString, GraphQLNonNull } from 'graphql';
 import { generate } from 'password-hash';
 
 import { createUser } from '../db/models/UserModel';
+import CreateUserType from '../../types/CreateUserType';
 
 type Args = {|
   +username: string,
   +password: string,
   +email: string,
 |};
-
-const CreateUserType = new GraphQLObjectType({
-  name: 'CreateUserMutation',
-  fields: {
-    success: {
-      type: GraphQLBoolean,
-    },
-  },
-});
 
 export default {
   type: CreateUserType,

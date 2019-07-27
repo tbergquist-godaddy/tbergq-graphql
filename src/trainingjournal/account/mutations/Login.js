@@ -2,9 +2,9 @@
 
 import { GraphQLString, GraphQLNonNull } from 'graphql';
 
-import fetch from '../../../common/services/Fetch';
+import loginResolver from '../../../resolvers/LoginResolver';
 import LoginType from '../../../types/LoginType';
-import { signToken } from '../../../auth';
+import { findOne } from '../../db/UserModel';
 
 type Args = {|
   +username: string,
@@ -23,31 +23,8 @@ export default {
   },
   resolve: async (_: mixed, { username, password }: Args) => {
     try {
-      const response = await fetch(
-        'https://tronbe.pythonanywhere.com/api/Account/auth/',
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            username,
-            password,
-          }),
-        },
-      );
-      let token;
-      if (response.token != null) {
-        token = signToken(
-          {
-            username,
-            token: response.token,
-          },
-          'tronbe.pythonanywhere.com',
-        );
-      }
-
-      return {
-        success: token != null,
-        token,
-      };
+      const user = await findOne(username);
+      return loginResolver(user, password, 'trainingjournal');
     } catch {
       return {
         success: false,

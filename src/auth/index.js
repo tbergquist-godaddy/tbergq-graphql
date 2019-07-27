@@ -5,30 +5,40 @@ import passport from 'passport';
 import jwt from 'jsonwebtoken';
 
 import { findOne } from '../tvhelper/db/models/UserModel';
+import { findOne as findOneTjUser } from '../trainingjournal/db/UserModel';
+import type { Apps } from '../resolvers/LoginResolver';
 
 const { JWT_SECRET } = process.env;
 type JwtPayload = {|
   +iss: string,
   +username: string,
   +token?: string,
+  +app?: Apps,
 |};
 
 export const jwtFromRequest = (request: $Request) =>
   request.get('Authorization');
 
-export const tokenToUser = async (jwtPayload: JwtPayload, done: Function) => {
-  if (jwtPayload.iss === 'tbergq-graphql.now.sh') {
-    const user = await findOne(jwtPayload.username);
+const getFindUserFunction = (app: ?Apps) => {
+  switch (app) {
+    case 'tvhelper':
+      return findOne;
+    case 'trainingjournal':
+      return findOneTjUser;
+    default:
+      throw new Error('Unkown app type.');
+  }
+};
 
+export const tokenToUser = async (jwtPayload: JwtPayload, done: Function) => {
+  const findUserFunction = getFindUserFunction(jwtPayload.app);
+  const user = await findUserFunction(jwtPayload.username);
+  if (user != null) {
     done(null, {
       id: user._id,
       username: user.username,
       email: user.email,
-    });
-  } else if (jwtPayload.iss === 'tronbe.pythonanywhere.com') {
-    done(null, {
-      username: jwtPayload.username,
-      token: jwtPayload.token,
+      app: jwtPayload.app,
     });
   } else {
     done(null, null);
@@ -50,12 +60,9 @@ export const attachUserToRequest = (
   })(req, res, next);
 };
 
-export const signToken = (
-  user: { [string]: mixed, ... },
-  issuer: ?string = 'tbergq-graphql.now.sh',
-) => {
+export const signToken = (user: { [string]: mixed, ... }) => {
   return jwt.sign(user, JWT_SECRET, {
     expiresIn: '1y',
-    issuer,
+    issuer: 'tbergq-graphql.now.sh',
   });
 };

@@ -4,16 +4,15 @@ import {
   GraphQLInputObjectType,
   GraphQLString,
   GraphQLID,
-  GraphQLInt,
   GraphQLNonNull,
 } from 'graphql';
 
 export type ExerciseInputType = {|
-  +breakTime: number,
+  +breakTime: string,
   +dayId: string,
   +description: ?string,
   +reps: string,
-  +set: string,
+  +sets: string,
   +baseExerciseId: string,
 |};
 
@@ -21,7 +20,7 @@ export default new GraphQLInputObjectType({
   name: 'ExerciseInput',
   fields: {
     breakTime: {
-      type: GraphQLNonNull(GraphQLInt),
+      type: GraphQLNonNull(GraphQLString),
     },
     dayId: {
       type: GraphQLNonNull(GraphQLID),
@@ -32,7 +31,7 @@ export default new GraphQLInputObjectType({
     reps: {
       type: GraphQLNonNull(GraphQLString),
     },
-    set: {
+    sets: {
       type: GraphQLNonNull(GraphQLString),
     },
     baseExerciseId: {

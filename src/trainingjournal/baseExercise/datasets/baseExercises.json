@@ -1,107 +1,72 @@
 {
   "count": 66,
-  "next": "https://tronbe.pythonanywhere.com/api/Program/baseExercises/?limit=10&offset=10",
-  "previous": null,
-  "results": [
+  "baseExercises": [
     {
-      "id": 38,
+      "id": "38",
       "name": "Alternerende benkpress med hantler",
-      "youtube_link": "",
-      "muscle_group": {
-        "id": 5,
-        "name": "Chest"
-      },
+      "videoLink": "",
+      "muscleGroup": "Chest",
       "description": "Start med begge på sterk arm. En side føres ned mens den andre holdes strak. Annen hver side"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Arnold Press",
-      "youtube_link": "https://www.youtube.com/watch?v=6Z15_WdXmVw",
-      "muscle_group": {
-        "id": 4,
-        "name": "Shoulders"
-      },
+      "videoLink": "https://www.youtube.com/watch?v=6Z15_WdXmVw",
+      "muscleGroup": "Chest",
       "description": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Band pulls apart",
-      "youtube_link": "https://www.youtube.com/watch?v=BVehf-8FAxQ",
-      "muscle_group": {
-        "id": 13,
-        "name": "Middle Back"
-      },
+      "videoLink": "https://www.youtube.com/watch?v=BVehf-8FAxQ",
+      "muscleGroup": "Chest",
       "description": ""
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Benkpress",
-      "youtube_link": "https://www.youtube.com/watch?v=0k57fpKM2L4",
-      "muscle_group": {
-        "id": 5,
-        "name": "Chest"
-      },
+      "videoLink": "https://www.youtube.com/watch?v=0k57fpKM2L4",
+      "muscleGroup": "Chest",
       "description": ""
     },
     {
-      "id": 36,
+      "id": "36",
       "name": "Benkpress m/hantler",
-      "youtube_link": "https://www.youtube.com/watch?v=xyzh7OpHEq4",
-      "muscle_group": {
-        "id": 5,
-        "name": "Chest"
-      },
+      "videoLink": "https://www.youtube.com/watch?v=xyzh7OpHEq4",
+      "muscleGroup": "Chest",
       "description": ""
     },
     {
-      "id": 63,
+      "id": "63",
       "name": "Biceps i kabelmaskin",
-      "youtube_link": "https://www.youtube.com/watch?v=mJ0-SWKKInI",
-      "muscle_group": {
-        "id": 6,
-        "name": "Biceps"
-      },
+      "videoLink": "https://www.youtube.com/watch?v=mJ0-SWKKInI",
+      "muscleGroup": "Chest",
       "description": ""
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Bulgarsk utfall",
-      "youtube_link": "https://www.youtube.com/watch?v=zp89Arzfcg4",
-      "muscle_group": {
-        "id": 9,
-        "name": "Quads"
-      },
-      "description": ""
+      "videoLink": "https://www.youtube.com/watch?v=zp89Arzfcg4",
+      "muscleGroup": "Chest"
     },
     {
-      "id": 67,
+      "id": "67",
       "name": "Cable cross",
-      "youtube_link": "",
-      "muscle_group": {
-        "id": 5,
-        "name": "Chest"
-      },
+      "videoLink": "",
+      "muscleGroup": "Chest",
       "description": ""
     },
     {
-      "id": 66,
+      "id": "66",
       "name": "Cable cross rygg",
-      "youtube_link": "",
-      "muscle_group": {
-        "id": 13,
-        "name": "Middle Back"
-      },
+      "videoLink": "",
+      "muscleGroup": "Chest",
       "description": ""
     },
     {
-      "id": 65,
+      "id": "65",
       "name": "Chest press",
-      "youtube_link": "",
-      "muscle_group": {
-        "id": 5,
-        "name": "Chest"
-      },
-      "description": ""
+      "muscleGroup": "Chest"
     }
   ]
 }

@@ -3,11 +3,13 @@
 import { GraphQLObjectType, GraphQLString } from 'graphql';
 import GlobalID from '@kiwicom/graphql-global-id';
 
-import MuscleGroup from './MuscleGroup';
-import { type BaseExercise } from '../../../programs/dataloaders/ProgramLoader';
+import { type BaseExercise as BaseExerciseType } from '../../../programs/dataloaders/ProgramLoader';
+import { nodeInterface } from '../../../../types/node/node';
+import { register } from '../../../../types/node/typeStore';
 
-export default new GraphQLObjectType({
+const BaseExercise = new GraphQLObjectType({
   name: 'BaseExercise',
+  interfaces: [nodeInterface],
   fields: {
     id: GlobalID(({ id }) => id),
     name: {
@@ -15,14 +17,17 @@ export default new GraphQLObjectType({
     },
     videoLink: {
       type: GraphQLString,
-      resolve: ({ youtube_link: videoLink }: BaseExercise) => videoLink,
+      resolve: ({ youtube_link: videoLink }: BaseExerciseType) => videoLink,
     },
     description: {
       type: GraphQLString,
     },
     muscleGroup: {
-      type: MuscleGroup,
-      resolve: ({ muscle_group: muscleGroup }: BaseExercise) => muscleGroup,
+      type: GraphQLString,
     },
   },
 });
+
+register('BaseExercise', BaseExercise);
+
+export default BaseExercise;

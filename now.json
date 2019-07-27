@@ -8,7 +8,8 @@
     "DB_URL":"@db_url",
     "JWT_SECRET": "@jwt_secret",
     "TV_HELPER_PASS": "@tv_helper_pass",
-    "GRAPHQL_DB_URL": "@graphql_db_url"
+    "GRAPHQL_DB_URL": "@graphql_db_url",
+    "TRAININGJOURNAL_DB_URL": "@trainingjournal_db_url"
   },
   "alias": "tbergq-graphql.now.sh"
 }
