@@ -1,15 +1,12 @@
 mutation createExercise {
-  createExercise(exercise: {breakTime: 1, dayId: "RGF5OjIwMQ==", description: "Nopw", reps: "2", set: "2", baseExerciseId: "YmFzZUV4ZXJjaXNlOjM4"}) {
-    exerciseEdge {
+  createExercise(exercise: {breakTime: "2", dayId: "RGF5OjIwMQ==", description: "Nopw", reps: "2", sets: "2", baseExerciseId: "YmFzZUV4ZXJjaXNlOjM4"}) {
+    edge {
       node {
-        id
-        name
-        set
-        reps
-        breakTime
-        baseExercise {
+        ... on Exercise {
           id
-          name
+          sets
+          reps
+          breakTime
         }
       }
     }

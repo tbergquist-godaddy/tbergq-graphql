@@ -36,7 +36,7 @@
     "build": "rimraf graphql/ && npx babel src --out-dir graphql",
     "start": "node graphql/index.js",
     "deploy": "yarn build && now --target production",
-    "test": "DB_URL=url GRAPHQL_DB_URL=db jest --setupTestFrameworkScriptFile=./scripts/setupTests.js -c ./.jest.json",
+    "test": "DB_URL=url GRAPHQL_DB_URL=db TRAININGJOURNAL_DB_URL=db jest --setupTestFrameworkScriptFile=./scripts/setupTests.js -c ./.jest.json",
     "lint": "yarn eslint .",
     "flow": "flow src/ --include-warnings",
     "test-ci": "yarn lint && yarn flow && yarn test"

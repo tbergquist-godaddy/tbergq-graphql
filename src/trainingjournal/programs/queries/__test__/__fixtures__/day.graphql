@@ -2,16 +2,5 @@ query day {
   day(dayId:"RGF5OjE0Mg==") {
     id
     name
-    exercises (first: 1) {
-      edges {
-        node {
-          set
-          reps
-          baseExercise {
-            name
-          }
-        }
-      }
-    }
   }
 }

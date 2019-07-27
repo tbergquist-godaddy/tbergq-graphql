@@ -3,9 +3,6 @@
 import { generateTestsFromFixtures } from '@kiwicom/test-utils';
 
 import executeTestQuery from '../../../../common/services/executeTestQuery';
-import Day from '../../datasets/day.json';
-
-fetch.mockResponses([JSON.stringify(Day)]);
 
 jest.mock('../../../db/ProgramModel.js', () => ({
   getProgram: () =>
@@ -15,6 +12,18 @@ jest.mock('../../../db/ProgramModel.js', () => ({
       date: '2017-08-08T09:20:11Z',
     }),
 }));
+
+jest.mock(
+  '../../repositories/DayRepository.js',
+  () =>
+    class DayRepository {
+      getDay = () =>
+        Promise.resolve({
+          _id: '345',
+          name: 'Day 1',
+        });
+    },
+);
 
 generateTestsFromFixtures(`${__dirname}/__fixtures__`, input =>
   executeTestQuery(input),
